@@ -1,3 +1,3 @@
 # scalaLearning
 
-Repository of my firsts steps in Scala
+Repository of my first steps in Scala
