@@ -40,5 +40,15 @@ object ifstatement {
             println("#3: Welcome to Marmot land!")
         }
 
+
+        //Annided if statement
+        val k = 10
+        println( if (k == 10) "K value is 10" else "K value is not 10")
+
+        println("\n")
+        for(i <- 0 until 10){
+            print(if (i%2 ==0) s"$i is even " else s"$i is odd ")
+        }
+
     }
 }

@@ -5,7 +5,7 @@ object datatypes {
         the data types
         */
         //integer variable
-        val a = 1  // val defines an inmmutable variable
+        val a = 1  // val defines an immutable variable
         var aa: Int =1 // var defines a mutable variable
         println("This is a integer variable:", a)
 

@@ -1,0 +1,20 @@
+To run a script without compiling
+    >>>scala file_name.scala
+
+To compile a file with an object
+    >>>scalac file_name.scala
+
+        ->It will generate a new file with the object name and .class extension
+
+To run .class files (compiled)
+    >>>scala -cp . object_name
+
+
+To begin a complete Scala project with sbt
+
+    >>>mkdir project_name
+    >>>cd project_name
+    >>>touch build.sbt
+    >>>sbt
+    >>>mkdir -p src/main/scala/module_name
+    >>>mkdir -p src/test/scala
