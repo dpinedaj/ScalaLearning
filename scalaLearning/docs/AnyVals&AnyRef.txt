@@ -1,0 +1,14 @@
+In scala everything is an object
+- Any is the super type of all types, also called the top type.
+    It defines certain universal methods such as equals, hashCode, and toString,
+    Any has two direct subclasses: AnyVal and AnyRef
+
+- AnyVal represents the value types:
+    -Integer, Long, Double, Float, Boolean, Char, Byte, Unit
+
+-AnyRef represents reference types. All non-value types are defined as referece types
+    Every user-defined type in Scala is a subtype of AnyRef, the predefined are:
+    -String, Iterable, Seq, List, Arrays.....
+
+
+Everything is Nothing....

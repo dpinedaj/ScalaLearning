@@ -8,7 +8,9 @@ object datatypes {
         val a = 1  // val defines an immutable variable
         var aa: Int =1 // var defines a mutable variable
         println("This is a integer variable:", a)
-
+        //Long variable
+        var al = 1L
+        println("This is a Long Variable:", al)
         //Double or floating variable
         val b: Double = 1.5
         println("This is a double variable:", b)
@@ -17,7 +19,9 @@ object datatypes {
         //string variable
         val c: String = "hola"
         println("This is a string variable: " + c)
-
+        //char variable
+        val ch: Char = 'a'
+        println("This is a char variable: " + ch)
         //Scala arrays
         println("This is an Array")
         var d = Array(1, 2, 3)
