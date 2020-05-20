@@ -1,0 +1,33 @@
+// docs at https://docs.scala-lang.org/overviews/collections/overview.html
+
+All collection classes are found in the package scala.collection or one of its sub-packages
+
+---> scala.collections.immutable
+    -> Is guaranteed to be immutable for everyone. Such a collection will never change after is created
+        so you can rely on the fact that acessing the same collection value repeatedly at different
+        points in time will always yield a collection with the same elements
+---> scala.collections.mutable
+    ->Have somera operations that change the collection in place. So is needed to understand his methods
+
+By default scala always pick immutable collections. for example if you just write Set, it will be immutable
+    the mutable set is called collection.mutable.Set or import it by convention "import scala.collection.mutable"
+
+
+Every kind of collectino can be created with the same uniform syntax: write the colleciton class name followed by its elements:
+
+>>>Traversable(1, 2, 3)
+>>>Iterable("x", "y", "z")
+>>>Map("x" -> 24, "y" -> 25, "z" -> 26)
+>>>Set(Color.red, Color.green, Color.blue)
+>>>SortedSet("hello", "world")
+>>>Buffer(x, y, z)
+>>>IndexedSeq(1.0, 2.0)
+>>>LinearSeq(a, b, c)
+
+>>>List(1, 2, 3)
+>>>HashMap("x" -> 24, "y" -> 25, "z" -> 26)
+
+
+Basic Collections functions:
+
+    
