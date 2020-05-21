@@ -3,3 +3,4 @@
 .scalafmt.conf
 scalavista-vscode.log
 .vscode
+.idea
