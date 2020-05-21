@@ -1,0 +1,57 @@
+welcome to getting started with Scala after completing this lesson you should
+be able to describe how to get started with Scala on your machine and outline
+how to start a new project in Scala Scala language has a website called
+Scotland dash lang DAW tour with the beautiful picture of Lausanne
+Switzerland to get started with the language click on the download link on
+the front page which will give you the option of how you want to bring the
+language down to your machine you can download the language itself which will
+give you the compiler and tooling around how to get started with the project or
+you can download types of activator a tool which is very good for helping you
+start with templates that show you how to do specific things with Scala what
+I've downloaded types of activator I have to decompress the zip file has been
+brought down in this case I put it on my desktop if I open the folder that was
+from the compressed zip file you'll see you have a folder inside of their called
+activator with scripts inside of allowing you to run activator on various
+platforms if you were running on Mac OS X or Linux use the activator shell
+script if you're running on Windows based platforms use activator batch file
+I start the activator script and it starts at Shell session which is going
+to figure out whether it has the most recent version of activator and then
+start a web UI there are many templates inside of activated allow you to get
+started with various parts of the skull ecosystem if you want to just start
+learning scholar you can select hello Scala template other templates include
+various parts of the ecosystem such as the concurrency toolkit the play web
+framework and spark for big data handling we also have seeds were you
+have a project starting point without any functionality already built into it
+if I look at the tutorials and I searched on spark a bunch of templates
+show up I'm going to select the spark workshop template I want to
+choose where on my desk this template will live in this case I will put in my
+desktop in the activator folder choose and then I press the Create button at
+this point all of the dependencies this project requires will be brought down
+from various repositories across the internet
+there could be quite a few in this may take some time however it's a one-time
+cost you do it the first time and after that in immediately loads when you open
+the template you'll see a new user interface which allows you to explore a
+tutorial about this project it also has a view to allow you to see the code
+compile the code executes the tests associated with this project and run the
+application if that's part of this template the spark workshop template
+will explain to you what patchy spark is how it's used in Hadoop context and has
+several examples that are considered canonical in the Big Data space such as
+word count if we navigate through the tutorial you will see that we eventually
+reach a point where we are describing the various implementations of these
+applications so here is an example code word count to word count being the kind
+of application where you're counting the number of times the word is used in all
+of Shakespeare's great works this is a very simple application it's not that
+large the comments themselves make up for more of the source code then the
+logic itself and you can also execute the tests so that one by one the various
+parts of the project can be executed to be sure that they're implemented
+correctly we look at the code again we can move on to the other projects such
+as word count three the matrix for the crawl which is the fifth application in
+spark the inverted index and and grams which is natural language processing
+when you're finished using activated to get started you can bring the source
+code down to your machine locally
+clicking on this button right here which will allow you to open the project and
+the IntelliJ IDEA IDE or the Eclipse IDE or I down to your file system so that
+you can use it with Sublime Text Emacs VMware any other editor you prefer after
+having completed this lesson we should understand and be able to describe how
+to get started with Scala as well as be able to use activator to get started
+quickly with templates and seed projects

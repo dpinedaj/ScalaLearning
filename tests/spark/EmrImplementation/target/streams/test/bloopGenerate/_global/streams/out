@@ -1,4 +1,4 @@
-[debug] [app-test] Classpath dependencies List()
-[debug] [app-test] Dependencies from configurations List(app)
-[debug] Bloop wrote the configuration of project 'app-test' to '/home/daniel/Desktop/Projects/study/5.awsArchitect/own/emr/app/.bloop/app-test.json'
-[success] Generated .bloop/app-test.json
+[debug] [emrimplementation-test] Classpath dependencies List()
+[debug] [emrimplementation-test] Dependencies from configurations List(emrimplementation)
+[debug] Bloop wrote the configuration of project 'emrimplementation-test' to '/home/daniel/Desktop/Projects/study/4.ScalaLearning/tests/spark/EmrImplementation/.bloop/emrimplementation-test.json'
+[success] Generated .bloop/emrimplementation-test.json

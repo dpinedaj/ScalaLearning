@@ -16,6 +16,6 @@ lazy val hello = (project in file("."))
 lazy val helloCore = (project in file("core"))
   .settings(
     name := "Hello Core",
-    libraryDependencies ++= Seq(gigahorse, playJson),
+    libraryDependencies ++= Seq(gigahorse, playJson),ss
     libraryDependencies += scalaTest % Test,
   )

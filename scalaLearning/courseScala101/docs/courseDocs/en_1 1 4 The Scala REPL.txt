@@ -1,0 +1,51 @@
+welcome to the Scala rebel in this lesson you will learn how to describe
+how to use the Scala report to experiment invalidate your ideas and
+implementation before you put it into production
+scholar Apple is also called the read evaluate and print loop is a tool that
+many languages have in Scala does as well as an interactive shell session to
+try out logic before you deploy it into production to enter a rebel session
+first of all you have to have an activator project that you want to use
+just as we saw in the previous lesson so now that I have my temp project start
+activator inside of the root folder of that project and then I take the console
+command once I'm at the activator prompt you should now see a Scala prom showing
+that you have a console session open in the rubble and I can very easily create
+data such as one to ten thousand creating a sequence of numbers from one
+to ten thousand inside of a collection you'll notice that the value is
+automatically assigned to name called result 0 and if I perform any kind of
+transformation such as mapping over the data and saying for every number add one
+to it I get a new result in this case result one with the values change based
+upon the transformation that I gave me if I look back at my result 0 you'll see
+it still exists and hasn't been altered in any way shape or form I can also
+perform very basic data science operations inside of the rebel for
+example if I create a range of values from one to 20 I can say for that result
+three I want to group them by their remainder whenever I say for every
+number get the modulus of dividing by three
+in this case I end up with a collection where the index is the remainder and the
+value associated with that key is all of values that had that remainder I can
+also perform spark operations inside of the rubble when we showed off her
+activator templates earlier we saw an example of how to do in grams and grams
+or just a sequence of tokens typically words of which there are a number of
+them we can use the anagram class and sparked transform input features into
+input grammar anagrams and to do so the first thing I'm going to do is use paste
+mode inside of the Repsol to paste in a group of import statements and I hit
+ctrl D which has all of them interpreted as a single command next I'm going to
+create a spark contacts and don't worry about what sparked context or any of
+these concepts are yet as will be explaining more about them later but
+this is just an example of some simple functionality that you can build inside
+of your Apple distemper project and I have to give it a master of the spark
+configuration now have a spark in Fig
+an hour can create a spark context
+using their config next I can create a sequel context from that spark context
+next less space them in new data frame representation values that we want to
+convert into an anagram in this case three different sentences index by an
+index number
+control deed and peace mode and evaluate this word data frame now I can create
+and then gramm by creating an instance of a new and Graham class where I have
+to set some arguments to the new instance
+and then I create an anagram data frame by transforming the word data frame I
+just created and then I can perform a transformation on the anagram data frame
+which allow me to say take the first three lines and map over them where it's
+safe for each line get it as a stream of strength applying type safety as we go
+on a call and grams and I'm it turned into a list I'm now going to print them
+out his inaction by saying for each Franklin which results in the three
+streams being printed out as sentences in a list

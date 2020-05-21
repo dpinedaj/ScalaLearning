@@ -1,0 +1,63 @@
+welcome to creating a scallop project after completing this lesson we should
+be able to describe how to create a new scallop project outline how to add
+external libraries such spark to your project and then open the project inside
+of Scala IDE to create a new scallop project created directory somewhere on
+your disk at that point you're going to want to edit a new file called a
+build-out SPT inside of that fire you only need three things first of all the
+version of scholar you want to use
+the name of the project and finally any dependencies that I may want to add to
+my project such as libraries that may come from other people who created them
+that you want to leverage inside of your project to do that we add the library
+dependencies we give the groupId of who created the project that we want to use
+the name of the project we want to pull in the Persian scholar with which it is
+being used and then finally the version of the project itself that we are going
+to be leveraging once we have these three things we have the basis of an
+entire project in Scala and now I type activator to start my activator session
+inside of this project and instead of bringing up the WebUI as we saw earlier
+because it knows it's inside of an SBT project it will start a build session
+inside of that project when you receive your prompt which is this carrot right
+here you can now start typing in commands Command Sgt or commands such as
+compile to compile all of the source inside of the project you can also run
+the test command which will run any tests that you have inside of your
+project or run if you have any classes that start up a JVM and an application
+in this case we don't have any source yet so there's nothing to run in order
+to open her project in Scala IDE first we have to make sure that we have the
+Eclipse plugin added to our activator project to do that we have to leave
+activator and I find the best way to leave activator is to use control D
+once you're back at the root of the project you want to move into the
+project folder which was created for you when you created this project and ran
+activator so CD into project folder and now you want to create a plugins . SBT
+file inside of this file you're going to want to add a single line you want to
+say add SPT plugin where you add the group com type saved at SBT clips and
+then the project SPT like Eclipse plugin and the version 3200 as it currently
+stands once you've done this save the file
+return to the temp project folder and then type activator again this will
+reload the entire context of all of the information about this project including
+what you just add it now if you type eclipse the command line inside of the
+SBT prompt it's going to create the Eclipse project files for you so that
+you can open this project inside Eclipse if you use IntelliJ IntelliJ has the
+ability to read your build-down SBT file and you don't need to do this step 2
+downloads khallid go to Scala dash I D dot org
+where you'll find the latest links to download the latest version of the idea
+itself once you've done that and you have the ideal local on your box you can
+start the I D which will load eclipse with the Scala IDE plugin as well this
+may take a few minutes but once it's up and running you don't have to add your
+project to the Package Explorer inside of Eclipse now even though this is a
+brand new project we've already created it inside of our shells session and we
+need to import an existing project into Eclipse to do that we need to right
+click inside the Package Explorer or go to the file
+and select Import once we done that this dialogue should show up asking us what
+kind of project we want to import we want to say in the general group that we
+want to bring in an existing project into our current workspace we say next
+and then we have to select the location of our temp project that we were using
+in my case it's going to be on my desktop and select the term project I
+see open and I should see my projects view and side of eclipse the simple
+Scala project that I created when I say finish eclipse is going to bring it into
+the Eclipse context and now whenever expand it I'll see that there's a whole
+bunch of stuff here that was created for me
+such as the location for our I want to put my Scala source files any Java
+source files any resource files such as configuration and we might be using then
+we also have locations for our test source files as well if I want to create
+a class I merely right click on the source main Scala and I say new and
+select scholar class and I can call that anything I want for example through and
+then the class will be created underneath that grouping

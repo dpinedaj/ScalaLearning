@@ -1,0 +1,4 @@
+[debug] [root-114project-test] Classpath dependencies List()
+[debug] [root-114project-test] Dependencies from configurations List(root-114project)
+[debug] Bloop wrote the configuration of project 'root-114project-test' to '/home/daniel/Desktop/Projects/study/4.ScalaLearning/scalaLearning/courseScala101/projects/114project/.bloop/root-114project-test.json'
+[success] Generated .bloop/root-114project-test.json

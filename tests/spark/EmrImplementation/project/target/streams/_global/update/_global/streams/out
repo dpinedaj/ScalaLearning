@@ -1,4 +1,4 @@
 [debug] "not up to date. inChanged = true, force = false
-[debug] Updating ProjectRef(uri("file:/home/daniel/Desktop/Projects/study/5.awsArchitect/own/emr/app/project/"), "app-build")...
-[debug] Done updating ProjectRef(uri("file:/home/daniel/Desktop/Projects/study/5.awsArchitect/own/emr/app/project/"), "app-build")
+[debug] Updating ProjectRef(uri("file:/home/daniel/Desktop/Projects/study/4.ScalaLearning/tests/spark/EmrImplementation/project/"), "emrimplementation-build")...
+[debug] Done updating ProjectRef(uri("file:/home/daniel/Desktop/Projects/study/4.ScalaLearning/tests/spark/EmrImplementation/project/"), "emrimplementation-build")
 [warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.

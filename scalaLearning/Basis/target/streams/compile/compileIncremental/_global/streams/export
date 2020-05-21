@@ -1,0 +1,1 @@
+scalac -bootclasspath /home/daniel/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.jar -classpath /home/daniel/Desktop/Projects/study/4.ScalaLearning/scalaLearning/Basis/target/scala-2.13/classes /home/daniel/Desktop/Projects/study/4.ScalaLearning/scalaLearning/Basis/src/main/scala/examples/15.whileLoops.scala

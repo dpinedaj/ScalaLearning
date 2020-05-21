@@ -1,0 +1,9 @@
+Why Scala for Data Science?
+    -All of the data science capabilities expect:
+        -Centrality and dispersion measures
+        -Normalization and standarization
+        -Covariance and correlation
+        -Receiver operating characteristics (ROC) curve
+        -Feature engineering
+        -Random Forest
+        -Support vector machines(SVM)

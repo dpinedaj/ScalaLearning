@@ -12,9 +12,31 @@ To run .class files (compiled)
 
 To begin a complete Scala project with sbt
 
-    >>>mkdir project_name
-    >>>cd project_name
-    >>>touch build.sbt
+    >>>mkdir workspace
+    >>>cd workspace
+    >>>echo "scalaVersion := <<scala-version>>
+            name := <<project-name>>
+            libraryDependencies += <<dependencie>> % <<package>> % <<version>>" >>build.sbt
     >>>sbt
-    >>>mkdir -p src/main/scala/module_name
-    >>>mkdir -p src/test/scala
+    >>>touch project/plugins.sbt
+    
+
+
+    //can be used the default templates
+    >>>sbt new scala/scala-seed.g8 ///It will create the minimal project with some resource needs
+
+
+    //Different templates:
+
+    -scala/scala-seed.g8 (Seed template for Scala)
+    -scala/hello-world.g8 (A minimal Scala application)
+    -scala/scalatest-example.g8 (A template for trying out ScalaTest)
+
+    //spark
+    -spark-jobserver/spark-jobserver.g8 (Template for Spark Jobserver)
+    -holdenk/sparkProjectTemplate.g8
+    -MrPowers/spark-sbt.g8
+
+    //More references at: https://github.com/foundweekends/giter8/wiki/giter8-templates
+
+ 

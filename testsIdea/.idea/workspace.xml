@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6b5bb794-7595-4078-a521-5d9f17734cd7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/1.definedFunctions.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/1.definedFunctions.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/10.mapMethod.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/10.mapMethod.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/11.flattenFlatMap.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/11.flattenFlatMap.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/12.logicalOperators.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/12.logicalOperators.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/13.ifStatement.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/13.ifStatement.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/14.forLoops.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/14.forLoops.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/15.whileLoops.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/15.whileLoops.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/16.DeclaringFunctions.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/16.DeclaringFunctions.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/2.datatypes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/2.datatypes.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/3.aritmethicOperations.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/3.aritmethicOperations.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/4.stringOperations.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/4.stringOperations.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/5.tuples.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/5.tuples.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/6.lists.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/6.lists.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/7.arrays.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/7.arrays.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/8.sets.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/8.sets.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/9.maps.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/9.maps.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/Basis/docs/running.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../scalaLearning/Basis/docs/running.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scalaLearning/courseScala101/docs/ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/basicStructure/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/basicStructure/build.sbt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1cAoR12PnUet6h5cjQ7frYTbI3e" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b5bb794-7595-4078-a521-5d9f17734cd7" name="Default Changelist" comment="" />
+      <created>1589980746887</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589980746887</updated>
+      <workItem from="1589980749874" duration="50000" />
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="269" y="155" width="1372" height="803" key="new project wizard" timestamp="1589980796002">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="269" y="155" width="1372" height="803" key="new project wizard/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1589980796002" />
+  </component>
+</project>
