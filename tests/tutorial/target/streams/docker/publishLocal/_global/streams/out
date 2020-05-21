@@ -1,0 +1,41 @@
+[0m[[0m[0mdebug[0m] [0m[0mExecuting Native docker build --force-rm -t hello:0.1.0-SNAPSHOT .[0m
+[0m[[0m[0mdebug[0m] [0m[0mWorking directory /home/daniel/Desktop/scalaLearning/tests/tutorial/target/docker/stage[0m
+[0m[[0m[0minfo[0m] [0m[0mSending build context to Docker daemon  14.49MB[0m
+[0m[[0m[0minfo[0m] [0m[0mStep 1/6 : FROM openjdk:latest[0m
+[0m[[0m[0minfo[0m] [0m[0mlatest: Pulling from library/openjdk[0m
+[0m[[0m[0minfo[0m] [0m[0m83755823a002: Pulling fs layer[0m
+[0m[[0m[0minfo[0m] [0m[0mc0e105caaf23: Pulling fs layer[0m
+[0m[[0m[0minfo[0m] [0m[0m2fb07d19f2c1: Pulling fs layer[0m
+[0m[[0m[0minfo[0m] [0m[0mc0e105caaf23: Verifying Checksum[0m
+[0m[[0m[0minfo[0m] [0m[0mc0e105caaf23: Download complete[0m
+[0m[[0m[0minfo[0m] [0m[0m83755823a002: Verifying Checksum[0m
+[0m[[0m[0minfo[0m] [0m[0m83755823a002: Download complete[0m
+[0m[[0m[0minfo[0m] [0m[0m83755823a002: Pull complete[0m
+[0m[[0m[0minfo[0m] [0m[0mc0e105caaf23: Pull complete[0m
+[0m[[0m[0minfo[0m] [0m[0m2fb07d19f2c1: Verifying Checksum[0m
+[0m[[0m[0minfo[0m] [0m[0m2fb07d19f2c1: Download complete[0m
+[0m[[0m[0minfo[0m] [0m[0m2fb07d19f2c1: Pull complete[0m
+[0m[[0m[0minfo[0m] [0m[0mDigest: sha256:9db045736d07ac0025d3b2e7c2628baf8e2d6d24f58f0e9b13cf184d978f3a8d[0m
+[0m[[0m[0minfo[0m] [0m[0mStatus: Downloaded newer image for openjdk:latest[0m
+[0m[[0m[0minfo[0m] [0m[0m ---> db8922a53903[0m
+[0m[[0m[0minfo[0m] [0m[0mStep 2/6 : WORKDIR /opt/docker[0m
+[0m[[0m[0minfo[0m] [0m[0m ---> Running in 6d398b2c44cb[0m
+[0m[[0m[0minfo[0m] [0m[0mRemoving intermediate container 6d398b2c44cb[0m
+[0m[[0m[0minfo[0m] [0m[0m ---> d335be97327f[0m
+[0m[[0m[0minfo[0m] [0m[0mStep 3/6 : ADD --chown=daemon:daemon opt /opt[0m
+[0m[[0m[0minfo[0m] [0m[0m ---> 2c72c5839a84[0m
+[0m[[0m[0minfo[0m] [0m[0mStep 4/6 : USER daemon[0m
+[0m[[0m[0minfo[0m] [0m[0m ---> Running in c63a82ecc7e1[0m
+[0m[[0m[0minfo[0m] [0m[0mRemoving intermediate container c63a82ecc7e1[0m
+[0m[[0m[0minfo[0m] [0m[0m ---> 2e63f450dfa5[0m
+[0m[[0m[0minfo[0m] [0m[0mStep 5/6 : ENTRYPOINT ["/opt/docker/bin/hello"][0m
+[0m[[0m[0minfo[0m] [0m[0m ---> Running in af34b7ac3715[0m
+[0m[[0m[0minfo[0m] [0m[0mRemoving intermediate container af34b7ac3715[0m
+[0m[[0m[0minfo[0m] [0m[0m ---> eb0e776a6dc3[0m
+[0m[[0m[0minfo[0m] [0m[0mStep 6/6 : CMD [][0m
+[0m[[0m[0minfo[0m] [0m[0m ---> Running in fc81f976bbfa[0m
+[0m[[0m[0minfo[0m] [0m[0mRemoving intermediate container fc81f976bbfa[0m
+[0m[[0m[0minfo[0m] [0m[0m ---> 94baea52b432[0m
+[0m[[0m[0minfo[0m] [0m[0mSuccessfully built 94baea52b432[0m
+[0m[[0m[0minfo[0m] [0m[0mSuccessfully tagged hello:0.1.0-SNAPSHOT[0m
+[0m[[0m[0minfo[0m] [0m[0mBuilt image hello:0.1.0-SNAPSHOT[0m

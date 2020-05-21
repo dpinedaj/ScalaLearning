@@ -1,0 +1,10 @@
+[0m[[0m[0minfo[0m] [0m[0m:: delivering :: com.example#hello_2.13;0.1.0-SNAPSHOT :: 0.1.0-SNAPSHOT :: integration :: Thu May 21 12:46:05 COT 2020[0m
+[0m[[0m[0mdebug[0m] [0m[0m	options = status=integration pubdate=Thu May 21 12:46:05 COT 2020 validate=true resolveDynamicRevisions=true merge=true resolveId=null pubBranch=null[0m
+[0m[[0m[0minfo[0m] [0m[0m	delivering ivy file to /home/daniel/Desktop/scalaLearning/tests/tutorial/target/scala-2.13/ivy-0.1.0-SNAPSHOT.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	deliver done (6ms)[0m
+[0m[[0m[0mdebug[0m] [0m[0mlocal do not support transaction. ivy pattern does not use revision as a directory[0m
+[0m[[0m[0minfo[0m] [0m[0m	published hello_2.13 to /home/daniel/.ivy2/local/com.example/hello_2.13/0.1.0-SNAPSHOT/poms/hello_2.13.pom[0m
+[0m[[0m[0minfo[0m] [0m[0m	published hello_2.13 to /home/daniel/.ivy2/local/com.example/hello_2.13/0.1.0-SNAPSHOT/jars/hello_2.13.jar[0m
+[0m[[0m[0minfo[0m] [0m[0m	published hello_2.13 to /home/daniel/.ivy2/local/com.example/hello_2.13/0.1.0-SNAPSHOT/srcs/hello_2.13-sources.jar[0m
+[0m[[0m[0minfo[0m] [0m[0m	published hello_2.13 to /home/daniel/.ivy2/local/com.example/hello_2.13/0.1.0-SNAPSHOT/docs/hello_2.13-javadoc.jar[0m
+[0m[[0m[0minfo[0m] [0m[0m	published ivy to /home/daniel/.ivy2/local/com.example/hello_2.13/0.1.0-SNAPSHOT/ivys/ivy.xml[0m

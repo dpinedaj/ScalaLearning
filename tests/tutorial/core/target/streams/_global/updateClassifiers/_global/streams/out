@@ -1,0 +1,4 @@
+[warn] scala-library-2.13.1-sources.jar no longer exists at /home/daniel/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1-sources.jar
+[debug] "not up to date. inChanged = false, force = false
+[debug] Updating ProjectRef(uri("file:/home/daniel/Desktop/scalaLearning/tests/basicStructure/"), "helloCore")...
+[debug] Done updating ProjectRef(uri("file:/home/daniel/Desktop/scalaLearning/tests/basicStructure/"), "helloCore")
