@@ -5,6 +5,7 @@ val scalaTest = "org.scalatest" %% "scalatest" % "3.1.1"
 val gigahorse = "com.eed3si9n" %% "gigahorse-okhttp" % "0.5.0"
 val playJson  = "com.typesafe.play" %% "play-json" % "2.8.1"
 
+
 lazy val hello = (project in file("."))
   .aggregate(helloCore)
   .dependsOn(helloCore)

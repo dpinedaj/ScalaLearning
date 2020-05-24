@@ -1,0 +1,58 @@
+welcome to immutable and mutable fields after completing this lesson you should
+be able to describe the difference between mutable and immutable fields
+create field since college classes describe the difference between class
+parameters and fields and outline how to promote class parameters to become
+fields themselves so what is the field of field assessed value encapsulated
+within an instance of a class that represents the state inside of that
+instance and therefore the state of an application at a given time
+think of a customer as we spoke of earlier in the classes section that
+customer may have fields inside of it that represent its customer name its
+customer address and its customer phone number that is state inside of your
+application which may change at various times fields are also accessible to the
+outside world unless specified otherwise by this we mean another class is able to
+ask an instance of a customer for that customers name so what is the difference
+between fields and class parameters parameters are passed into the
+constructor of a class and are only visible within that class fields exist
+inside of the body of the class and are accessible to outside instances for
+immutable fields we can create them using the BAL keyword immutable is
+exactly what it sounds like it cannot be changed so inside of a class hello we
+define a field message using the BAL keyword type string and we set it equal
+to the value hello this means when we instantiate a new hello class instance
+we can access the message field however no one is able to change it at any point
+in time we also have mutable fields using the bar keyword and this means
+that the field that you create can be changed
+point to a different strengths in this case we have a class alone we create a
+field called message which is a bar in there for mutable of type string and it
+points to a string called hello when we create a new instance of hello we then
+can access the message or we can set it equal to a new value and if we look at
+the bottom of the slide BC where hello doubt message is being assigned to a new
+value of hello world instead of just how low so how do we choose when to be
+immutable or mutable immutable fields cannot be changed and are therefore
+thread safe inside of a multithreaded environment such as the GBM this is a
+very desirable property because you don't have to worry about anybody else
+changing about you on you unexpectedly mutable fields can be useful but they
+require significant diligence on the part of the programmer to ensure that
+multiple threads cannot update the field at the same time leading to
+non-deterministic behavior soyuz immutable fields by default is easier to
+reason about immutable fields and it will require as much work on your end to
+make sure that you aren't updating fields at the same time by definition
+Scala makes our class parameters immutable by default is also important
+to specify the types Scala has type in prince but this isn't something you want
+to over use is a good habit to be specific about types regardless if we
+look at our class hello on the slide we see that we have a field called message
+but we never say it is equal to a type of strength instead by assigning it to a
+string the compiler infers that message is a string instance however this is not
+how we want to write your code it is less clear and does not enforce
+correctness at compile time we can also promote class parameters become fields
+themselves if you want to make a parameters as being passed to a class
+constructor a publicly visible field at the Val keyword in front of it
+the Scala compiler will generate an access
+for you and other class instances can now ask for the current state of the
+promoted field here's an example I have my class hello and I still have my
+parameter to the class called message of type strength but by putting the BAL
+keyword in front of it when I create an instance of a hello I can now ask to see
+the message value and is passed out to me having completed this lesson we
+should be able to describe the difference between beautiful and
+immutable fields create fields in Scala classes describe the difference between
+class parameters in fields and outline how to promote class parameters to
+fields

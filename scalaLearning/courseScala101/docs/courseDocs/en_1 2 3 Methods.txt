@@ -1,0 +1,55 @@
+welcome two methods after completing this lesson you should be able to
+implement methods with them Scala classes described evaluation order
+methods vs field in Scala an outline how index notation works inside of Scala to
+what is a method a method described behavior with them a class instance
+there something that can be called on to do work on the state that exists inside
+of a class this is where transformations the state can take place
+methods may or may not take parameters as inputs and may return a single value
+in response if any and they should specify their return type if one exists
+this gives us more correctness a compile-time it also allows for faster
+compilation is the compiler doesn't have to figure out what subsequent usages of
+a value might do and whether or not
+operations on them are valid if you specify types the compiler can make
+those judgments quicker so here's examples of a simple Scala method first
+of all we have the Deaf method hello using the Deaf keyword to specify that
+we are creating a method and the Hello method simply returns a Hello strength
+in this case we are using type inference because we are not specifying the Hello
+returns a string is merely inferred from the fact that we have a string that is
+returned from a low method however another example is this method echo
+again using the Deaf keyword echo takes a parameter which is a strength called
+message and it returns a string explicitly and we set that equal to the
+message that was passed in in this case we have a fully formed method that takes
+about you and returns another value even though in this case it's merely echoing
+the message that was passed
+past and so why use methods instead of fields if a method can look like a field
+for example and our method hello on the previous slide methods are evaluated
+every time they're called at the time they are called so they are re-evaluated
+the next time you call them again
+fields on the other hand are only evaluated at the time the class is
+constructed and immutable only the first time this gives you a balance between
+evaluation order methods are evaluated every time you call them
+fields are evaluated only when the class is constructed and one-time scholar also
+supports something called in pics notation methods can be called on an
+instance of a class and Scala permits those calls to be made with no dot or
+parentheses but only if the method takes only one argument this is flexible
+syntax that supports very powerful D S l's domain-specific languages that allow
+you to abstract the way you want to describe a problem in source code
+however for readability you should not use this feature let me show you what I
+mean
+in the first example we have a string Martin order ski and we use dot notation
+to call the method split on that strength and we say to split that string
+using a space this results in an array of strings of two values the string
+Martin and the string oh dear ski because we split the single string by a
+space we could have called this in the exact same way but without the dot and
+the parenthesis because the split method only takes one argument we are treating
+the split method almost as though it is an operator like a plus sign or a minus
+sign or multiplication this syntax is very readable whenever you want to write
+domain-specific languages for example whenever you write tests using certain
+kind
+libraries but even though it results in the same thing it could be more
+difficult for new developers to Scala to understand syntax when they see no dots
+and no per ends we recommend that you stick with ordinary syntex using dots
+and per ends so there is no cognitive overhead for new people to your team
+having completed this lesson you should be able to implement methods and scholar
+using the Deaf keyword described the evaluation order methods forces fields
+in Scala and outline how infix notation works

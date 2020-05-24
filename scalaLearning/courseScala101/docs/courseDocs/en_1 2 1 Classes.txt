@@ -1,0 +1,59 @@
+welcome to classes before we can get started doing any serious data science
+work we first have to understand basic syntax in Scala after completing this
+lesson you should be able to create instantiate classes in Scala describe
+how arguments are passed to scholar class instances and outline the lifespan
+of class parameters and a scholar class instance so what is a Class A classes a
+description of a type it embodies the state inside of an instance of a class
+so it is nothing more than a way of representing
+type of value inside of your system for example think of a customer inside of a
+customer you might have states such as their name or their address or their
+phone number
+classes represent behavior for how that state can be transformed for example how
+you might change someone's address or their name classes are not concrete
+unless they have been instantiated by a call to their constructor with the new
+keyword so it class merely describes how you would want to represent concepts
+such as a customer and then to have an instance of a customer that represents a
+specific person you have to instantiate the Customer class with the new keyword
+and multiple instances of a class can exist for example you would have
+multiple customers near system one would hope
+here's a simple Scala class within the rebel we take the keyword class and give
+it a name
+hello this is a very basic class representation which doesn't contain any
+state or any methods which were described later however we can create an
+instance of a Hello class by saying new Halo with parentheses at the end of it
+and an instance is created given the name Res 0 inside of the rebel we can
+then call a method on the instance of a low by saying Res 0
+to strength which will return a string representation of the instance of the
+class in this case its location inside of the Java heap the memory space inside
+of the JVM each class gets a primary constructor automatically from the Scala
+compiler this defines the signature of how we create instances of a class
+the body of the class inside of the Scala source code is the implementation
+of the constructor so again if we look at our class hello that we were defining
+inside of a rebel we have an open curly brace and close curly brace and with end
+those curly braces is the body of the class if we put a statement inside of
+their such as a print money to pronounce the word hello that will create an
+instance of a class that when constructed using the new keyword will
+print out hello you can pass values into an instance of a class using one or more
+parameters to the constructor but you must specify the types of each of these
+parameters these values are internally visible for the life of the class
+instances you are creating so if you create a customer that represents a
+specific person and you pass values in as parameters to that class instance
+those will be visible inside of the class the entire time that customer
+object is living however those parameters cannot be accessed from
+outside of the class instance an example of this look at this example from the
+rubble we have a class hello and now we have a parameter called message of type
+string inside of the body of the class in the constructor we have a printed
+statement to print out the message that is passed into our fellow instance this
+defines our class alone and then we create the new Halo instance impasse in
+axed our strength it has been printed out when the class is constructed if we
+try to create hello without passing in that value we get a compile error before
+we try to run it saying that we do not have
+arguments for the constructor of hello and those class parameters are not
+accessible if I have that class hello with the message of type string as a
+parameter and I instantiate an instance of hollow and then I tried to access the
+message value inside of the Hello instance Res 0
+I'm told by the compiler days not visible and again this happens before
+you put this into production
+having completed this lesson you should be able to create and instantiate
+classes and Scala describe how arguments are passed scholar class instances and
+outline the lifespan of class parameters and a scholar class instance

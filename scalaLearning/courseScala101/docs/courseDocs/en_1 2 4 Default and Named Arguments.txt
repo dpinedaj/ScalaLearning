@@ -1,0 +1,40 @@
+welcome to default and named arguments after completing this lesson you should
+be able to utilize default argument values in Scala class constructors and
+methods and then leverage named arguments to only pass certain values
+when you use a method or constructor with default arguments so what are
+default arguments they allow the developer to specify about you to use
+for a constructor method when none is passed by the collar and omit values
+that are frequently the same this reduces boilerplate an application
+source code base because you don't have to overload methods with different
+signatures overloading is a language feature and some languages which allows
+you to have multiple definitions of the same method taking different arguments
+so here's an example of default arguments inside of a method called name
+we have two parameters the first is called first and the second is called
+last they're both strings and they both have default values of empty strings
+when you call this method is going to concatenate the first name a space and
+then the last name in the case where you call the name method and only passed the
+first argument is going to assume that the last value has not been passed and
+it should use the empty string in its place so when it prints out the result
+of this method with the first a space and the last name concatenated together
+you see a string value of just the word Martin as a best practice if you have a
+mixture of default arguments and those that do not have default values but the
+arguments without the defaults first for example let's look at that may method
+again we have the first middle and last name that we went to pass into this
+method however not everybody has a middle name and in this case we use a
+default value of an empty string
+for middle we put the first and the last rings first and then middle last so that
+when we call this week and just passed first and last name and not worry about
+the middle if one doesn't exist
+named arguments allow you to emit leading arguments if they have default
+values you can specify only the values you want to pass as an example let's
+look at named arguments in news for our named method that we used before where
+we had first and last name with default values of an empty string if we call
+name and we only want to pass the last name but it's a last is equal to the
+value we want to pass in there were referencing the name of the parameter in
+the call to the method so that we can only set that value we could also be
+explicit about both of them and say name first is equal to Martin last is equal
+to order ski and get both values into our method with default values were
+neither default was used
+having completed this lesson you should be able to utilize default argument
+values in Scala class constructors and methods and leverage named arguments to
+only pass certain values

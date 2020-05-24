@@ -1,4 +1,4 @@
 [debug] [helloCore-test] Classpath dependencies List()
 [debug] [helloCore-test] Dependencies from configurations List(helloCore)
-[debug] Bloop wrote the configuration of project 'helloCore-test' to '/home/daniel/Desktop/scalaLearning/tests/tutorial/.bloop/helloCore-test.json'
+[debug] Bloop wrote the configuration of project 'helloCore-test' to '/home/daniel/Desktop/Projects/study/4.ScalaLearning/tests/tutorial/.bloop/helloCore-test.json'
 [success] Generated .bloop/helloCore-test.json

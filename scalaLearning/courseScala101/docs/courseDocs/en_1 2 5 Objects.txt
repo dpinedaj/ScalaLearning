@@ -1,0 +1,48 @@
+welcome to objects after completing this lesson you should be able to create
+singleton objects in Scala describe the difference between a class and an object
+in Scala outline usages for objects in school applications and be able to start
+a scholar application so what is an object in the nineteen nineties a very
+famous book came out called design patterns and included a pattern called
+the singleton pattern this defines a single instance of a class that cannot
+be recreated with them a single run time such as a JDM instance they can be
+directly accessed by in their name so here's an example of a very simple Scala
+object instead of using the class keyword we use the object keyword and
+call the object hello inside of this object is a method called message which
+returns a string hello you'll notice that we are able to use the message
+method inside of the Hello object without instantiate during an instance
+of hello there is no keywords such as new and use we use it directly this is
+because this object is a singleton instance and is already instantiated for
+us when we tried to call the message method objects are Linsley instantiated
+so that they are instantiated the first time you tried to use them why is this
+useful many languages permit the definition of static fields and methods
+which are not tied to a particular instance of a class there globally
+available within the runtime such as the JVM so when are scholar objects used a
+very frequent use cases to create factories for instances of classes so
+this is an abstraction or usage is not tied directly to an instance of a class
+but instead results in the creation of instances of classes they're also good
+for utility method
+which do not leverage any state from outside of themselves
+anything they use is what is passed as a parameter and then they returned some
+value based on a calculation or transformation objects are also used to
+house constant definitions and have a look at some examples here is our object
+hello again and inside we have a constant defined as an immutable value
+called one hour in minutes
+it is a type int and is sixty as a value we also have a method called create time
+from minutes which takes a minute's value of type int and it damn instead
+she ate a new time instants for us using the minutes passed in divided by the
+constant we already defined and then the minutes modded by the same value this is
+a factory method for time instances to start a scholar application we put a
+main method inside of an object the object can be called anything you want
+the Deaf main has to follow a specific convention where it has some arguments
+of a type array of string and returns a type of unit which is a rough equivalent
+value to avoid in the JVM it then can do whatever you want inside of the
+bootstrapping mean methods such as create other classes and services to
+start the skull application from outside of itself we say the Scala keyword to
+start the JVM process and to the classpath we add whatever classes we
+want to use such as the Hello class we just to find that hello object and then
+if we wanted to run inside an SBT or activator context we use the run command
+either one of these would work
+having completed this lesson you should be able to create singleton objects in
+Scala describe the difference between a class and an object in Scala outline
+usages for objects in school applications and start a scholar
+application
