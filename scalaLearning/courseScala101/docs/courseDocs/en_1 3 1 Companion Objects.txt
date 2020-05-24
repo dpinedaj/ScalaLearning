@@ -1,0 +1,43 @@
+welcome to accessibility and companion objects after completing this lesson you
+should be able to leverage accessibility keywords in Scala to manage the
+visibility of methods and fields within classes and objects we want to describe
+the role companion objects planes Scala and outline how to use companion objects
+we can use keywords in Scala to limit the visibility of methods and fields
+what we call members inside of class instances there's the public key word
+which is the default you don't have to specify public school assumes the public
+is what you want from the get-go however if you want to make something hidden
+inside of a class you use the private keyword thus limiting visibility only to
+the current instance of the class there's also a protected keyword but
+that is unimportant for now here is accessibility in action in the first
+class hello we've been immutable and private field called message with the
+value of hello if we were to instantiate an instance of hello and try to access
+the message field inside of it
+the compiler will tell us before we deployed to production that this is an
+operation is not permitted because we use the private keyword we limited
+visibility of the message field only to the class hello itself we also have the
+class welcome which also has an immutable feel message inside of it
+which is a value of a string hello however this is not marked private so
+for create an instance of a welcome class and then try to access the message
+field inside of the welcome that is allowed in Scala we have a concept
+companion objects if a singleton object and a class share the same name and are
+located in the same source file they are called companions companion class can
+access private fields and methods inside of its companion object which is a
+special relationship because ordinarily when you mark something private you do
+not have visibility between two of these kinds of entities
+companion objects are a great way to separate static members things such as
+fields constants in methods that are unrelated to a specific instance of a
+class from those members that are related to a specific instance of a
+class let's have a look at what I mean here is a companion object hello with a
+single constant private field it's called default message with the value of
+hello we also have a class and their defined side of the same source file to
+have the same name
+class hello and objects below these are companions and share that special
+companion relationship inside of the constructor for a low we have a
+parameter called message of type string which is a default value of hello .
+default message we can leverage that parameter inside of the constructor of
+their low class in a print mine message it is only because the class alone in
+the object lol companions that the class how low can see a private the old inside
+of the object alone having completed this lesson you should be able to
+leverage accessibility keywords to manage visibility of methods and fields
+describe the role companion objects plane Scala and outline how to use
+companion objects

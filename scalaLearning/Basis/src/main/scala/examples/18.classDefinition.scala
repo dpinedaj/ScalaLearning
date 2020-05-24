@@ -7,12 +7,14 @@ class Hello {
 }
 
 class HelloMessage(message: String = null) {
-
+  //using var instead of val the value can be accessed and replaced
+  //in each instance of the class
+  val defaultMsg = "hello"
   var myMsg = message
   if (myMsg != null) {
-    println(myMsg)
+    println(defaultMsg + myMsg)
   } else {
-    println("There's not message")
+    println(defaultMsg)
   }
 }
 
@@ -23,9 +25,28 @@ class Utils {
 }
 
 
-object HelloObject {
+//Private vals and companion objects.
 
-    def echo(msg: String): Unit = {
-        println(msg)
-    }
+//This is defined as a companion object for the class Welcome
+object Welcome {
+   //When i define a private val, it can't be accessed by
+  //The instance, and off course can't be modified
+  private val defaultMessage: String = "Welcome!"
+  //It can be used like the constructor for his companion class
+  
 }
+class Welcome(message: String = Welcome.defaultMessage) {
+  //This class can access to the private val message from his class
+  println(message)
+
+  /*The apply method is special and can be called using:
+    >>>val example = new Welcome(val1, val2)
+    >>>example.apply("Hello", 10)
+    Is equal to using:
+      >>>example("Hello", 10)*/
+  def apply(val1:String, val2:Int): String ={
+    return s"The string val is: $val1, the int val is: $val2"
+  }
+}
+
+

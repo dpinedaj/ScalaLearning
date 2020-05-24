@@ -1,0 +1,8 @@
+Types versus Terms:
+
+-A type is a description of a concept in an application
+    -A class is a type
+
+-A term is a concrete representation of a type
+    -Any class instance (including an object) is a term
+    -A method is a term, as it is also concrete and "callable"

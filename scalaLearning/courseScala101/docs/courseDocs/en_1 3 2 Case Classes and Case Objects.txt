@@ -1,0 +1,58 @@
+welcome to case classes in case objects after completing this lesson you should
+be able to describe when do you use case classes and caves objects instead of
+regular classes and objects should also be able to outline the differences
+between case classes and objects compared to regular classes and objects
+so what is a day to class some classes represent specific data types in a
+domain that represents our application imagine an online store that store could
+have domain types such as customers accounts orders and inventory and more
+in comparison think about what a service class might be some classes represent
+work to be performed inside of an application but not the data themselves
+they know what to do but they have to be provided with the data on which they
+will do that work when an application called the service they passed the data
+to the service in the service of transforms and in some meaningful way
+examples of this would be persisting data to a datastore or logging out
+information about how well the application is running calculation
+engines are also built like this where you provide the data to be calculated
+and calculation returns and answer about a specific kind of calculation case
+classes are a representation of it data type that removes a lot of extra
+boilerplate code when you compile a case class the compiler generates JBM
+specific convenience methods for you and makes every class parameter that you
+pass into an instance of a case class a field these fields are immutable by
+default so you don't have to worry about thread safety and it also performs
+value-based equivalents by default
+instead of comparing one instance of a case class to another to see if they are
+the same instance you're actually checking the values inside of them to
+make sure that this is value equivalent to another instance of a case class here
+is an example of a case class where we use the case keyword and the class
+keyword to create the instance of a case class called time
+it has two parameters to it hours and minutes both the type int with default
+values of 0 in order to create an instance of a time on the next line we
+say val time is equal to time 90 note that when we created this instance we
+didn't say the new keyword will explain why in a subsequent session you also
+notice that when it's prints out result 0 the time shows up with the
+representation of the values inside of time instead of the memory space where
+it was located in the JVM heap we can then do equivalents checks of this time
+versus another time in the next line we say for the time value that we created
+let's compare it to a new time instance where we created time without giving the
+minutes value and we see that the result of this operation is true we compare
+that original time to another time instance where the minutes value is 30
+we get a value-based equivalents of false in the final line we access the
+field hours inside of time and it prints out the value 9 this is interesting
+because we never explicitly used the BAL keyword promote our hours or minutes
+parameters to be filled but every parameter is passed into a case class is
+automatically made a field if it keeps classes and instance based
+representation of a datatype the case
+object is a representation of a datatype where there can only be a single
+instance if you try to create a case class with no parameters it is by
+definition stateless and should be a case object because there is no
+difference between one instance or another if there is no state inside of
+the class
+here's an example of trying to create a case class time with no class parameters
+the compiler warnings saying that this is not possible instead if you created
+as a case object you now have an object of time of which there were only be one
+instance inside of the JVM
+and you can reference it immediately without instantiated it by saying time .
+to strength having completed this lesson you should be able to describe when to
+use case classes in case objects instead of regular classes and objects and
+outline the differences between case classes and objects compared to regular
+classes and objects

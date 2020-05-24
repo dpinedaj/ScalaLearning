@@ -1,4 +1,10 @@
 package examples
+
+object HelloObject {
+    def echo(msg: String): Unit = {
+        println(msg)
+    }
+}
 object singletonTest {
   //This is a basic Singleton Object
   //The main method is needed to run it, the debuger will always search

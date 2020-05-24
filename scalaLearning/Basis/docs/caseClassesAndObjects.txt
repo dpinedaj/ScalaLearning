@@ -1,0 +1,39 @@
+What is a Data Class?
+    -A class that represent specific data types in a "domain"
+    i.e.
+    An online store needs:
+        -Customers
+        -Accounts
+        -Orders
+        -Inventory
+
+What is a Service Class?
+    -Some classes represent work to be performed in an application
+    -They know what to do, but they don't have data themselves
+    -When an application calls the service, then pass the data to the
+        service, and the service transforms it in some way
+
+    i.e.
+        -Persistence
+        -Loggers
+        -Calculation engines
+
+What is a Case Class:
+    -A representation of a data type that removes a lot of
+     boilerplate code
+        -Generates JVM-specific convenience methods
+        -Makes every class parameter a field
+        -Is immutable by default
+        -Performs value-based equivalence by default
+
+    -Instead of comparing one instance of a case class 
+    to another to see if they are the same isntance you're
+    actually checking the values inside of them to make sure
+    that this is value equivalent to another instance
+    of case class here
+
+What is a Case Object:
+    -A representation of a data type of which there can only be a single instance
+    -If you try to create a case class with no parameters, it is stateless and should be
+    a case object
+    
