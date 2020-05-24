@@ -4,3 +4,5 @@
 scalavista-vscode.log
 .vscode
 .idea
+.ipynb_checkpoints
+.empty
