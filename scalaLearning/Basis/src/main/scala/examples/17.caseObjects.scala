@@ -4,8 +4,6 @@ case object exampleCaseObject
 
 
 
-
-
 object testCaseObjects{
     def main(args: Array[String]):Unit = {
 

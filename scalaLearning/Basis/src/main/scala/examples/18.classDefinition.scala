@@ -44,8 +44,8 @@ class Welcome(message: String = Welcome.defaultMessage) {
     >>>example.apply("Hello", 10)
     Is equal to using:
       >>>example("Hello", 10)*/
-  def apply(val1:String, val2:Int): String ={
-    return s"The string val is: $val1, the int val is: $val2"
+  def apply(val1:Int, val2:String=message): String ={
+    return s"The int val is: $val1, the default message is: $val2"
   }
 }
 

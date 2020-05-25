@@ -1,9 +1,9 @@
 package examples
 
 object HelloObject {
-    def echo(msg: String): Unit = {
-        println(msg)
-    }
+  def echo(msg: String): Unit = {
+    println(msg)
+  }
 }
 object singletonTest {
   //This is a basic Singleton Object
@@ -16,7 +16,25 @@ object singletonTest {
 
   //The apply method is special and can be called using:
   // singlethonTest(val1, val2)
-  def apply(val1:String, val2:Int): String ={
+  def apply(val1: String, val2: Int): String = {
     return s"The string val is: $val1, the int val is: $val2"
+  }
+}
+
+
+/*Whit the apply method, it can be used directly on calling the object
+as there:
+>>>Reverse("Hello World")
+*/
+object Reverse {
+  def apply(s: String): String =
+    s.reverse
+}
+
+object reverseTest {
+  def main(args: Array[String]): Unit = {
+    val a = "Hello World"
+    val aReversed = Reverse(a)
+    println(aReversed)
   }
 }

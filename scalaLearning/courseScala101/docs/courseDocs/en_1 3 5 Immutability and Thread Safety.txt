@@ -1,0 +1,66 @@
+welcome to immutability in thread safety after completing this lesson you should
+be able to understand basic thread safety in the GBM described the
+importance of immutability in multithreaded applications and online
+how to use snapshots to preserve thread safety with case classes the JPM has a
+well-defined memory model with specific guarantees imagine you are at a website
+and you are trying to order a book or something along those lines when you go
+to order the book there's a number of books that are available in multiple
+people might be trying to buy the book at the same time this means that
+somewhere in the application behind that website something has to manage the
+count of books available for this specific book that means multiple
+threads could be accessing discount at the same time the JVM has two concerns
+there's the idea of synchronize with which is who is able to change state and
+in what order imagine you trying to buy a book and another person trying to buy
+a book when there's only one left there's also the concept of happens
+before if I multiple threads running inside of a GBM and one thread changes
+about you how do other threads see the change that was made by the first thread
+when you're writing scholar there are two concepts you have to think of the
+left hand side of the equals and the right hand side of the equals on the
+left hand side we have a name that we are binding to the instance of the class
+in this case the name I give is me and is a pointer to the data inside of the
+value on the right hand side of the Eagles on the right hand side we have
+the instance of the class in this case the classes of person class and the
+instance has values inside of it for a name first name and last name is very
+important to think about the impact of the left hand side and the right hand
+side if you look at this table on the left side of the table we have the left
+hand side of the equal sign the name that were binding the pointer that were
+using to the instance of the class and whether that pointer can be chained
+changed if it can it's a bar if it can't it's a valve on the top of the stable we
+have the value the right hand side of the equals and we have beautiful state
+or immutable state if we have a bar pointing to mutable stayed inside of the
+class that we're creating the immutability both in the pointer and
+inside of the reference what's inside of that reference and that is the worst
+place that we can be if we move below and we have an immutable pointer to
+mutable data we still aren't in a really good place as far as the Red Sea he goes
+in both of these conditions we would have to worry about locking who has
+access what to do at a specific point in time if we look at the top of this table
+on the right hand side we have the condition where we have a bar as far as
+the name that were binding and we have immutable state in this case we have
+snapshots because if this state is changed on the right hand side of the
+equals and we are pointing to a new instance we have a bar which has to be
+updated to all threads and finally in the bottom right quadrant we have pure
+immutability where we have an immutable pointer and immutable data that is the
+simplest place for us to be from a thread safety perspective so the left
+hand side of the equal sign represents appointed to the current value we want
+this to be final as much as possible using a bowel however we can reassign
+the instance were pointing to by using a bar the right hand side of the equal
+sign represents the data that we're currently using the state of the
+application should always be immutable meaning the class instance contains only
+fields that themselves are defined as Valse if not you must protect this state
+and who can change it by using mutually exclusive locks if we use bar for
+snapshots pointing to immutable data at all times then we can use the case class
+copy method to create new instances out our class that holds data so that we
+don't have to worry about
+locks however when we use far we have to make sure that other thread see the
+change that we're making and in this case we have to use the volatile
+annotation as an example of this here's a case class customer with the person
+name and a last name with default values of empty strength if we had a bar
+pointer to an instance of their customer with the name Martin and order ski we
+would have to market at volatile and then if we use the customer not copy to
+change the last name of the instance of our customer and still have it point by
+Eddie customer pointer will then the ball at all and rotation will make sure
+that other thread see this change
+having completed this lesson should be able to understand basic thread safety
+in the GBM described the importance of immutability in multithreaded
+applications and outline how to use snapshots to preserve thread safety with
+kids classes

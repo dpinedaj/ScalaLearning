@@ -2,7 +2,7 @@ package examples
 
 import examples.{Hello, HelloMessage,
    Utils, HelloObject, ExampleTrait,
-  exampleCaseClass}
+  exampleCaseClass, Welcome}
 
 object testClasses {
 
@@ -33,13 +33,15 @@ object testClasses {
     val excase = exampleCaseClass(9, 0)
 
     println(excase.hours)
+
+
+    //Using companion object with class
+    val welcome = new Welcome()//When initialize the instance, it takes the default message from
+                              // his companion object
+    println(welcome(1))
   }
 
-  //The apply method is special and can be called using:
-  // singlethonTest(val1, val2)
-  def apply(val1:String, val2:Int): String ={
-    return s"The string val is: $val1, the int val is: $val2"
-  }
+  
 
 
 

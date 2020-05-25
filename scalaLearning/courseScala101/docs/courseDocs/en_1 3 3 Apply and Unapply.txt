@@ -1,0 +1,52 @@
+after completing this lesson you should be able to illustrate the difference
+between a type and eight-term describe how they apply method works in both
+objects and classes and outline how and apply works a type is a description of a
+concept in an application for example a class is a tight fit term is a concrete
+representation of a type any class instance including an object is itself
+eight-term a method is also a term because it is concrete and callable like
+some other languages Colin allows you to call it term without specifying the
+method you want to call on it so for example we noticed in the earlier
+session that we could create a case class time instants without using the
+new keyword in this example we have the definition of what a case class time is
+and then we create a field time without using the new keyword create the
+instance of time that it binds to the question is how did that work when you
+created your case class the compiler generated a companion object for the
+class for you and it also generated and apply method inside their companion
+object which is a factory for that time
+instance when you call time and give it the parameters required to instantiate
+an instance of a time you were actually calling the companion object I'm and
+delegating to the apply method that was created inside of it so this is not
+calling the constructor of the time class directly when you see in this
+first line here that we are calling time with the nine the term that we're using
+is actually the companion object time and then delegating to the apply method
+with whatever parameters were provided that apply method then calls the
+constructor for time and creates a new instance of a time class which is held
+in res 0 you can do the exact same thing by explicitly calling the apply method
+as you see in the next line
+apply is a very flexible concept in this case have created an object reverse and
+inside of it isn't apply method the takes a string reverses it returns that
+reversed representation of the strength if I call reverse hello I never
+explicitly state that I want to call the apply method however the term I'm using
+is the reverse object and the apply method is delegated to because I never
+explicitly called a method on that term is more clear example might be found
+inside of collections in this case I'm going to create an instance of an array
+with three values inside of it one two and three this creates an array of
+integers but I never explicitly said new or said any method Honore that should
+tell you that array has a companion object inside of their companion object
+over a there's an apply method that took the values 123 and created an instance
+of an array for me but then in Scala to leverage the values inside of that array
+I don't use the typical square brackets to subscript the array value in this
+case I have the term results 0 and I passed to it
+a number which is going to pull for me the value that exist at that subscript
+index so when I say Res 0
+and give me the first value of us zero-based array it's going to give me
+the first value which in this case is 11 applied deconstruct a case class if I
+have a case class time as we've seen before and I create an instance of that
+time I can then call from the companion object I'm the on apply method passing
+in the instance of time I want to deconstruct and from that I get a
+representation of the values that are inside of the time in this case the
+hours and minutes
+having completed this lesson
+you should be able to tell the street the difference between type in the term
+describes how the apply method works in both objects and classes and outline how
+I apply works

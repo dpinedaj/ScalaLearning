@@ -1,0 +1,24 @@
+Apply method:
+    Apply method is an special method that allows to call it just with an () in the instance.
+        i.e.
+        >>>object Reverse {
+            def apply(s: String): String = s.reverse
+        }
+        >>>Reverse("Hello")
+        res0: String = olleH
+
+    A good example for this method is as we call an Array():
+        i.e.
+        >>>val arr = Array(1, 2, 3)
+        >>>arr(1)  //Here we are using the method apply asking for the value in the index 1
+        res0: Int = 2
+
+
+Unapply method:
+    It can deconstruct a case class
+    i.e.
+    >>>case class Time(hours: Int=0, minutes: Int=0)
+    >>>val time = Time(9, 0)
+    >>>Time.unapply(time)
+    res0: Option[(Int, Int)] = Some((9, 0))
+    

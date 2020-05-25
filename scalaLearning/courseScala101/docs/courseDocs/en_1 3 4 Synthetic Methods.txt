@@ -1,0 +1,62 @@
+welcome to synthetic methods after completing this lesson you should be
+able to describe how the Scala compiler generates functionality for you explain
+what the synthetic equals hashCode to strengthen copy methods do an outline
+how you would use immutable case classes in a program where state is changing
+coding a maintenance are expensive
+you are a data scientist and you do not want to be wasting your time writing
+code that is irrelevant to what you're trying to accomplish in finding meaning
+in your data writing and maintaining the source code required by the JVM for
+simple data classes is not easy and to support the features of case classes a
+comfortable time class in Java to the one we've been creating in one line of
+Scala would be over 70 lines of code so what are synthetic methods scholars
+compiler generates the spoiler plate for you at compile time using
+implementations at a rock solid improvement in the field there are four
+methods provided to you equals hashCode to strengthen copy we also saw that the
+Scala compiler created our companion object width apply method so there's a
+lot of work that is doing for you so that you don't have to write and
+maintain this code yourself equals method is required for any class inside
+of the GBM but the default implementation only compares whether an
+instance of the class is the exact same instances another it has nothing to do
+with whether or not they contain the same values Scala provides value-based
+equivalents allowing you to compare whether two different instances of a
+class at the same state this is one of the reasons why scholar is a
+data-centric language as an example imagine if I create a case class time
+with hours and minutes and then I create an instance of that time I can then
+compare that instance of time to other instances of sign in the third line
+you'll notice that compared to another instance where I didn't give them in its
+value and I get a value of true whenever I compare it to another time where the
+minutes or thirty I get a false hashCode has met the required for any classes you
+might want to put into a trash collection examples of this might be a
+HashMap or ash set if we create a case class time as we've been doing all along
+and then we create an instance of that class and we call hashCode on it you'll
+see that there's a value that has been generated and displayed based upon the
+values provided for hours and minutes this is to avoid collisions so that when
+you place values into these hash based collections they can be retrieved
+quickly the toString method is also required by the GBM for any classes
+defined but the default implementation print out the virtual representation of
+the instance location in memory which isn't very useful to anyone
+the synthetic toString provided by scholars case class shows you the values
+inside the case class and you can override this Steven make it prettier
+you want as an example consider an ordinary class time to find exactly as
+we've been doing case class but without the case keyword when I create a new
+instance of that time with the default values for hours and minutes you'll see
+the representation of time that comes back is the virtual memory space on the
+other hand if I use the case class time with the exact same implementation then
+whenever I create an instance I see the values inside of the hours and minutes
+instead finally we have the copy method this is not required by the JVM the
+synthetic copy provided by scholars case class allows you to remain immutable and
+you snapshots of kids classes when state needs to change it will create a new
+instance of whatever class you are defining with all the same values except
+for those that you change when you say to make the copy here's an example of
+our case class time again I'm going to create an instance of a time using the
+values 94 hours and 45 minutes you'll notice that the time that I'm finding it
+too is a bar it is mutable and therefore this time can point to a different
+instance of time if I wanted to
+to however the time instants them creating of 945 is itself immutable and
+cannot be changed if I then use the copy method to get a new instance of a time I
+now am assigning a different instance of time to my time variable with different
+values based upon what I passed him when I called copy
+having completed this lesson you should be able to describe how the Scala
+compiler generates functionality for you explain what the synthetic equals
+hashCode too stringent copy methods do an outline how you would use immutable
+case classes in a program where state is changing

@@ -1,0 +1,18 @@
+There are some "predefined" or synthetic methods to make easier the work, some:
+    -equals()
+        -Compares whether an instance of the class is the exact same
+            instance
+
+    -hashCode()
+        -This method is required for any class that you might
+        want to put a hashed collection, such a HashMap or a HashSet
+            -> a hashed collection is a collection with a tag or "hash" to 
+                efficiently identify the values, it can be an integer identifier
+                or something else.
+    -toString()
+        -This method is used to prints out a virtual representation of the instance location
+            in memory
+        -The synthetic "toString()" provided by Scala's case class shows the values inside of the class
+        -You can override this to make it even better
+    -copy()
+        -Allows you to remain immutable and use "snapshots" of case classes when state needs to change
