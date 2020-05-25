@@ -1,12 +1,9 @@
 package examples
-object tuplesTest {
-  def main(args: Array[String]) = {
+
+object Tuples {
     /*a tuple in scala allows any datatype
         and are immutable elements*/
     val junkTup = (6, 3.14, "elephant", true)
-    println(junkTup)
     //accessing index
-    println(junkTup._2)
-
-  }
+    println(junkTup._2)//res0: Double = 3.14
 }

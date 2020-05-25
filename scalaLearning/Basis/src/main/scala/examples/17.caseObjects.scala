@@ -2,12 +2,8 @@ package examples
 
 case object exampleCaseObject
 
+object CaseObjects {
 
-
-object testCaseObjects{
-    def main(args: Array[String]):Unit = {
-
-        val caseObj = exampleCaseObject
-        println(caseObj.toString)
-    }
+  val caseObj = exampleCaseObject
+  println(caseObj.toString)
 }

@@ -5,14 +5,14 @@ object HelloObject {
     println(msg)
   }
 }
-object singletonTest {
+object SingletonExample {
   //This is a basic Singleton Object
   //The main method is needed to run it, the debuger will always search
   //for a main method to run it.
-  def main(args: Array[String]): Unit = {
+
     val n: Int = 100
     println("This is %d using a format".format(n))
-  }
+
 
   //The apply method is special and can be called using:
   // singlethonTest(val1, val2)

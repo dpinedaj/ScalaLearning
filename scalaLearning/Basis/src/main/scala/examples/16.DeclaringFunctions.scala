@@ -1,5 +1,5 @@
 package examples
-object functionsTests {
+object Functions {
   class functions {
     //sum function
     def sum(a: Int, b: Int) = a + b
@@ -30,13 +30,11 @@ object functionsTests {
     }
   }
 
-  def main(args: Array[String]) = {
-    val func = new functions
-    val a = func.sum(10, 20)
-    println(a)
+  val func = new functions
+  val a = func.sum(10, 20)
+  println(a)
 
-    val b = func.divide(20, 10)
-    println(b)
-    println(func.isPrime(3))
-  }
+  val b = func.divide(20, 10)
+  println(b)
+  println(func.isPrime(3))
 }
