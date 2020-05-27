@@ -1,5 +1,5 @@
 // docs at https://docs.scala-lang.org/overviews/collections/overview.html
-
+//docs at https://docs.scala-lang.org/overviews/collections/performance-characteristics.html
 All collection classes are found in the package scala.collection or one of its sub-packages
 
 ---> scala.collections.immutable
@@ -13,7 +13,7 @@ By default scala always pick immutable collections. for example if you just writ
     the mutable set is called collection.mutable.Set or import it by convention "import scala.collection.mutable"
 
 
-Every kind of collectino can be created with the same uniform syntax: write the colleciton class name followed by its elements:
+Every kind of collection can be created with the same uniform syntax: write the colleciton class name followed by its elements:
 
 >>>Traversable(1, 2, 3)
 >>>Iterable("x", "y", "z")
@@ -28,6 +28,47 @@ Every kind of collectino can be created with the same uniform syntax: write the 
 >>>HashMap("x" -> 24, "y" -> 25, "z" -> 26)
 
 
-Basic Collections functions:
 
-    
+Sequence:
+    -Is an ORDERED collection of data
+    -Duplicates are parmitted
+    -May or may not be indexed
+    -Array, List, Vector
+    -The apply method on an instance is a lookup
+
+    Some kinds of sequences:
+
+        Array:
+            -A fixed size, ordered sequence of data
+            -Very fast on the JVM
+            -Values are contiguous in memory
+            -Array is a mutable collection by default
+            -Indexed by position
+                -val a = Array(1,2,3)
+                a(0) == 1
+
+        List:
+            -Linked list implementation, with a value and a pointer to the next element
+            -Theoretically unbounded in size
+            -Poor performance as data could be located anywhere in memory.
+                And must be accessed via "pointer chasing"
+            -Is more flexible than an array because don't matter if i "exceed" the limit of the
+                size, just need to know if i have enought memory
+        
+        Vector:
+            -A linked list of 32 element arrays ---> A structure full of arrays
+            -2.15 billion possible elements
+            -Indexed by hashing
+            -Good performance across all operations without having to copy arrays when more space is needed
+
+Set:
+    -A "bag" of data, where no duplicates are permitted
+    -Order is not guaranteed
+    -The apply method on an instance checks to see if the set contains a value
+    -Some kinds of sets:
+        -HashSet
+        -TreeSet
+        -BitSet
+        -KeySet
+        -SortedSet
+        

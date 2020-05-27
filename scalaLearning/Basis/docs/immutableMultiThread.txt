@@ -1,0 +1,25 @@
+Thread Safety:
+    -Synchronize-With: Who is able to change state and in what order (locks)
+    -Happens-Before: 
+        If i multiple threads running inside of a JVM and one thread changes
+        about you how do other threads see the changes that was made by the first thread
+        When to publish changes on one thread to all other threads(memory barriers)
+
+    
+        val me    =      new Person("Jamie", "Allen")
+     "left side"            "right side"
+
+    the left side is the pointer or the name given to the variable, and can be val or var if is mutable or not
+    
+    If in the right side, we have a var inside the reference, it will make mutable the pointer and the reference
+
+    --> if we have an immutable pointer with a mutable data, it will be unsafe
+
+    
+    Recommendations:
+        -the safest place to be about threading safety is in immutable pointer and immutable reference variables
+        -If there's "vars" inside the class definition, you must protect the satate and who
+            can change it using Mutually Exclusive Locks
+        -Using var for "Snapshots" or in the pointer:
+            -If we use var at declaring the left side, you can replace it with new instances
+            -The case class copy() method will help you do this

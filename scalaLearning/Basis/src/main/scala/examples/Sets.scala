@@ -11,6 +11,9 @@ object Sets {
   val set1 = Set(1, 5, 9, 5, 9, 10, 5)
   println(s"This is a immutable set: \n${set1}")
 
+  //The default apply method of a set says if there's some element
+  println(s"There is element: 5 on set1?: ${set1(5)}")
+
   //Casting a list to a set
   val listy = List(6, 8, 8, 12, 13, 13, 16)
   val sety = listy.toSet
@@ -29,9 +32,10 @@ object Sets {
   println(s"This set is empty?: ${setBase.isEmpty}")
 
   //To concatenate sets, add or extract elements
-  val set123 = setBase ++ Set(1, 2, 3)
+  val set023 = setBase + 10
+  val set123 = set023 ++ Set(1, 2, 3)
   val set223 = set123 - 1
-  val set323 = set123 -- Set(4, 5)
+  val set323 = set223 -- Set(4, 5)
 
   //some functions
   val set666 = Set(1, 2, 3)

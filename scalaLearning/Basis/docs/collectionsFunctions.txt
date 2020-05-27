@@ -1,0 +1,5 @@
+1 to 10
+    -> It defines a immutable range. inclusive
+
+map
+    -> it returns a change in a iterator with some function (lambda or defined one)

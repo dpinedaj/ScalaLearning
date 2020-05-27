@@ -1,17 +1,3 @@
-package examples
-
-object DefinedFunctions {
-
-  System.out.println("Hello World") //This is the full call of println
-
-  println("Hello World")
-
-  val a = "world"
-  val b = 123
-  val c = 1.5
-  printf("Hello %s %d  %.2f", a, b, c)
-}
-
 object SynteticMethods {
   case class Time(hours: Int = 0, minutes: Int = 0)
 

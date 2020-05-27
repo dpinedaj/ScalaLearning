@@ -1,0 +1,60 @@
+welcome to the collections overview after completing this lesson we should
+be able to understand the structure of the Scala collections hierarchy describe
+how to apply functions to data in collections outlined the basics of
+structural sharing and illustrate the performance characteristics of data in
+different data structures the Scala collections hierarchy represents a
+structure of collections that can contain data in different ways at the
+top is the idea of something that can be traversed or walked next in the
+hierarchy is a specialization of that behavior that represents iteration the
+idea that could be walk to single time that you could say is there a next value
+is there a next value is there a next value and then beyond adorable we have
+specializations of a sequence a set and a map the sequence breaks down a little
+bit further you have the idea of a linear sequential which is something
+that has to be walked one by one to find the elements you want such as a linked
+list or an indexed sequential which gives you the ability to directly access
+about you inside of the sequence scholars collections have higher order
+functions because colin is a functional programming language instead of walking
+a collection and performing a transformation and putting some data
+into a new collection we instead apply a function to the values inside of a
+container and a collection is merely one form of such a container there are many
+higher-order functions available to you across the Collections library which we
+will discuss in a later session
+here's an example of higher-order functions just saw the you have an idea
+of what I'm talking about if we open the rubble and we create a collection of
+numbers from 1 to 10 we can then map over this data applying a function where
+we say for every number which we're just calling
+and we're going to add one to it and the result of that is a new collection with
+the values inside of it from two to 11 when you have data inside of a immutable
+collection in Scala it is an aggregation of references to individual values in
+the Java heap so for example on the earlier slide when we were looking at
+data of one to 10 inside of a list we had references to individual integer
+instances of the integer class they could be scattered around the heap and
+we use immutable collections of immutable values those references can be
+shared between collection instances here is an example of structural sharing we
+have a list of members one two three four and five each one of those numbers
+inside the list is not actually the number itself but a reference to a value
+on the EP that is one it just looks like the value inside of the list but really
+the list is calling on two references that point to those numbers if we depend
+62 the end of this list we then have a new list with one two three four five
+and six
+the only thing that's really been added is a new collection of references
+pointing to the one pointing to the same 2012 same three with a new six and then
+if we take that res 1 and we prepend 0 in front of it again
+reuse the one the 23 the poor the five and six from res 12 create a new list of
+references within new reference 20 and don't worry about these prepend a nap
+and operators that you see inside of this I'll be explaining them in a later
+session scholars collections have well-defined performance characteristics
+and if you go to this web page is shown or if you do a web search for Scala
+collections performance characteristics you'll find a page that has every
+collection in the Collections library and its performance using barriers
+operations such as
+accessing the head of a list which is the first value the tale of the list
+which is everything after the first value or updating the list or pre
+pending the list these operations have different performance characteristics
+that are based on whether their constant time or they are linear such as I have
+to walk to the end of the list to perform this work or effectively
+constant time or amortize constant I'm having completed this lesson we should
+be able to understand the structure of Scala collections hierarchy describe how
+to apply functions to data in collections and outline the basics of
+structural sharing you should also be able to illustrate the performance
+characteristics of different data structures

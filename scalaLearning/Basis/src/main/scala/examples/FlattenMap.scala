@@ -1,5 +1,5 @@
 package examples
-object FlatenMap {
+object FlattenMap {
 
   val numbers =
     List(List(1, 2, 6), List(2, 3, 5), List(5, 7, 1), List(4, 8, 3))

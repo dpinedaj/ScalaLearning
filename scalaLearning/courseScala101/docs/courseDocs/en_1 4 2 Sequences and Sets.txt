@@ -1,0 +1,94 @@
+welcome to sequences and sets after completing this lesson we should be able
+to describe the various kinds of sequence collections and their
+properties outline the desirable properties of the vector collection type
+and describe the properties of set collections so what is the sequence
+sequence is an ordered collection of data where duplicates are permitted
+there may or may not be index such that you can access a value directly into it
+without having to walk the entire collection and some of the common types
+you find in sequences are raised lists and vectors the apply method when you
+have an instance of a sequence is a lock up at that index so consider an array of
+arrays are fixed in size and they are an ordered sequence of data they are very
+fast on the JVM and on other platforms because they are always contiguous and
+memory and data can be prefetch down to the course of execution at the time
+instructions are going to be executed a razor also indexed by their position as
+an example of a scholar a we create an array using the companion object apply
+method and we put the values of one two three four and five inside of it this
+gives us an array of events because the razor zero-based when you access the
+third value inside of the array you actually look it up with a too because
+the first element would be zero the second will be one and that there would
+be two however if we try to access something beyond the size of the array
+such as going with the result 0 and indexing it at the fifth element which
+is actually the sixth position we are not able to access a value or try to set
+the value because we are outside of the arrays size here is how we would operate
+on a raise
+we use the companion object apply method to create a new instance of an array
+but saying array with the values of one two three four and five arrays are
+zero-based which means that the first element is access 10 the second element
+with one the third element with two etcetera
+so when we say result 0 sub 2 we are axing about you three if we tried to
+update this array and all arrays in scholar actually mutable collections if
+we try to update the element at the fifth position which is actually six
+because this is a zero-based index if we try to change that value we get an array
+index out of bounds exception because the array only had five elements and the
+last one would have been indexed at four scholars lists are a linked list
+implementation with a value in a pointer in every cell the pointer points to the
+next element or next cell with another value if there is one they are
+theoretically unbounded and size though that isn't entirely true because there
+is always the limitation of the amount of memory that the GBM is allocated or
+on the machine there is some performance hit in using lists because data could be
+located anywhere in memory every time you go from cell to cell it could be
+going anywhere else in memory and that means you're accessing data using
+pointer chasing which can lead to stalls at the core of execution however
+compared to arrays they're very flexible because you don't have to worry about if
+I exceed the size of a list I only have to worry about how much memory I have in
+this case again I use the companion object apply method to create an
+instance of a list and I put the values 123 another instance of three and four
+into the list because sequences can have duplicate values this is not a problem I
+can get rid of the extra three by using the distinct method on the instance of
+the list that was created however if I look at the original result 0 you'll
+notice it was not change when I did that distinct operation instead a new list
+was created using the exact same references to the values that we were
+you
+before if we want to add value to a list we can either up and or prepend and
+their operators that allow us to do that however because lists are sequences
+where order matters we have to use an associative operator in this case you'll
+notice that we have res 0 and we want to
+upended value 5 to the end of it we have to have a colon + operator with a colon
+faces toward the sequence if we want to prepend about you in front of the
+sequence we have to use the + colon again with the colon facing toward the
+sequence so we say zero plus colon Res 1 resulting in a value of a list with zero
+one two three and four factors are unique kinds of sequences in that they
+represent a combination of both arrays and lists vectors are comprised of 32
+elementa raised and as you add more elements than a single array can hold it
+actually creates a structure
+raised that point to one another their 2.15 billion possible elements and every
+operation you perform on a vector is effectively constant time factors are
+indexed by hashing and they give you good performance characteristics across
+all operations what is the scent asset is a bag of data were no duplicates are
+permitted no order is guaranteed inside of the collection and common usages of
+sets include hash sets three sets bit sets key sets and sorted sets there are
+more as well
+the apply method on asset instead of giving you evaluate a specific place
+inside of a sequence instead tells you whether or not the value exists in the
+set because there is no order to asset per se
+here's an example of a set I create the set using the companion object apply
+method and I put the values 1233 again
+for intuit this results in a set of one two three and four because we already
+had 13 inside of it we didn't need to have a second one sets are unique set of
+values you can see that the default implementation of asset that we get
+whenever we create one news in the companion object apply is a hash set and
+because there's no Assoc tivity order we want to add a value to a said we don't
+have to reference its position weathers pre pending or up ending we are merely
+throwing about you into a bag so we say result zero plus five and it puts 5 into
+the collection of set however if we then went to add about you that already
+exists it results in no change here we have an instance of a set one two three
+and four we can check to see whether a value is inside of that set by using the
+apply method on the instance it was created result 0 it we see a result 075
+its legacy of fives inside of that said and we get false and returned it will
+check to see if Tues inside of it we get true if we take the result 0 and want to
+make it an ordered sequence of values we can use the to seek method and then we
+can take the resulting sequence and converted back to us said by calling to
+set on that instance having completed this lesson you should be able to
+describe the various kinds of sequence collections and their properties outline
+the desirable properties of the vector collection type and describe the
+properties of set collections

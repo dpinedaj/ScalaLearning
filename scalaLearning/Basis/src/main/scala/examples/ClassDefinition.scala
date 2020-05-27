@@ -6,9 +6,10 @@ class Hello {
   println("Hello") //When instanciate the class, it will be printed
 }
 
-class HelloMessage(message: String = null) {
+class HelloMessage(var message: String = null, var message2: String = null) {
   //using var instead of val the value can be accessed and replaced
   //in each instance of the class
+  this.message2 = "hello"
   val defaultMsg = "hello"
   var myMsg = message
   if (myMsg != null) {
@@ -39,6 +40,9 @@ class Welcome(message: String = Welcome.defaultMessage) {
   //This class can access to the private val message from his class
   println(message)
 
+  //You can also import all the variables and methods from his companion object
+  import Welcome._
+  println(s"The companion's message is: $defaultMessage")
   /*The apply method is special and can be called using:
     >>>val example = new Welcome(val1, val2)
     >>>example.apply("Hello", 10)
@@ -48,5 +52,6 @@ class Welcome(message: String = Welcome.defaultMessage) {
     return s"The int val is: $val1, the default message is: $val2"
   }
 }
+
 
 

@@ -10,8 +10,12 @@ object Lists {
   val animals = List("aardvark", "penguin", "hippo", "sloth")
 
   //This is an integer type list
-  val numbers = List(8, 9, 18, 1, 57, 2)
-
+  var numbers = List(8, 9, 18, 1, 57, 2, 2, 1, 57)
+  //To append a new number into List
+  numbers = numbers :+ 15 //It will append 15 to the end of the list
+  numbers = 0 +: numbers //It will append 0 to the beginning of the list
+  
+  numbers = numbers.distinct //It will drop the repeated elements of the list
   //This is an "any" type list
   val stuff1 = List("aardvark", 65, 3.14)
   println(
@@ -86,5 +90,7 @@ object Lists {
 
   val animals3 = "zebra" :: animals2
   println(animals3)
+
+  
 
 }

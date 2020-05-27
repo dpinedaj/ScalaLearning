@@ -1,5 +1,5 @@
 package examples
-object wileLoopsTest {
+object WhileLoops {
   import util.control.Breaks._
   def whilebreak() = {
     //Using break statement, in this case break with also close the main function
