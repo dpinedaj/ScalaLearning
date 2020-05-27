@@ -3,3 +3,10 @@
 
 map
     -> it returns a change in a iterator with some function (lambda or defined one)
+
+High Order functions:
+    -A function which takes another function as argument
+    -Typically describes the "how" for work to be done in a container ( foreach, forall)
+    -The function passed to it describes the "what" that should be done to elements in the container
+
+

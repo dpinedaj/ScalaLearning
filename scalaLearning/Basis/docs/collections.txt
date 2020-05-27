@@ -82,4 +82,7 @@ Tuple:
 
 Maps
     -A grouping of data by key to value, which are tuple "entries"
-    
+    -Allow you to index by a specific key for fast access
+    -Some kinds of maps:
+        HashMap
+        TreeMap
