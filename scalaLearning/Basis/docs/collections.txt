@@ -71,4 +71,15 @@ Set:
         -BitSet
         -KeySet
         -SortedSet
-        
+
+Tuple:
+    -A loose aggregation of values into a single container
+    -Can have up to 22 values in Scala
+    -Are always used when you see parentheses wrapping data
+        without a specific type
+    -Can be accessed using 1-based accessor for each value
+    -Can be deconstructed into names bound to each value in a tuple
+
+Maps
+    -A grouping of data by key to value, which are tuple "entries"
+    

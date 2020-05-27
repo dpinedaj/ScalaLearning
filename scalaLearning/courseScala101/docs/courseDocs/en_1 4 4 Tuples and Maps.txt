@@ -1,0 +1,67 @@
+welcome two tuples and maps after completing this lesson we should be able
+to describe what a two boys and how they are used some people call them tuples
+out my how to deconstruct to polls and describe the properties of a map to
+polls are loose aggregation of values into a single container and they can
+have up to twenty two values in scholar they're always use when you see
+parentheses wrapping data without pointing to a specific kind of type so
+here's an example of a two point I could create a tuple to which is going to have
+to values inside of it and provide the two values I want to place into it i
+could also create another 2.2 with different values inside of it both ends
+as opposed to an end and strength another syntex I can use what you see at
+the bottom is sooo not specify the tuple to type instead allow the Scala compiler
+to figure out this is a tuple too because I'm wrapping paper ends around n
+number of values if I put five values in here it would have resulted in the tuba
+520 can be accessed using a one based access server each value which compared
+to an array is zero-based might be a little confusing to post can be
+deconstructed into names bound to each value in a tuple so for example I create
+a two-point instance here that I called to pull and I said it equaled 24 values
+inside of parentheses this results in a two-point stance with the types of the
+values represented inside of the tuple and then I use an underscore three to
+access the third value out of the four which gives me back the two I can
+deconstruct that to fall by saying that I have a bowel and have parentheses for
+every value inside of the tube and I give it a name that I want to buy into
+that value so whenever I create these first second third fourth values that is
+now the name bound to the individual values inside of the two pole to pole
+Tues are frequently called a pair and they have a unique syntax
+for the values when you create them again I could just wrapping paper ends
+the values that I want to place into the pair or I could use the arrow between
+them when I say to give hype in greater than to represent arrow of a key to a
+value in the pair I can only do this repairs as the syntactic sugar for that
+arrow is going to try to aggregate values into pairs as you'll see in the
+last example if I try to do this with three values it's going to create a
+purse pair which is then pared to another value where there is a pair of a
+pair inside we saw in an earlier session that the unemployment that in case class
+companion objects will bring back the values inside of that class so here we
+have that case class time with hours and minutes inside of it and we create an
+instance of that time if we then use the on applying the companion object we
+received back an option of values which are held in a to pull maps are another
+collection type they represent a grouping of data by key to value which
+are held inside of this collection as to poor countries it allows you to index
+values by specific key for fast access and common implementations you may see
+include HashMap or tree maps I can create a range of values using the 125
+syntax and I can create a range of characters as well by using a to G one
+of the things I can do to show the relationship of two poles to maps is
+that I can then take the 125 values and sip them to those letters which is going
+to pair them up just like a zipper where the one is paired to a Tues pared to be
+etcetera
+as long as both the ranges we use values that can be paired when one of them runs
+out the zipping stops I can then call to map on the resulting collection which
+was a vector repairs to create a key-value relationship inside of a map
+from those two pools if I have a map I can created again using the comp
+Canyon object apply and giving individual entries as two pairs and then
+I use the index the key value for the instance apply lock up if it finds that
+key then it returns the value associated with that key however if it does not
+find that key it throws an exception because this is an opinionated look up
+with the expectation that the value should be found for that key if we do
+not want to use an opinionated look up we can instead use to get method in this
+life we see that we have a map created with two pairs of 12 in a in a tutu Abby
+if I look up one directly I know I'll find that value but I'm not sure I'm
+going to find the value 49 and if I do a get on the map it returns an option of
+the resulting value which is in this case none because nine is not a key in
+our map I can also use get or else which we saw on the option before which allows
+us to provide a default value for a key lookup in case it's not there if I use
+the one key I get back to value expect if I used the nine key I get the default
+values my response
+having completed this lesson he should be able to describe what a two boys and
+how they are used outline how to deconstruct two pools and describe the
+properties of a map

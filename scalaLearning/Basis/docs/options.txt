@@ -1,0 +1,6 @@
+Options:
+    -They're not a collection, but a container.
+    -An ADT representing the existence of a value
+    -'Some' is the representation of a value
+    -'None' is te representatino of the abscence of a value
+    -Allow us to avoid 'null' on the JVM

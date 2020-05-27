@@ -1,0 +1,36 @@
+welcome to option after completing this lesson we should be able to describe the
+relevance of option in the Scala type system outline how to use option inside
+of your types first let's describe what an algebraic data type is is a distinct
+set a possible types that composes all of the possibilities in the entire world
+represents think an algebraic data type that represents the days of the week it
+could only be one of seven values Monday through Sunday another algebraic
+datatype might be a light switch where you could only be on and off option is
+itself an algebraic data type that represents the existence of a value is
+not itself a collection but more of a data container however his relevance to
+things we are going to discuss in further sessions the value some is the
+representation of the existence of a value whereas none is the representation
+of the absence of value this allows us to avoid the concept of no inside of the
+GBM consider the creation of an option of a string I do that using the
+companion object apply method on the option parent type and I passing a
+string which results in a sum of a string Jamie in the case where I do I
+get that value I received the value inside of the wrapping some however I
+could also use a get or else which is a safer way to performing operations side
+of an option in case the value does not exist however the default value chain is
+not applied because there is a value inside of this result consider if I
+created an option of a null value this results in a non and if I try to do a
+get on the resulting instance of the option I'm going to get a no such
+element exception from the JVM this is where we want to use the get or else
+instead is considered bad form in Scala to use the option dot
+get by using get or else in this case I'm providing the default value of a
+strength Pooh and says there is no value inside of the option I get a food
+whenever I do together else option allows us to create API's where the
+possible absence of value is encoded in the type system and we can then perform
+behavior without asking whether or not the value is known in advance
+here's an example of a case class we saw this example before where a customer may
+not have a middle name our first name because it is not an option is
+implicitly a required value the last name is the same thing however the
+middle is an option of a string where the default value is none
+whenever I create an instance of a customer and I only give her first name
+and last name the middle name is a nun
+having completed this lesson you should be able to describe the relevance of
+option in the Scala type system and outline how to use option in your types
