@@ -1,0 +1,47 @@
+welcome to handling options after completing this lesson we should be able
+to describe how to pattern match on an option
+outline how to use higher order functions on an option to avoid no
+checking and illustrate how to use for comprehension to also work with option
+is very simple to pattern match on options it's a really can only be one of
+two values this being an algebraic datatype can only be some value or none
+in this case we created a method called get middle name is going to take a value
+that is an option of his strength and return a string as a result of the
+pattern match we take the value is passed in then we match on it and if we
+have some value that we assigned to a name called middle name we return that
+middle name value if we have none we return a string no middle name when we
+try to use this we first have our case class customer with the first and last
+names which are required strains and the middle name which is an option of a
+string with the default value of money if we create a customer instance with
+only a first and last name and then we called in get middle name that we just
+created passing in the Martin . Middlefield we would see the return
+value of no middle name on the other hand if we created case class instance
+of a customer named James D
+dole we then call the get middle name
+passing in Jane done middle and we get the value d period we can also use
+higher order functions with option in this case we create an option of a
+string Martin and then we map over the option for the value that is inside of
+it which we call name we are going to print minimal you will be a plus that
+name
+this will only work if there's a value inside of res 0 and that value is not
+none however because we mapped over an option
+an option is returned which is never really used so it's not a good idea this
+merely map over an option whenever you aren't going to return a value that you
+need to use later in this case we were instead use for each
+and we see that on the next line where we try to apply the for each method to
+the res 0 and for the name value inside of res 0 we print linen yay + name and
+this case we do not create a new option as a result if we try to do the same
+higher-order function for each on a nun instance nothing happens
+finally we can use for expressions with options as well if I create an instance
+of an option of a string Martin and I give it to me Martin and I create an
+instance of another option with the string Jane Jane I can use them as
+generators inside of the four expression where AM is retrieved from Martin
+pulling out the string inside of the option and then jay is retrieved from
+Jane pulling out the string inside of change it then yields a new strength but
+because we're operating on an option it is an option of a string and thus some
+Martin is friends with Jane if we have a nun in any of the options that we are
+operating on inside of her for expression then the for expression short
+circuits at that point and returns none
+having completed this lesson we should be able to describe how to pattern match
+on an option
+outline how to use higher order functions on an option to avoid no
+checking and illustrate how to use poor comprehension to work with option

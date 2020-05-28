@@ -1,0 +1,67 @@
+welcome to handling futures after completing this lesson we should be able
+to describe how to use futures to perform work asynchronously describe how
+to pattern matching the result of a future outline how to use higher order
+functions on the result of a future and illustrate how to use for comprehension
+to work with futures futures allow us to define work that may happen at some
+later time possibly on another thread this is work that will be done
+asynchronously futures return a try
+whether or not that work was successfully completed allowing us to
+leverage what we just saw in the previous session to use a future you
+must provide a thread pool in the JVM that the future can use to perform the
+work for example I can use an implicit vow to declare at one time and
+automatically applied to all usages of a future within a scope so rather than
+having to provide an execution context to every single one of the future is
+explicitly define it one time using this implicit Val and then it can be used for
+all futures inside of that block of code here's an example of how to create an
+execution context including the import still need we define an implicit Val
+execution context and we use the job of Fort joined pooled created this will
+spread work automatically across all of the cores available to our JVM at
+runtime futures also have a defined time out before they will stop and say that
+they were not able to do their work by default this is three seconds
+however you have the ability to override then using a very nice DSL for creating
+such time base values we import the Skylark concurrent duration . underscore
+package and all the values inside of it and using that we then say that we're
+going to use an implicit Val about time out and give it a value of 1 second
+allowing us to use every future inside of the block where this is defined with
+a timeout up one second the imports that are required to use futures include this
+list here this is Khaliq and current future and the
+execution context and as well the port joined pool that we're going to use to
+leverage all the course on the box we also have to have the Tri algebraic
+datatype values for failure and success in scope to create a future you merely
+define a value that you want to have as a future of some type like an integer or
+a string or a customer and in this case we're going to get the current inventory
+number how many items we have a specific book or something like that we're going
+to wrap it in a future and call our inventory service saying get us the
+current inventory number for product with a SKU number of 1234567 we can then
+pattern match on the results of a future in this case I'm very simple future
+which is going to return the computation of adding one two and three together if
+I have a successful completion when I call on complete I'm using callbacks to
+define behavior such as depression out that I successfully did this work if I
+had a failure i then say that I had a failure and show what the kind of
+exception was in this case it successfully completed in shows the
+value of six I can also use higher order functions so if I can find my future to
+calculate the value of adding one two and three together I can map over the
+future and applied this behavior at the time the future completes this behavior
+is not run immediately is instead defining the behavior that will be
+applied once that future is completed and in this case the execution context
+provides the capability and prints out the appropriate value because the future
+successfully completed however I might have a failure in this case remember the
+time out that I said before I'm going to make this thread sleep for four thousand
+milliseconds and then I'm going to try and return value 5 whenever I do that
+and I try to map over the future it's not going to work it's not going to
+apply this function because of future returns a failure and you see no result
+we can also use for expression on futures just because they support
+the higher-order functions here's an example of where I'm going to call two
+different services asynchronously first I'm going to ask for the current value
+of something and U S dollars second I'm going to ask you that value in Swiss
+francs these are going to take place
+asynchronously on other threads and then I can say I have a purchase if I get a
+quote of a value in USA dollars and I get a quote of a value in Swiss francs
+but only if the call to is profitable return true in that case I will yield a
+connection . why we're making the purchase of that amount in Swiss francs
+having completed this lesson you should now be able to describe how to use
+futures to perform work asynchronously describe how to pattern matching the
+result of a future and outline how to use higher order functions on the result
+of a future is also allows us to use for comprehension and at this point you
+should be aware of some certain idiomatic usage is of container values
+in Scala pattern matching higher-order functions and for comprehension

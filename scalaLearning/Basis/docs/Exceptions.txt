@@ -1,0 +1,14 @@
+
+JVM Exceptions:
+    -They represent runtime failures for various reasons:
+        -NullPointerException (Runtime)
+        -ClassCastException (Runtime)
+        -IOException (Checked)
+        -When one occurs, control is "thrown" back within a thread stack to whomever "catches" it
+
+Scala libraries:
+    In scala there's some predefined librarys to wrapping a call in try:
+        >>>import scala.util.{Try, Success, Failure}
+
+    Success objects have a similar behavior of Option objects and perform multiple operations
+        of their contents, inside of themselves

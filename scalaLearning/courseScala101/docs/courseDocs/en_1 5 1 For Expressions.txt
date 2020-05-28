@@ -1,0 +1,67 @@
+welcome to for expressions after completing this lesson he should be able
+to understand the relationship between for expressions and higher-order
+functions and described the usage of for expressions composition is difficult
+trying to put together multiple higher-order functions into a single
+expression to transform data can be very hard to do for expressions are syntactic
+sugar from the Scala compiler that simplifies the work of coding a
+multi-stage transformation consider trying to put multiple higher-order
+functions together in this case I've got a range of values it's simply one two
+and three and I'm going to map over that data and then say for each value in that
+collection I'm going to loop again I'm going to perform another map so the
+first time I go through this my I would equal one and then in my internal
+iteration I have one to one then I'm going to map a single time we're both I
+NJ or one and I'm going to multiply them together to yield the first value then
+I'm gonna come back and I'm going to try and make my eye the next value in this
+case it's going to be too and then I'm going to go to the sub loop where I say
+12 to map the first value we won and so in this case I will multiply times J two
+times one resulting in a value of two then I move my J to the next value to
+and where I was too and jay is to a yield of value for at this point I
+popped back out to the external iteration and I move I did three and I
+iterate through the sub loop 12 13 again this year olds the values of 369 the
+resulting collection I get is not what I expect however I don't end up with a
+vector of values altogether but instead with collections inside of that because
+I'm mapping over one collection creating another collection so I have to now
+change this to flat map the external iteration to make sure that I flattened
+out the internal vectors does she owning the values
+wanted in the first place a vector of 124 36 and 94 expressions greatly
+simplify the syntax again I have my numbers which are values 123 and I'm
+just going to say that I have a for statement and inside of that where I
+each value in my moms where J is each value in 12 I in the sub iteration yield
+I times J and it takes care of all the details or whether this was flat map map
+filtering you name it does yielding the vector that I wanted in the first place
+the code is much simpler syntax for for expression is as follows they must start
+with the four key word and they must have generators inside them using that
+leftward arrow generators get the values out of the containers upon which the
+poor comprehension they're working the yield keyword dictates whether or not a
+new value is returned as a result of the iteration so for expressions are
+syntactic sugar over the map
+flat map with filter and for each higher-order functions we used with
+filter instead of filter due to laziness higher-order functions have rules if I
+map over a list I'm going to get a list in responses what has yielded and poor
+comprehension to have to follow the exact same rules
+first generator and a poor expression has to follow that rule yielding a list
+if the first generator was on a list we can also apply guard conditions in the
+form of filters in our for expressions as an example again I have my noms which
+is a range of values 123 and I'm going to perform the exact same for expression
+I did last time however in this case I'm putting a guard condition with an if
+statement on the first line I still have my generator for each I but I'm saying
+only give myself a value of I if I mod the value by two
+has an odd number once again I have my collection my noms which is a range of
+values from 123 I have a poor expression just like I did before but in this case
+I added in its statement and I'm asking that if I mod the value by 22 result in
+a value of 1 dozen indicating that this is an odd value I will only get value in
+the poor expression if it meets this condition otherwise it will pop out as a
+result I end up with a smaller yielded vector that does not include the results
+of having performed any calculation where I was equal to 20 can also
+definitions and side of our for expressions in this case my for is going
+to save for each time in a collection of times I have an hour's value them
+calculating based upon whether or not the hours are greater than 12 and thus
+meaning that this is an afternoon value then you know the hours given that these
+could be twenty four-hour representations with a p.m. if they
+don't want to YouTube value and instead went to apply a function is going to be
+effective tools such as printing out the data I can omit the yield keyword and
+instead it merely apply the function to the data as it is being iterated this
+translates into a porridge as we saw in the higher-order functions session
+having completed this lesson should be able to understand the relationship
+between for expressions in higher-order functions and described the usage of
+ports pressions

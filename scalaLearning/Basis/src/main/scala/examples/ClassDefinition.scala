@@ -34,6 +34,9 @@ object Welcome {
   //The instance, and off course can't be modified
   private val defaultMessage: String = "Welcome!"
   //It can be used like the constructor for his companion class
+  def apply(s: String){
+    new Welcome(s)
+  }
   
 }
 class Welcome(message: String = Welcome.defaultMessage) {

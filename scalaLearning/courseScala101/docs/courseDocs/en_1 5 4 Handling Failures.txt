@@ -1,0 +1,64 @@
+welcome to handling failures after completing this lesson should be able to
+describe the usage in importance of the tried type described how to pattern
+match on a try instance outline how to use higher order functions on a try and
+illustrate how to use for comprehension to work with the tries well the JVM has
+this concept of exceptions that represent runtime failures for various
+reasons you could ever know pointer exception of run time if you tried to
+access a value that didn't have an instance you can get a class cast
+exception if you tried to cast a value to a different type that is unacceptable
+you can also get an IOException if you try to work with any kind of files or
+data coming from a socket when one occurs control is thrown back within a
+thread stack to whomever catches it here's an example of how we would wrap
+work to try and catch something if we pass in a string to this method to end
+and it is acceptable and has only number of values inside of it then it will work
+without any problems however if we passed in a string that had letters
+inside of it and we tried to convert it to an integer using this method it would
+throw a number format exception in this case we would catch that exception and
+we would return a zero in Scala we do not believe in this approach as it
+represents a possible side effect within your code it's something that could
+happen that isn't documented in the name of the method or in the work you're
+doing we want everything in our code to be pure purely functional and when we
+interact with libraries are services that may fail we wrap the call in a try
+to capture the failure
+first of all I need to import the classes that I need to use to represent
+the Tri type as well as the conditions of success and failure this is another
+example of an algebraic datatype where there are only two possible conditions
+if I try to do it to end
+method call on a string that says 100 that is successful and I get a success
+of 100 just like option this is something that wraps the value as a
+container
+if I try to do a try on the string Martin and convert that to an integer
+that results in a number format exception and instead of a success I get
+a failure representing the exception itself without going up the thread stack
+in order to handle the results of a try I can use pattern matching to try and
+deconstruct the possible value in this case I have my making method which takes
+his strength is going to try to do that to int method on the string value and
+that's going to match on the result if it's successful we then bind to the
+value and in return the end value in the case of a failure I'm not going to pay
+attention to the particular kind of failure and I represent that is an
+underscore whatever the failure is I'm just going to return a SERO and we see
+that in the next two lines when we try to passing valid and invalid values I
+could alternatively use higher order functions to interpret the value inside
+of a try in this case I have a method called get scholar which returns a try
+of a string and I return the string scholar wrapped as a success when I do
+that and I called the value I end up with a success of Scala and then apply
+trying to map over that value it works returning its success of the transformed
+strength in this case reversed I could also handle failure in this case I have
+a method called get out and it also returns a try of its strength but in
+this case returns a failure of some new exception with the string out inside of
+it i den call this method and put the value into a BALCO out when I map over
+the algae and I try to reverse the value the function is not applied to a failure
+and that allows me to ignore failures if I want to or handle them as special
+cases because we have higher order functions and try we can also use for
+expressions
+map over these tries in a cleaner way in this case I before where I'm going to
+return about your success Scala and put that into a bound name called language
+and also have a success of Roxana
+gonna put that into a bad name of behavior and i yield a string
+representation of those values put together using something called string
+interpolation in Scala this results in the success of the complete value
+transformed to be one string alone having completed this lesson you should
+be able to describe the usage in importance of a try type described how
+to pattern matching a try
+outline how to use higher order functions on a try and illustrate how to
+use for comprehension to work with tries

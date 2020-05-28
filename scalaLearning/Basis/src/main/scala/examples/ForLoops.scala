@@ -42,4 +42,12 @@ object ForLoops {
   for (i <- range1 if (i % 2 == 0); j <- range2 if (j % 5 == 0)) {
     println(s"$i ---> $j")
   }
+
+  //!for loop yielding results
+  val myNums = for {i <- 1 to 3 ; j <- 1 to i} yield i * j //res0: IndexedSeq[Int] = Vector(1, 2, 4, 3, 6, 9)
+
+  //filtering inside
+  val myNums2 = for {i <- 1 to 3 if i % 2 == 0;
+                     j <- 1 to i} yield i * j//res0: IndexedSeq[Int] = Vector(2, 4)
+
 }

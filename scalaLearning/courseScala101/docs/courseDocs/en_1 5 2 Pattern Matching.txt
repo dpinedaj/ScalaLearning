@@ -1,0 +1,60 @@
+welcome to pattern matching after completing this lesson you should be
+able to describe how to use pattern matching to handle different values in
+different ways
+outline how case classes in algebraic datatypes helping pattern matching and
+illustrate how to extract value from two poles so what does pattern matching many
+languages have the concept of switch case but pattern matching is much more
+powerful construct allows you to match on data and make conditional statements
+based upon what is found
+here's the simple example of a method that includes a pattern match the method
+is called is customer and a value can be passed in of any type if it is a
+customer those found a boolean is returned
+of whether or not it was customers either true or false
+we look at the some value parameter and match on it using the match keyword and
+we have an open curly brace with cases inside the cases represented different
+conditions that could be represented in this case we are buying a customer type
+to a name cust and then saying if it is a customer return true if anything else
+is found false is returned and we're using the underscore placeholder we
+could have also instead of an underscore used an axe or any combination of
+letters that would have been bound to the name but in this case we don't need
+it so it's very easy to use the underscore placeholder so let's look at
+how this would be used if I have a case class customer with the first and last
+name and then create an instance of their customer the name Martin order ski
+I passed the instance of the customer to the is customer method and it returns
+true to me it is a customer instance regardless of what the values are inside
+of it I can then passing a string that happens to have the same values as the
+name I passed into the customer but since it is not a customer tight the
+pattern match returns false pattern matching is very flexible you can match
+on many different kinds of values such as literals like a strength
+value and must match exactly in order to return the value that you place on the
+right hand side of that arrow we can use guard conditions like we saw in for
+expressions to provide extra specificity to each one of the conditions in the
+pattern match we can match on only some parts of a value such as I could have
+had my is customer check to see whether the last name inside of the customer was
+older ski when I have more specific cases they must come first and more
+general cases must come after them
+the compiler will warn you if a more general case is listed in the pattern
+match before the more specific case and if you use the underscore symbol name
+with no tie both match on anything found the key to pattern matching is exhausted
+missus when you see the case keyword anywhere in Scala pattern matching is in
+play
+case classes and algebraic datatypes provide compile time exhaustive list
+checking to make sure that all possible conditions have been met inside of the
+pattern match this way you can make sure compile time that all conditions
+possible have been meant we saw earlier in our tuple section that we could
+extract the values from a tuple this is actually done through pattern matching
+under the hood and we had that too poor to poor values inside of it and then we
+asked it to be placed into four different named values as we see at the
+bottom of the slide and pattern matching is actually extracting the values in
+assigning them to those individual names if I have my collection of values from
+one to five and I perform the reduce function we noticed that I could extract
+the to pull into the names ACC Amcor without having to use a case keyword
+that is due to the structure of the reduce higher-order function on the
+other hand fold left has a different structure and in order for us to extract
+the values of ACC incur we must explicitly put the case keyword and
+rapid and curly braces
+having completed this lesson you should be able to describe how to use pattern
+matching
+to handle different values in different ways outline how case classes in
+algebraic datatypes help in pattern matching and illustrate how to extract
+values from two pools

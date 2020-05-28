@@ -1,0 +1,6 @@
+Some ways to define a variable or value:
+    -val:
+    -var:
+    -private val:
+    -implicit val:
+    

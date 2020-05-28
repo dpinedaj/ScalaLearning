@@ -47,4 +47,6 @@ object CollectionsFunctions {
     val eh = e.takeWhile(num => num > 8)//res0: scala.collection.immutatble.Range = Range(9, 10)
     val ei = e.dropWhile(num => num < 8)//res0: scala.collection.immutatble.Range = Range(9, 10)
 
+
+    
 }

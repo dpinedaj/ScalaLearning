@@ -1,0 +1,19 @@
+Patter matching:
+    -Mainly concept of switch/case
+    -Pattern matching can be applied across many different types of data
+    -Can be embedded within other expressions as a way of cleanly expressing conditional logic
+
+Match:
+    You can match on many different kind of values:
+        -Literal values like "12:00"
+        -Use guard conditions to be more specific
+        -Match on only some parts of a value
+        -More specific cases must come first, more general last
+        -Id you use the _ or a simple name with no type, both match on everything
+    When you see the **case** keyword, pattern matching is in play
+    -Case classes and ADTs provide compile-time exhaustiveness checking that all possible
+        conditions have been have been met
+
+Match on an Option:
+
+    
