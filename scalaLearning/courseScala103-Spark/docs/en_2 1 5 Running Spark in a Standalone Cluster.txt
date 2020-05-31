@@ -1,0 +1,34 @@
+welcome to running spark in a stand-alone cluster after completing
+this lesson you should be able to describe sparks various deployment
+options and discuss the role resource negotiators play in deciding what work
+is performed on which physical resources spark has several resource management
+options and up until this point during this module we've been running
+everything locally on the box on which I've been performing this work however
+we also have stand-alone mode where spark itself can be responsible for
+giving work across a cluster of machines spark also has the capability to
+leverage external resource negotiators such as may Sosa Jorge dupes yarn
+resource negotiator is also the standalone mode which works on Amazon's
+ec2 and databases such as Cassandra react and other databases also have
+their own modes for direct interaction with spark sparks main has a driver
+which is responsible for creating the spark context and then dealing with the
+data in some meaningful way in this example is streaming context that driver
+then gives its information to the Cluster Manager and the Cluster Manager
+dictates how work is distributed across the various nodes that make up the
+partition data and where the work will take place in local mode we just have a
+single JBM process to run and it's doing the work of the driver and the executor
+and all the tasks but sparks stand-alone cluster is the simplest way to start
+using more physical or logical nodes within a cluster in spark it does not
+require an outside resource negotiator to determine what works should be run on
+which physical machine or virtual node with sparks standalone mode we manually
+configure our server instances and the spark master instance is the Cluster
+Manager jobs run in a queue like way where you use first in first out
+semantics and includes stops scripts for conveniens
+to start the spark master we designate the spark home and then we use this
+start master shell script we can then log the information is running on this
+individual node using a master URL in the spark stand-alone cluster world we
+have master and slave nodes and on each slave node we then start the slave using
+the start slave shell script we designate the master by saying the
+location of the master host and port on which you can be connected to having
+completed this lesson you should be able to describe sparks various deployment
+options and discuss the role resource negotiators play in deciding what work
+is performed on which physical resources

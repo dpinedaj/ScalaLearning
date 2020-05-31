@@ -1,0 +1,17 @@
+Spark Resource Management
+    -Local
+        -A single JVM process to run:
+            -The driver
+            -The executor
+            -All tasks
+    -Standalone
+        -The simplest way to use a physical or logical cluster of nodes with Spark
+        -Doesn't require a negotiator
+        -Manually configure the server instances
+        -Spark mastar is the Cluster Manager
+        -Jos run in a queue-like way
+
+    -Mesos
+    -Hadoop YARN
+    -Standalone on EC2
+    -Cassandra, Riak and other DBS soon

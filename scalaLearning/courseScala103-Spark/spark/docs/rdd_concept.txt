@@ -1,0 +1,17 @@
+-Resiliant Distributed Dataset
+    ->Is just another collection in the scala collections library
+        are immutable at its core assuring thread safety
+    ->They're distributed in partitions, in different nodes
+        of the cluster
+    ->Each step of a dataflow that transforms an RDD results in
+        a new RDD being created
+    ->RDDs are "lazy"
+        -A DAG of computation is constructed, where looping 
+            is not possible within it
+        -The actual data is processed only when results are
+            requested
+
+        -They know their "parents" and transitively, all of their
+            "ancestors" in the lineage of the data flow
+        -RDDs are resilient, and a lost partition can be reconstructed from its
+            lineage

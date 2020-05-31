@@ -1,0 +1,50 @@
+welcome to our first spark application after completing this lesson you should
+be able to describe an RDD and its properties and understand the basic
+workflow of a word count application with spark so what is an RDD Rd stands
+for a resilient distributed data set as the core abstraction of spark is simply
+just another collection in the Scala Collections library and therefore our
+disc is called it be alternate Scala collection is immutable at its core
+assuring thread safety and can be distributed across multiple machines
+here is an example of a cluster of machines working in a single spark
+context where an RDD is partitioned across four nodes these are TD's could
+be operated on with the single operation applied to each one of them each step of
+a data-flow that transforms an RDD results in a new Rd instance being
+created and our duties are lazy they represent a directed acyclic graph DAG
+of computation those constructed where looping is generally not possible with
+then it and it must always move forward through its transformations and the
+actual data is processed only when results are requested causing an action
+to be performed across that data are DD's have knowledge of their parents and
+transitive Lee all of their ancestors in the lineage of the data flow so as you
+apply multiple transformations the data in the yard eadie's there's always
+knowledge of where the data came from in the prior transformation and beyond and
+our DVDs are resilient if there is a las partition it can be reconstructed from
+its lineage by reapplying the function to the data the canonical example of how
+to do analytics on a set of data is due the word count of every word in all of
+Shakespeare's great works so if you have an input file that represents all of the
+texts from all of Shakespeare's plays
+you could then transform the data to find out how many times each word and
+all of the place has been said here we have a simple object word count and
+inside of a we have a main method so that this is an application that can run
+on the GBM we specify that the input data should be all of Shakespeare in the
+text format and then we say where we want our output to be written in this
+case we create a spark context and we say it's going to be in local mode and
+will call this context word count we damn input the data from the text file
+and then we tried to transform the data by first taking all the words and
+transforming them to be in lowercase format only
+and then we split the words by a single space we can group them such that each
+word is representing an individual grouping of all the times it is shown
+and then we map over the values to represent how many times it is shown we
+can then print out the results of this transformation and stop the job when we
+run this job we first create an SBT project and then I say to run the
+application it's going to ask me which one I want to run in my particular
+context nice a run the word count it then attempts to do so and whenever it's
+finished doing its work and asked me to press any key to finish the job
+time to go through all of Shakespeare's works took eighteen seconds in that case
+with some latency for me to press the key however if I come down here inside
+of my project and I say show me the update to the output that was written I
+can see that several files were created including how many times each of these
+words were shown for example the word insurrection shows up six times in all
+of Shakespeare's works and I commend on shows up 100
+having completed this lesson you should be able to describe an RDD and its
+properties and understand the basic workflow of a word count application
+with spark

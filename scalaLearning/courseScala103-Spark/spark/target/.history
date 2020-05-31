@@ -1,0 +1,11 @@
+run
+test
+reload
+run
+reload
+run
+spark-shell
+spark
+spark shell
+shell
+reload

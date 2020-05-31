@@ -1,0 +1,29 @@
+RDD Lineage
+    -An RDD can depend on zero or moreother RDDs.
+    -When you perform a transformation such as mapping over an existing RDD
+        "y" to create a new called "x", x will now depend on y
+    -This is called the "lineage" graph, as it represents the derivation of each RDD
+
+Stages:
+    -Similar to an execution plan
+    -Each stage can be executed as a pipeline in memory in a single node without
+        any dependency on other nodes
+    -Operations in each stage is fused together like a pipeline so that output of
+        one operation is piped as an input to next one in chain this is one of
+            the reasons why spark is faster it doesn't have to hit the disk
+            or go over the network to do its work its all perform within a partition in isolation
+            but the final output of each stage is usually a shuffled task in this case.
+
+    -Some transformation steps don't need data from other partitions, such as map, flatmap, filter, etc.
+    -Other such as groupBy and sort require shuffling between partitions
+    -Spark pipelines these steps into a single "stage" which uses a single JVM per partition.
+
+Shuffling
+    -When data has to be sent across the network to other partitions for proper grouping
+    -By definition, a performance bottleneck
+
+Why are Stages important?:
+    -Eliminate the overhead of running separate JVMs for each step
+    -Makes management of intermediate data more efficient
+    -Spark doesn't "materialize" the RDDs at each step, only the last RDD in each stage is actually computed,
+        and shuffling data in intermediate steps is performed in memory and/or in disk

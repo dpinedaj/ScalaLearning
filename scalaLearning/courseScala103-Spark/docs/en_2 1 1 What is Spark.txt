@@ -1,0 +1,71 @@
+welcome to coerce stewardess caliper data scientist curriculum in this course
+we will be talking about the spark MapReduce engine which is an enabler for
+data scientist to perform algorithms against their data this is not a deep
+dive into Sparkman overview to explain basic capabilities of spark please see
+the big deal university courses on spark fundamentals for a deeper look into its
+capabilities after completing this first lesson what is spark you should be able
+to describe what Apache spark is and how it can be used to derive valuable
+information from data compare and contrast part to the Hadoop ecosystem
+and discuss the various components of the spark ecosystem so what is spark
+Apache spark is a fast and general engine for large-scale data processing
+with built-in modules for streaming SQL machine learning and grab processing
+spark is the engine behind it making transformations to data to derive value
+from that data over the last twenty years
+Internet giants like Amazon Google Yahoo eBay and Twitter inventing new tools for
+working with data sets an unprecedented size far beyond the traditional tools
+could handle they started the Big Data revolution characterized by the
+inability to store and analyze these massive datasets with acceptable
+performance at drastically reduce costs has been a spectacular success offering
+cheap storage in the Hadoop distributed file system of data sets up to petabytes
+in size with batch mode off-line analysis using MapReduce jobs other
+tools in the Hadoop ecosystem include HBase NoSQL store and a customized SQL
+base query engines like in power and drill many companies will continue to
+write large Hadoop applications as before but these jobs can be replaced
+for better performance and ease of programming using the spark programming
+model MapReduce became a standard for applying calculations to a dataset and
+separating into meaningful groupings and set
+X however there were shortcomings this approach in a difficult programming
+model in the Hadoop world and an even more difficult API for support for
+iterative machine learning and graph algorithms as well as poor performance
+for complex jobs it also does not scaled down very well requiring you to use more
+resources than may be required for a single job these MapReduce shortcomings
+come largely from the fact that the API is not functional in nature in the
+previous course we saw that we could apply a function to a container of data
+those containers being a collection or future or an option if you will in those
+cases we took a function and we applied it to that data container in the case of
+spark we are going to do the exact same thing but the MapReduce engine of Hadoop
+did not support the application of functions to data and therefore it was
+more difficult to use so why spark it is a flexible composable programming model
+with a concise and powerful API is excellent performance for complex jobs
+because can do work in memory as opposed to all on disk it supports have been
+streaming applications and insufficient support for iterative machine learning
+and graph algorithms make it much simpler to use it also skills very well
+from a single laptop to a large cluster spark was started in 2009 as a berkeley
+project in the amp lab as part of Matei Zaharia his PhD thesis project it became
+part of the Berkeley data analytics stack also called PDAs along with me so
+soon yarn storage components like tachyon and more is now a top-level
+Apache project in the Apache foundation so the spark ecosystem contains several
+components include spark SQL an engine for performing SQL queries against Park
+data spark streaming for being able to handle data as it's coming in a very
+fast nature it also contains a male lib machine learning library written in
+Scala
+allows you to perform analytics against your data and the graphics library also
+written in Scala for performing grafting operation so that you can figure out how
+data is connected together all built around the Apache spark MapReduce engine
+to spark is written in Scala and the experience is native when you use
+skeleton code against it
+there's a vibrant data-centric ecosystem around spark and most of the big data
+ecosystem is JVM based already so you can leverage existing tools it also has
+static typing when you use Scala which means more correctness before you deploy
+an application particularly in a large code base which may need respect during
+school also has advantages over Joba Scala has a rebel to re-evaluate print
+loop that we discussed in the previous module which promotes exploration of
+data and algorithms against live data in-memory scott also a stipend printing
+allowing you to know in advance what the types will be in your data the two pools
+built into the Scala Collections library are concise and easy way to aggregate
+data and pattern matching makes quick work of deconstructing record data and
+DSL support allows you to use comments ATMs d'amato your designs
+having completed this lesson you should be able to describe what apaches spark
+is and how it can be used to derive valuable information from data compare
+and contrast park to do because system and discuss the various components of
+the spark ecosystem

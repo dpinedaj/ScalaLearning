@@ -1,0 +1,39 @@
+welcome to the spark console after completing this lesson you should be
+able to describe what the spark console is and how it can be useful for
+understanding the runtime details of your spark application spark console is
+launched every time you create a spark context by default on port 4040 of
+whatever machine the spark context is being created on in the case where I'm
+going to run locally that would be localhost port 4048 multiple spark
+context are running on the same post they will bind two successive ports
+beginning with forty 40 so the next bar context will be 40 41 the next 40 42
+etcetera this provides insight into the runtime characteristics of your resource
+usage on that host the spark console gives you a list of scheduler stages in
+tasks a summary of RDD sizes and memory usage environmental information about
+the box on which it's running and information about the running executors
+and spark which are going to perform the work on your data note that this
+information is only available for the duration of the application by default
+to view the web UI after the fact that sparked have been logged unable to true
+before starting the application and then you want to host the summer box using
+something like sparks history server see the spark documentation on monitoring
+for more details such as the link as show below they decide to should use the
+spark console when building spark applications as it will help them
+identify bottlenecks and in efficiencies and sparked jobs and your algorithms
+let's have a look at how that would work in the previous example of how to do a
+word count will perform transformations on the data such that we did a group buy
+and then mapped the values together so that we were able to come up with the
+number of times a single word showed up inside of Shakespeare's great works
+however if we want to try slightly different approach that didn't do quite
+so much shuffling
+we could instead map over the words and then reduce them by key which is going
+to do the exact same thing is our previous task but possibly more
+efficiently because of less shuffling being involved in the process so if we
+tried to execute the second job and we come into our SPT session and we run the
+task and we say we're going to run the word count faster example if we go to
+our browser and attempt to view the data as far as how well this job ran we can
+then see the data inside of the spark console telling us that the task
+succeeded
+how long it took what resources it use and whether it did shuffles and what the
+cost was on the read and the right
+having completed this lesson we should be able to describe what the spark
+console is and how it can be useful for understanding the runtime details of
+your spark application

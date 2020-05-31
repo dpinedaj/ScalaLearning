@@ -1,0 +1,40 @@
+What is Spark?
+    ->Is a fast and general engine for large-scale data processing, with built-in modules for streaming,
+        SQL, machine learning and graph processing
+
+Spark: 
+    ->Flexible, composable programming model
+    ->Concies, powerful API
+    ->Excellent performance for complex jobs
+    ->Support event-streaming applications
+    ->Efficient support for iterative, machine learning and graph algorithms
+    ->Scales from a single laptop to a large cluster
+
+History:
+    ->Initialy hadoop was used to process in a cheaply way the data with an acceptable performance
+    ->Map-Reduce became the standard for applying a calculation to a dataset and separating it
+        into meaningful groupings and sets
+    Map-Reduce Shortcomings:
+        ->Difficult programming model
+        ->Even more difficult API
+        ->Poor support for iterative, machine learning and graph algorithms
+        ->Poor performance for complex jobs
+        ->Does not scale down very well
+    Spark:
+        ->Started in 2009 as part of a PhD Thesis project
+
+Spark Ecosystem
+    ->Spark SQL
+        -for performing SQL queries against spark data
+    ->Spark Streaming
+        -for being able to handle data as it's coming in a very fast nature
+    ->MLlib
+        -Allows you to perform analytics(machine learning) againts your data
+    ->GraphX
+        -To perform graphing operations so that you can figure out how data is
+            connected together all built around the Apache Spark MapReduce engine
+
+Why scala and spark:
+    -> Spark is written in scala and the experience is native
+    ->There's a vibrant, data-centric ecosystem, and most of the "Big Data" ecosystem is JVM-based
+    ->Static typing

@@ -1,0 +1,65 @@
+welcome to tuning Rd deeds after completing this lesson should be able to
+describe the different kinds of methods available for our DVDs and explain
+partitioning caching and checkpointing their importance and how to exploit them
+transformation methods defined the sequence of operations and they are lazy
+they return new Rd DS examples of these include map flat map filter group by
+reduced by key and join action methods trigger execution of the pipeline they
+returned results or unit when writing output to understand unit consider Boyd
+in the sea or Joba examples of action methods include count collect for each
+and save as text file count returns along the number of records collect
+returns all the data and the RTD to the driver program as a scholar collections
+such as an array or map but warning expectant how to memory error if the
+data is too big
+control methods do med operations or return state information examples of
+this include checkpoint cash persist on persist coalesce and repartition also
+dependencies get checkpoint file get storage level and is check pointed our
+control methods for your operations cash saves an RDD in memory persisted lets
+you very where the data is saved for example to memory or disk to our DD's
+where one is the parent of the other as shown here I'm showing the type
+signatures and had to import the RDD but they would be inferred if I let them in
+this example we have to our DVDs and one is the parent of the other note that
+paralyzed and map our transformation methods in this context cash and persist
+are an optimization in a boy three computing the lineage of ancestor Rd DS
+but only if the RDD is still in the cash you want to call before invoking an
+action
+it doesn't trigger the evaluation itself in the previous example you since to dot
+on persist when you're done with the RDD I'm persist automatically cleans up the
+RDD from the cash if it goes out of scope cash persist prevents
+computing every ancestor of the RDD every time you use it
+storage options include memory only memory and disk which blushes the disk
+if memory pills disc only which means use only on disc and that starr
+underscore serwer you save serialized objects and by to raise its more CPU
+expensive but more memory efficient and has also offer deep which allows you to
+use tachyon checkpoints saves the RGD to the file system and its durable the
+parent lineage is forgotten it's no longer needed to reconstruct glass
+partitions because the data has been saved to disk will call checkpoint
+before evaluating the RDD we want to use checkpointing when it would be too
+expensive to rely on cashing to avoid the computation of the RTD lineage and
+it is impossible to go back to the data source for example a socket and
+streaming context where once the data has been processed you may no longer
+have access to where it came from
+here's an example of a checkpoint before we call count we've set up checkpointing
+the spark context at checkpoint der is required first but nothing is actually
+check pointed yet after calling count we have a checkpoint file and a new parent
+note that RDD dependencies returns a sequence of parents you have more than
+one if this party is a joint group by etcetera
+here we have just one so we get the head of the sequence the first element and
+then ask that dependency for its corresponding RDD sparks streaming
+automatically sets up checkpointing and it cleans up the old checkpoint files
+for you
+for batch jobs you have to set up the checkpointing and clean them up yourself
+F we also have re- partitioning recalled it reduced by key and other group by
+variants bring together records with the same key so you might want to change the
+number of records drastically but in a group by each record might be much
+bigger than the original records sometimes those partition numbers are
+wrong you just did a reduced by key and now you have far fewer records so you
+need fewer partitions if you have too few partitions so each task takes a long
+time and cluster resources may sit idle to Usry partitioning in a more general
+method it requires a subtle operation if you want fewer partitions try using the
+coalesce method so what should end be it would depend on your application in your
+dataset used the spark web console to see if a partition sizes and task
+execution times are reasonable based upon your own non functional
+requirements let's explore that next
+having completed this lesson you should be able to describe the different kind
+of methods available for our DD's explain partitioning cashing in
+checkpointing as well as their importance in how to exploit them

@@ -1,0 +1,47 @@
+welcome to the spark execution model after completing this lesson you should
+be able to describe the lineage of an RDD explain how stages of spark jobs
+work and discuss what shuffling of data means an RDD can depend on SERO or more
+other Rd DS depending itself on whether or not that RDD was created as a result
+of other transformations when you perform a transformation such as mapping
+over an existing RDD called why to create a new Rd called X RDX will now
+depend on rdy this is called the lineage graph as it represents a derivation of
+each RDD here's an example of how this might work if we had poor nodes in our
+cluster and an RDD partitioned across each one of those four nodes we then
+have the input transformation that we perform and then we have the lines
+transformation to count the number of lines inside of the dataset we then plat
+map the data and then perform a group I finally we perform a final
+transformation called map values to do the aggregation of the data very much
+like we saw in the previous lesson when we did our word count example we have
+stages inside of our execution of our jobs and this is similar to an execution
+plan if you will
+each stage can be executed as a pipeline in memory in a single node without any
+dependency on any other node another way to think about this is operation fusion
+operations in each stage are fused together like a pipeline so that the
+output of one operation is piped as an input to the next one in the change this
+is one of the reasons why spark is faster it doesn't have to hit the disk
+or go over the network to do its work its all perform within a partition in
+isolation but the final output of each stage is usually a shuffled task in this
+case
+imagine the group by task that we saw inside of our way
+word count where we had to figure out how we were going to group data across
+all of the partitions inside of our cluster we see that here in this example
+where we did the group by work and data had to be shuffled across each of the
+partition and our porno cluster some transformation steps do not need data
+from other partitions such as map flat map and filter but others such as group
+by or reduce by and sort requires shuffling between partitions and that
+means that these ones are more costly and performance than tasks such as map
+flag map and filter which could be performed and isolation spark pipelines
+he steps into a single stage which uses a single JBM per partition so why are
+stages important they eliminate the overhead of running separate GBM for
+each step and then make the management of intermediate data more efficient when
+you use the Hadoop MapReduce engine it's got a load the data from disk perform
+the tasks involved in the data transformation and then put it back on
+disk its then got a load from disk again
+shuttle the data and then put it back on disk once more
+all of this I O comes with a performance cost spark does not materialize the
+ending our DVDs at each step only the last resilient distributed data said in
+each stage is actually computed and shuffling data in intermediate steps is
+performed in memory and/or on disk depending on the size of that data
+having completing this lesson you should be able to describe the lineage of an
+RDD explain how stages of spark jobs work and discuss what shuffling of data
+means for performance
