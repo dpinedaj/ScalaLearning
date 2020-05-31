@@ -1,0 +1,4 @@
+[debug] [scrappy-test] Classpath dependencies List()
+[debug] [scrappy-test] Dependencies from configurations List(scrappy)
+[debug] Bloop wrote the configuration of project 'scrappy-test' to '/home/daniel/Desktop/Projects/study/2.ScalaLearning/scalaLearning/utils/.bloop/scrappy-test.json'
+[success] Generated .bloop/scrappy-test.json

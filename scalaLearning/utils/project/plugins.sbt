@@ -1,0 +1,2 @@
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.3.4") //Plugin tot use java App packaging
+libraryDependencies += "com.spotify" % "docker-client" % "8.9.0" //plugin to automatically dockerize the solution

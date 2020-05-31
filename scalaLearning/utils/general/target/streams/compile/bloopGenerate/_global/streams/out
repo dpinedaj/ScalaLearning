@@ -1,0 +1,4 @@
+[debug] [general] Classpath dependencies List()
+[debug] [general] Dependencies from configurations List()
+[debug] Bloop wrote the configuration of project 'general' to '/home/daniel/Desktop/Projects/study/2.ScalaLearning/scalaLearning/utils/.bloop/general.json'
+[success] Generated .bloop/general.json
