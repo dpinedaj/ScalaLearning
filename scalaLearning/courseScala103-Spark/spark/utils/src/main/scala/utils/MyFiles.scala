@@ -1,11 +1,17 @@
 package utils
 
-import java.io._
+import java.io.File
 
 object MyFiles {
   //Class made to manage directories and files in Scala
 
+  def deleteFileOrFolder(pathDir: String): Unit = {
+    val file = new File(pathDir)
+    deleteRecursively(file)
+  }
+  
   def deleteRecursively(file: File): Unit = {
+
     if (file.isDirectory) {
       file.listFiles.foreach(deleteRecursively)
     }

@@ -1,0 +1,72 @@
+welcome to more transformations the inverted index algorithm after
+completing this lesson we should be able to discuss more transformations
+available for building data applications and explain how to deconstruct data
+problems into sequences of transformation steps the inverted index
+algorithm is a great way to be able to build views of data suppose you're
+building a Google killer what do you need
+first you need a web crawler to find all web content and then you need indexers
+to index that content for searching and our first iteration we want to build an
+index of words the keys will be all of the words we find and the values we
+lists of URLs and word counts for example food to food at org 1000
+wikipedia.org food to 100 it's best to sort descending by words but why because
+if we search for food in the Google killer we would probably find the pages
+that use food a lot to be the most interesting so imagine you have web
+crawlers running constantly finding pages on the internet and writing the
+initial data set with URLs or other ideas and the content of the pages found
+then the inverted index is computed over that data set to yield a new index were
+the words are inverted moved from the initial value column to the key column
+and for each word we have a list of URLs count pair's first let's generate fake
+role data you use a sampling of the email corpus from the now-defunct Enron
+Corporation let's walk through a theoretical crawled out Scholar Program
+and will sketch the implementation in the slides first of all we want to clean
+up the old output and set up the spark context note that you probably would not
+want to delete the previous output in production this is only for how we would
+do this
+in this simple example first will read a directory and return records the
+filename and contents then we'll map over the records and transform them for
+our dataset of emails we need to keep the file name which most Hadoop based I
+O libraries ignore whole text files reads one or more directories and
+returns the data as a record per file with the file path as the key and the
+contents as the value we're going to do then remove the leading path part
+because it's not useful for us the paths will be Briggs ample path to exercises
+data and ron's bam bam bam 100 file we don't need the leading directories most
+of which are identical and handsome no value for distinguishing one mile from
+the next chance we used the last / and if found we removed the text up to and
+including it will remove embedded new lines in the text so it's all on one
+line we can then return the cleaned up data and write out the results and quit
+before we run the inverted index algorithm let's walk through the
+inverted index . Scholar Program we would use first we'll use the crowd data
+as input we use a regular expression to parse the input file name in text lines
+and we load the data and map over the lines we attempt to match with the Reg X
+its successful we return a tuple with the name trimmed of white space and the
+text in lower case for other lines we write an error message then return an
+empty tube or which will be removed downstream we used flat map to split the
+text in one record into a collection of zero and words than flat map flattens or
+concatenate
+these collections into one big collection of words actually we're going
+to return to pools with word and path is the key and a 12 a seat count as the
+value and optimize group I could be performed using reduced by key where we
+don't want the group's just the some of the elements and then we have a case of
+the patent text pattern matching on a single argument recognizing its a tuple
+of two elements in extracting them into values there is no case keyword when we
+do the reduced by key because we aren't pattern matching this function takes two
+arguments about one in count to this is my favorite line know how we are
+elegantly restructuring the tuple now we want the words keys and the path and two
+poles as values are all SQL friend group buys then used it uses the first to
+Parliament the word as the key and the results end up being the word and then
+some
+iterable of the path to end count value another path to another and count value
+and so on
+at this point we're actually already done here we just reformat collection of
+paths and pairs that are the value part of the records and then we saved to disk
+finally we allow the user to examine the web console before quitting by leaving
+this up and running until somebody says yes they've hit return after the user
+hits return we shut down now let's generate the inverted index note that it
+pauses and waits for you to enter a return keystroke use this opportunity to
+browse the web console and understand this three-stage job when finished we
+can look at the results there's only one thing missing the list of paths to end
+pairs isn't sorted by count descending will fix that in the next module
+having completed this lesson
+you should be able to discuss more transformations available for building
+data applications and explain how to deconstruct data problems into sequences
+of transformation steps

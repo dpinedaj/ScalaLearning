@@ -1,0 +1,47 @@
+welcome to the spark web console a deep died in the previous model we had less
+than where we were introduced to the spark web console in this lesson you
+will learn how to use the analytics provided by the web console to tune or
+usage of our our DD's after completing this lesson you should be able to
+interpret the various pages of the spark web console and use the console to
+understand what your jobs are doing and how to improve their performance this is
+the spark web console and is showing a job where we are doing our word count as
+we showed in the previous module your notice that all tasks succeeded and it
+shows you the duration and the stages of work if we click on the event timeline
+link we get more information that zooms into our executors and jobs and how well
+they worked we can mouse over these blue bars to get even more information about
+how well they were performing if we scroll down for that we see the
+completed jobs and now there's a link which allows us to see information about
+the job for the word count work when we view that link we see that there were
+two stages involved in this work the first involving the map in the flat map
+and the group by where the group by resulted in a sharp of the data and a
+new stage being created that group by led to the map values and then saving
+the data is a text file again if you don't see this diagram click de dag
+visualization link from above if you remember from the previous model we had
+this diagram which showed our cluster for nodes and four partitions of our
+data across those nodes where we did the import the lines and the flat map but
+then the group by result in the shuffle that's where we see the breakdown of
+stages here in this view
+if we go down further will see that the complete in stages have a chart showing
+more information
+stages are shown last first and we can see that by the stage I D which is now D
+sending note the stage durations the second stage took two seconds where the
+first stage took one second that is largely due to the shuffle that took
+place we can also see how many tasks took place one person I partition
+there's the data input to the stage and the data output as well as shuttle data
+read and shackled data written if we click on the second link to look at the
+first stage of our operations we get a more detailed view of that per stage can
+also scroll down and click on the event timeline just for that stage which shows
+us information about the individual scheduler delay task serialization time
+shuttle read time execution computing time shuttle right time and results
+serialization time a small delay for Dec realizing is quite good we can also
+compare the state into what we see in the table below we had to one second of
+execution for this first stage so we're able to see fidelity of up to 100
+milliseconds and we see the shuttle data for the next stage as the last part of
+the work being done on two partitions for this first stage
+the executor manages the local tasks and since world running in local mode we
+only have one you can see that all data was local by viewing the process
+underscore local value in the locality level for more information about
+locality levels see this link explaining locality across the spark cluster
+having completed this lesson you should be able to interpret the various pages
+of the spark web console and use the console to understand what your jobs are
+doing and how to improve their performance

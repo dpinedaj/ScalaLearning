@@ -1,0 +1,63 @@
+Broadcast Variables:
+    -They're read-only shared variables that are cached and available on all nodes in a cluster in-order
+        to access or use by the tasks. Instead of sending this data along with every task, spark distributes
+        broadcast variables to the machine using efficient broadcast algorithms to reduce communication costs.
+    -Instead of distributing this information along with each task over the network (overhead and time consuming), 
+        we can use the broadcast variable to cache this lookup info on each machine and tasks use this cached 
+        info while executing the transformations.  
+    -Keep a read-only variable local on each machine, rather than ship a copy of it with each task
+    -It can be any serializable value
+    -Can be used in the same way by RDD, DataFrame and Dataset.
+    -When you run a Spark RDD, DataFrame jobs that has the Broadcast variables defined and used, Spark does the following.
+
+        -Spark breaks the job into stages that have distributed shuffling and actions are executed with in the stage.
+        -Later Stages are also broken into tasks
+        -Spark broadcasts the common data (reusable) needed by tasks within each stage.
+        -The broadcasted data is cache in serialized format and deserialized before executing each task.
+
+    -If the broadcast variable is mutable, it should not be modified after it is broadcasted
+        -Any changes won't be propagated around the cluster
+
+Accumulators
+    -They're shared variables wqhich are only "added" through an associativa and commutativa operation
+        and are used to perform counters (Similar to Map-reduce counters) or sum operations
+    -Can be created named accumulators or unnamed accumulators
+    -Can be seen on Spark web UI under the "Accumulator" tab.
+    -Only tasks can modify the value
+    -For reliable counts is better to use only inside actions like "foreach"
+    -For accumulators used in actions, Spark applies each task's update to each accumulator only once
+
+    Creating an Accumulator:
+        -Via SparkContext there're:
+            -LongAccumulator
+                -Methods:
+                    -isZero
+                    -copy
+                    -reset
+                    -add
+                    -count
+                    -sum
+                    -avg
+                    -merge
+                    -value
+            -DoubleAccumulator
+                -Methods:
+                    -isZero
+                    -copy
+                    -reset
+                    -add
+                    -count
+                    -sum
+                    -avg
+                    -merge
+                    -value
+            -CollectionAccumulator
+                -methods:
+                    -isZero
+                    -copyAndReset
+                    -copy
+                    -reset
+                    -add
+                    -merge
+                    -value
+

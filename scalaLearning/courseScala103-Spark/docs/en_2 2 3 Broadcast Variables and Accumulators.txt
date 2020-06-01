@@ -1,0 +1,37 @@
+welcome to broadcast variables and accumulators after completing this
+lesson you should be able to discuss how to send support data to tasks using
+broadcast variables and explain how to accumulate information overall task for
+consumption back in the jobs driver first let's discuss broadcast variables
+imagine a use case where you need a large readonly lookup table for all
+tasks you could keep a read only variable local on each machine rather
+than ship a copy of it with each task and it can be any serializable value
+here's an example we have our states map which is a map of keys to values
+including the abbreviation for state and the name of the USS state and then we
+have the state's broadcast value which is a broadcast representation of that
+map if the broadcast variable is mutable it should not be modified after this
+broadcast because any changes won't be propagated around the cluster behind the
+scenes spark is using a peer-to-peer protocol to distribute the value much
+like BitTorrent would accumulators solve the opposite problem they accumulate
+some results over the whole job even when tasks are distributed around the
+cluster consider though that associativity is critical in this case
+because you don't have control over how values are accumulating between tasks by
+associativity I mean how you group them imagine arithmetic where you are adding
+values together if you add 1+2 and then add three it doesn't matter if you did
+2+3 and then added 12 grouping is irrelevant
+note community is not required because community implies order consider this
+use case we want to count certain events that occurred during job execution such
+as the number of bad records we've seen this is analogous to MapReduce counters
+paper task values modified through an associative operation where grouping
+does not matter and only tasks can modify this value we have support for
+numeric accumulators and we can add new types only the driver program can read
+the result of the accumulators value so to create the accumulator we have our
+spark context and we give it a seed value we then performer work and we had
+to or increment the value inside are numb bad lines sparked can rerun failed
+or slow tasks and run speculative copies for accumulators using transformations
+such as map or flat mapper filter spark applies each tasks update every time the
+task is executed pants you could possibly over count for accumulators
+used in actions spark applies each tasks update to each accumulator only once if
+you need reliable counts only use them inside of actions like for each having
+completed this lesson you should be able to discuss how to send support data to
+tasks using broadcast variables and explain how to accumulate information
+overall task for consumption back to the jobs driver

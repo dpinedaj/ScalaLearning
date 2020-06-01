@@ -1,0 +1,9 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/daniel/Desktop/Projects/study/2.ScalaLearning/scalaLearning/courseScala103-Spark/spark/utils/target/scala-2.12/utils_2.12-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	utils[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/daniel/Desktop/Projects/study/2.ScalaLearning/scalaLearning/courseScala103-Spark/spark/utils/target/scala-2.12/classes/utils[0m
+[0m[[0m[0mdebug[0m] [0m[0m	utils/MyFiles.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/daniel/Desktop/Projects/study/2.ScalaLearning/scalaLearning/courseScala103-Spark/spark/utils/target/scala-2.12/classes/utils/MyFiles.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	utils/MyFiles$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/daniel/Desktop/Projects/study/2.ScalaLearning/scalaLearning/courseScala103-Spark/spark/utils/target/scala-2.12/classes/utils/MyFiles$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

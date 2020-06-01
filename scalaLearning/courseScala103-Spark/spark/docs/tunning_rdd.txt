@@ -8,7 +8,13 @@ Transformations:
         -filter
         -groupBy
         -reduceByKey
+            -This method can improve a groupBy method
         -join
+    -More transformations:
+        -Inverted index algorithm
+            -Sort the values in the best way to make easier querys
+    -Crawl Data:
+        -
 
 Actions:
     -Trigger execution of the "pipeline"
@@ -21,6 +27,7 @@ Actions:
 
 Control:
     -Do meta-operations or return state information
+
     -Some Controls:
         -checkpoint
             -Saves the RDD to the file system, it's durable
@@ -29,10 +36,14 @@ Control:
             -Use checkpointing when:
                 -It would be too expensive to rely on caching to avoid recomputation of the RDD lineage
                 -It is impossible to go back to the data source, e.g., a socket in a streaming context
+            -Spark streaming automatically sets up checkpointing and it cleans up old checkpoint files
+            -For batch jobs, you have to set up checkpointing and clean up old checkpoint files yourself
+            -Some checks for checkpoint:
+                -dependencies
+                -getCheckpointFile
+                -isCheckpointed
 
-        -cache
-        -persist
-            -Cache/Persist
+        -Cache/Persist
                 -Cache saves an RDD in memory.
                 -Persist let's you vary where the data is saved (to memory or disk)
                 -It avoids recomputing the lineage of ancestor RDDs, but only if the RDD
@@ -45,10 +56,26 @@ Control:
                     -DISK_ONLY (Onle use disk)
                     -*_SER (Save serialized objects(byte arrays); more CPU expensive, more memory efficient)
                     -OFF_HEAP (Experimental support for Tachyon)
-        -unpersist
-        -coalesce
-        -repartition
-        -dependencies
-        -getCheckpointFile
-        -getStorageLevel
-        -isCheckpointed
+                -Some checks/ops for cache/persist:
+                    -getStorageLevel
+                    -unpersist
+
+        -Repartition/Coalesce
+            
+            -Sometimes the number of partitions is wrong:
+                i.e.
+                -You just did a reduceByKey and now you have far fewer recors,
+                    so you need fewer partitions
+                -You have too few partitions so each task takes a long time and cluster 
+                    resources sit idle
+            -Repartitioning:
+                -myRDD.repartition(n) (Converts to n partitions, when n can be < or > than original
+                    number)
+                    -might force a shuffle operation, which is expensive
+                -myRDD.coalesce(n, shuffle = false) (For n < original number. Shuffle is optional, so
+                    more efficient)
+
+            What should n be?
+                -Depend on your aplication, dataset, etc.
+                -Use the Spark Web Console to see if partition sizes and tasks execution times are "reasonable"
+                

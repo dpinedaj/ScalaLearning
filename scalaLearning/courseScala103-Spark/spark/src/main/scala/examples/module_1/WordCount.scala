@@ -22,24 +22,26 @@ object WordCount {
     try {
       //read input file as a textFile, into an RDD
       val input = sc.textFile(inpath)
-      
+
       val wc = input
         .map(_.toLowerCase) //convert every single letter in lowercase
         .flatMap(text => text.split("""\W+""")) //split the text into words and flatt everything in a Seq
         .groupBy(word => word) //groupby every word--> it generates tuples2 with the key and a compactbuffer with the same word many times
-        .mapValues(value => value.size)//.map(group => (group._1, group._2.size)) //change every value of the map(groups of tuples) for his size
-        .filter(x =>  x._1.length() > 4) //remove "", " ", "and" and some short words
+        .mapValues(value => value.size) //.map(group => (group._1, group._2.size)) //change every value of the map(groups of tuples) for his size
+        .filter(x => x._1.length() > 4) //remove "", " ", "and" and some short words
 
-      val max = wc.sortBy(_._2, ascending=false ).first() //Sort the list and take the first value
-      
-      println("The most used word is: %s with %d occurrences".format(max._1, max._2))
+      val max = wc.sortBy(_._2, ascending = false).first() //Sort the list and take the first value
+
+      println(
+        "The most used word is: %s with %d occurrences".format(max._1, max._2)
+      )
       println(s"Writting output to: $outpath")
-      wc.saveAsTextFile(path=outpath)
+      wc.saveAsTextFile(path = outpath)
       println("Finished")
 
       val t1 = System.nanoTime()
 
-      println("Elapsed time: %.2f seconds".format((t1-t0)/1e9d))
+      println("Elapsed time: %.2f seconds".format((t1 - t0) / 1e9d))
     } finally {
       sc.stop()
     }

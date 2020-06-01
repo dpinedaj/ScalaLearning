@@ -16,6 +16,7 @@ object Controls {
       checkpoint(sc)
     } finally {
       sc.stop()
+      
     }
   }
 
@@ -32,7 +33,8 @@ object Controls {
 
   }
   def checkpoint(sc: SparkContext): Unit = {
-
+    /* Saves the RDD to the file system and forget his legacy*/
+    
     val inst1: RDD[Int] = sc.parallelize(0 until 5)
     val inst2: RDD[(Int, Int)] = inst1.map(i => (i, i * i))
     val checkpointsDir: String = "data/checkpoints"
