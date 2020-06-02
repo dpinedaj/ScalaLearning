@@ -1,4 +1,0 @@
-[debug] [main-test] Classpath dependencies List(utils)
-[debug] [main-test] Dependencies from configurations List(main)
-[debug] Bloop wrote the configuration of project 'main-test' to '/home/daniel/Desktop/Projects/study/2.ScalaLearning/scalaLearning/courseScala103-Spark/spark/.bloop/main-test.json'
-[success] Generated .bloop/main-test.json

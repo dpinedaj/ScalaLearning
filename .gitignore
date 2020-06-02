@@ -8,3 +8,5 @@ scalavista-vscode.log
 .empty
 data
 stale_outputs_checked
+project
+target
