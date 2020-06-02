@@ -1,0 +1,65 @@
+welcome to refining the inverted index after completing this lesson you will be
+able to discuss how to sort data understand why to remove stop words
+using a broadcast variable and explain how to identify which code runs in the
+driver and which code runs in the tasks across the cluster to recall are
+inverted index output from the previous lesson records that have more than one
+path and pair are not sorted by end count descending let's fix that we're
+going to suggest how to enhance the implementation we should pause the video
+and try it yourself then resumed the video to see the solution in this
+exercise before the final formatting step we had records that look like this
+the word and then an iterable the path in the number
+another path and another number iterable is is collotype it is not a spark type
+from the sky ladakh page how could we sort it actually we can't enter a boy is
+a trait and we need to converted into a collection with a sort function in the
+last map step before calling make string make a vector using an iterable . to
+vector call then try using vectors sort by to sort by count descending and name
+ascending positive video here and try it yourself
+continue the video to see my solution we will show you the modified map step at
+the end
+first we convert the iterable to of actor and then call sort by the function
+passed to sort by takes each record in return something new that when sorted
+naturally results in the ordering you want note that this called a sort by is
+purely Escala collection thing is nothing to do with spark we are
+operating on the data in a single record at a time now in our keys returning it
+to bowl with and first sort by count descending
+we only also add the path because that makes unit test predictable if we do not
+add the path when we have path one to name one and past 12 another name where
+that is named to where the name one is equal to name two sometimes the first
+two boys will get sorted first and sometimes the second to make this
+predictable especially when running unit tests and comparing with expected
+results it's best to sort by both will then return the two bowl with the word
+in the strength made from the sorted collection and we simplify the code
+using map values so we don't have to pattern match on the input to pool and
+construct a new output tuple do we really want for the EEC Hayward's show
+up probably not these stop words can be removed with the filter step but how do
+we get the list of stop words to each task we already know how we use a
+broadcast variable we have a util class we create called stop words we put in
+the words we do not care about is a sad because we only care about membership of
+these words sets by definition do not include duplicates so let's do another
+exercise used to broadcast variable technique we discuss the module three to
+share this data with all tasks use the RDD . filter method to remove words that
+are in the stop words yet pause the video here and try it yourself
+continue the video to see my solution here's the solution with only what's
+changed
+first of all we have new imports and then we have a broadcast variable that
+we've created for the stop words in our set first of all we had what we had
+before and are flat map and then we have a new filter step what should we keep
+though for this function we only need the word soyuz the undersea
+soar to ignore the rest we get the value of the broadcast variable in the set and
+then we test for membership using the contains function passing the word we're
+checking the solution code also filters words that are just numbers but that's
+not shown and then we reduced by key as before the group by key as before with a
+bonus sort by key we sort the RDD globally by the words which is
+potentially expensive so what code runs where in all of these examples some code
+blocks run the driver and some run in the tasks remotely when running in a
+real cluster all of this code shown runs in the driver its setting up work for
+all of the tasks and then these functions are serialize sent to the
+cluster nodes and run in tasks so we had code that ran in the driver to set up
+the broadcast variable than the code circled in this slide in the middle here
+runs in one or more tasks to use that broadcast variable these transformation
+method calls run in the driver they define the pipeline that will run in
+tasks
+having completed this lesson you should be able to discuss how to sort data
+understand how to remove stop words using a broadcast variable and explain
+how to identify which code runs in the driver and which code runs in the tasks
+across the cluster

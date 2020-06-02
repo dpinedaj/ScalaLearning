@@ -7,3 +7,4 @@ scalavista-vscode.log
 .ipynb_checkpoints
 .empty
 data
+stale_outputs_checked

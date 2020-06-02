@@ -1,5 +1,6 @@
 package examples.module_1
 
+//Imports
 import org.apache.spark.{SparkContext, SparkConf} //SparkContext class
 import java.util.logging.{Level, Logger} //To speciffy the logger level
 
@@ -11,8 +12,8 @@ object WordCountFaster {
   def main(args: Array[String]): Unit = {
     val t0 = System.nanoTime()
     //define paths
-    val inpath = "data/shakespare.txt"
-    val outpath = "data/word_count2"
+    val inPath = "data/shakespare.txt"
+    val outPath = "data/word_count2"
     val logsPath = "data/logs"
 
     //clear previous logs
@@ -27,11 +28,11 @@ object WordCountFaster {
     val sc = new SparkContext("local[*]", "Word Count", conf = conf)
 
     //remove old directory
-    MyFiles.deleteFileOrFolder(outpath)
+    MyFiles.deleteFileOrFolder(outPath)
 
     try {
       //read input file as a textFile, into an RDD
-      val input = sc.textFile(inpath)
+      val input = sc.textFile(inPath)
 
       val wc = input
         .map(_.toLowerCase) //convert every single letter in lowercase
@@ -45,14 +46,15 @@ object WordCountFaster {
       println(
         "The most used word is: %s with %d occurrences".format(max._1, max._2)
       )
-      println(s"Writting output to: $outpath")
-      wc.saveAsTextFile(path = outpath)
+      println(s"Writing output to: $outPath")
+      wc.saveAsTextFile(path = outPath)
       println("Finished")
 
       val t1 = System.nanoTime()
 
       println("Elapsed time: %.2f seconds".format((t1 - t0) / 1e9d))
     } finally {
+      println("...")
       sc.stop()
     }
   }

@@ -11,7 +11,7 @@ object Transformations {
     val sc = new SparkContext("local[*]", "Transformations")
 
     try {
-      //crawl(sc)
+      crawl(sc)
       invertedIndex(sc)
     } finally {
       println("...")
@@ -22,7 +22,7 @@ object Transformations {
   def crawl(sc: SparkContext): Unit = {
     val sep = separator // sep: String = /
     val inpath = "data/crawl/enron1/*"
-    val outpath = "data/crawl/rawData"
+    val outpath = "data/crawl/output"
     MyFiles.deleteFileOrFolder(outpath)
     /*wholeTextFiles allows me to read multiple text files in some directories
         and put the fileName as key and content as value*/
@@ -32,7 +32,7 @@ object Transformations {
         val id2 =
           if (lastSep < 0) id.trim //remove side white spaces
           else id.substring(lastSep + 1, id.length).trim
-        val text2 = text.trim.replaceAll("""\s*\n\s*""", " ")
+        val text2 = text.trim.replaceAll("""\s*\n\s*""", " ") //Remove all new lines
         (id2, text2)
     }
     println(s"Writing output to $outpath")
@@ -41,12 +41,12 @@ object Transformations {
   }
   def invertedIndex(sc: SparkContext): Unit = {
 
-    val inpath = "data/crawl/rawData/*"
-    val outpath = "data/crawl/output"
+    val inpath = "data/crawl/output"
+    val outpath = "data/crawl/invertedIndex"
     MyFiles.deleteFileOrFolder(outpath)
 
     val lineRE = """^\s*\(([^,]+),(.*)\)\s*$""".r //The ".r" method convert it to a regex
-    val input = sc
+    val rdd = sc
       .textFile(inpath)
       .map {
         case lineRE(name, text) => (name.trim, text.toLowerCase)
@@ -58,7 +58,7 @@ object Transformations {
         case (path, text) =>
           text.trim.split("""[^\w']""").map(word => ((word, path), 1))
       }
-      .reduceByKey { (count1, count2) => count1 + count2 }
+      .reduceByKey { (count1, count2) => count1 + count2 } //Sum all ocurrencies of every key
       .map {
         case ((word, path), n) => (word, (path, n))
       }
@@ -66,5 +66,9 @@ object Transformations {
       .map {
         case (word, iterable) => (word, iterable.mkString(", "))
       }
+    println(s"Writing output to $outpath")
+
+    rdd.saveAsTextFile(outpath)
+
   }
 }
