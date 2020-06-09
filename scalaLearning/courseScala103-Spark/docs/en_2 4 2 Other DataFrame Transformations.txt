@@ -1,0 +1,71 @@
+welcome to other data frame transformations after completing this
+lesson you should be able to describe other available transformations on data
+frames including aggregation sample and random split aggregation is the general
+method for computing aggregations of data you can do an aggregation call use
+in the AGG method on the data friend and this is shorthand for calling group buy
+on the data frame and then aggregating that in this case we will work with just
+the flight's data and again we're going to register a temporary table we're
+going to aggregate all rose compute the minimum maximum average in some of the
+flights elapsed times this would be the equivalent SQL query and we get the same
+results for both we could count all roads we can count all tail numbers in
+our rose but since there's a tail number for every single one of the flights were
+going to get the exact same number in our count we could ask four distinct him
+numbers to tell us how many distinct planes were used for all of the routes
+and then we could ask a pretty approximation of how many distinct
+planes there might be an SQL we get very equivalent syntax however there is no
+count approximate supported and therefore we cannot show something
+similar to the last line when we count all of the flights will get a hundred
+and fifty one thousand different flights and we count all the tail numbers we get
+the exact same number when we asked for the distinct number of town numbers we
+get only the number of planes involved in all of the different flights in this
+case a hundred and twenty-six but when we do an approximate count distinct we
+get one hundred and twenty-two which is closed
+useful with you don't want to go through the cost of counting every single one
+distinctly and you just want an approximation of what that value might
+be when we do the same thing using SQL
+we end up with the 151,000 distinct flights and we end up with the exact
+same number of towns because we have not yet said that we want to stink townhomes
+if we ask for the distinct helms once again we get a hundred and twenty six
+different planes used for all of the plates in data warehouses it's common to
+construct multi-dimensional cubes and roll ups R analytics such as
+aggregations in addition to using group by the available functions are provided
+by the group Data API which you see in the spark documentation under the spark
+SQL group data page in this case I'm going to use cube to compute averages
+for all numeric fields for each origin and destination pair and when we see the
+results of this we see the IATA code for the origin and destination airports as
+well as the average flight number
+the average distance the average canceled flights you may say why do we
+have an 04 origin IATA code and this case it may be from the dataset that
+we're using I could also do the same thing where I averaged over all
+destinations where the origin is lax or Los Angeles also note that in this case
+there is an old estimation which results in some invalid data similarly the SQL
+you use the GROUP BY clause as shown at the bottom of the SELECT statement but
+you have to name the columns to average explicitly when you use the data frames
+AP ionCube you could aggregate to a map we say a value to some function however
+this is convenient but not very flexible in this case I say for everything
+give me account for the times the actual apps time give me the average and for
+the distance give me the average and then I want to order by the average
+distance in a descending order
+it's more flexible for me to say that I went to cuba my data and result in an
+aggregation of the average distance which is aliased is average test the men
+the actual elapsed time
+alias Tasman time the max of the actual elapsed time aliased as Max time an
+average of the actual elapsed time also aliased is average underscored time we
+can then get the average distance in 25 by the average actual elapsed time and
+call that te underscore d where the aliases or what show up when we show our
+data at the end I don't order by the average distance in a descending order
+and I cash the data which results in this I can also see the lowest average
+distance this would be the corresponding SQL query for what we just did we can
+look at our origin and destination pairs with the most flight delays we can see
+that going from addict alaska to Anchorage Alaska might result in
+frequent cancellations because the weather in alaska can be very harsh will
+also note that we see a flight going from Portland Oregon on the west coast
+to the USS and burbank california also on the West Coast of the USA Mike
+frequently be delayed weather delays are also common in places such as
+Minneapolis and Seattle also very northern in their location the
+corresponding SQL to do this work would look like this
+a few other important operations can be found in the data frame scholar docs for
+example there's the sample method we take a random sampling of the data or
+random split where we split the data into two or more subsets having
+completed this lesson you should be able to describe other available
+transformations including aggregation sample and random split

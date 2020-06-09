@@ -1,0 +1,25 @@
+What is machine learning?
+    -Improve performance through experience
+    -You start with an assumption
+        -Make the machine process data and verify that assumption
+        -Run the program multiple times with the same data by upgrading
+            the assumption
+        -Measure improvement
+        -Stop running when assumption is no longer changing
+
+ML and Big Data
+    -Even simplistic ML models shine when they are trained on huge amount of data
+    -Big Data is democratizing ML for general public
+
+Machine learning vs map reduce
+    -They are iterative computations
+    -CPU intensive
+    -Mantain state between iterations
+
+Spark MLlib
+    -Scalable ml library
+    -Support many ml models
+    -Packages:
+        -spark.mllib: work on top of RDD
+        -spark.ml: higher-level API built on top of DataFrames for constructing ML pipelines
+        

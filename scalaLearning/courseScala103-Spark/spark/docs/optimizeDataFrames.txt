@@ -1,0 +1,42 @@
+Main:
+    The main goal of DataFrames is to create and run Spark programs faster
+        -Write less code
+        -Read less data
+        -Let the optimizer do the hard work
+
+Reading less data
+    -The faster way to process a lot of data is to never read it
+    -SparkSQL helps you do this in several ways
+
+Converting to More Efficient Formats
+    -The binary formats are faster to move between sources
+
+Using Columnar Formats
+    -Makes easier to skip columns we do not care about.
+
+Using Partitioning:
+    -i.e. /year=2014/month=02/...
+
+Using Statistics
+    -Can skip data using min and max
+    -(x => x > minval) can skip files entirely
+
+
+Performance Tuning Options
+    -Caching table data or the DataFrame in memory
+        >>>sqlContext.cacheTable("tableName")
+        >>>dataFrame.cache()
+    -SparkSQL will scan only the required columns and automatically tune compression to
+        minimize memory usage and garbage collection pressure
+
+Configure Max Broadcast Join
+    "spark.sql.autoBroadcastJoinThreshold"
+    -Configure the maximum size in bytes for a table that will be broadcast to all worker nodes
+        when performing a join
+    -Not applicable to all operations, so check performance with the Spark Console
+
+Configure the number of partitions to use:
+    "spark.sql.shuffle.partitions"
+    -Configures the number of partitions to use when shuffling data for joins or aggregations
+    -Based on the size of the cluster, the number of partitions can improve the performance of the job
+    

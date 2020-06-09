@@ -5,16 +5,16 @@ import org.apache.spark.{SparkContext, SparkConf} //SparkContext class
 import java.util.logging.{Level, Logger} //To speciffy the logger level
 
 //own modules
-import utils._
+import utils.MyFiles
 
 object WordCountFaster {
   Logger.getLogger("org").setLevel(Level.OFF)
   def main(args: Array[String]): Unit = {
     val t0 = System.nanoTime()
     //define paths
-    val inPath = "data/shakespare.txt"
-    val outPath = "data/word_count2"
-    val logsPath = "data/logs"
+    val inPath = "data/module_1/shakespare.txt"
+    val outPath = "output/module_1/word_count2"
+    val logsPath = "logs"
 
     //clear previous logs
     MyFiles.clearDirectory(logsPath)
@@ -28,7 +28,7 @@ object WordCountFaster {
     val sc = new SparkContext("local[*]", "Word Count", conf = conf)
 
     //remove old directory
-    MyFiles.deleteFileOrFolder(outPath)
+    MyFiles.rmrf(outPath)
 
     try {
       //read input file as a textFile, into an RDD
@@ -41,7 +41,7 @@ object WordCountFaster {
         .reduceByKey((n1, n2) => n1 + n2) // or .reduceByKey(_ + _)
         .filter(x => x._1.length() > 4) //remove "", " ", "and" and some short words
 
-      val max = wc.sortBy(_._2, ascending = false).first() //Sort the list and take the first value
+      val max = wc.sortBy(_._2, ascending=false).first() //Sort the list and take the first value
 
       println(
         "The most used word is: %s with %d occurrences".format(max._1, max._2)

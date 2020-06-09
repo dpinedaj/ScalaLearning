@@ -1,0 +1,77 @@
+welcome to using high with spark SQL after completing this lesson you should
+be able to describe how to create and drop hype tables with spark SQL discuss
+how to run high queries and explain how to use the data frame API with query
+results sparked SQL supports two different SQL dialects there's its own
+SQL dialect which is a subset of high Q well but also hype QL integrated with
+hype medicine stores the hype UL SQL is richer and his preferred when doing more
+extensive data processing with SQL from spark to use hive instantiate a high of
+context instead of an SQL context and here's an example of how we do that
+first of all we import the hype context and then as before we create a spark in
+Fig
+we create a spark context from that config and then instead of creating an
+SQL context we create a new high context from that spark context we can then
+import some extra helpers which allow us to write code without having to import
+them or mention them explicitly as far as their name space in this case we have
+our airports data and we prepared a version of the comma separated values
+file with double quotes
+extra commas and extra whitespace removed for a more complete
+comma-separated values parser use the one that we mentioned in an earlier
+lesson called spark csd from the data bricks packages project in this case we
+have that special version of the airport's data which we've cleaned and
+high once the full path to that data when we call SQL in order to generate a
+prepared statement we declare a high external table for the airports external
+means higher doesn't own the data it's in the location we provide to it
+in this case you'll notice something different about the SQL we have an S and
+then three quotes around the SQL statement that three quotes do know that
+this is going to be a multiline string and the ass in front of it means that
+we're using a feature of Scala called string interpolation to insert values
+directly into the strength this means we don't have to use any percent as or
+format commands and we know that we're always putting the right value into our
+string in a type Safeway we mentioned the columns that we want to leverage
+inside of our data and that our columns are separated by a comma we also provide
+the location of where that data is located mostly this looks like a typical
+DDL data definition language statement from SQL accept higher ads expressions
+for specifying file format information the row format delimited is a verbose
+way to say taxed with fields separated by comma but this is not a full-fledged
+CSV parser in this case the culture show returns an empty data frame we can do
+more with our SQL statements for example we can call show tables and this will
+show the table name and whether or not that table was temporary
+can describe the information in the airports in this case we have the IATA
+the airport the city in the state in the country as well as the Latin long this
+is very much like describing a table inside of a relational database we can
+describe the extended airports where we see more information about what exists
+inside of this data and we can also described the formatted airports however
+this might be hard to read in my second formatted airports I say show and also
+only show one hundred possible items but then I say truncated equal to false this
+could cause wide output but it can be very hard to read on the slides
+as we're looking at right now
+similarly we could use the higher-order function for each on data frame passing
+the print lind function to it which might be more useful for showing us the
+data that we want in this statement we select account from the airports showing
+us the number of airports there are inside of our dataset in this case we
+get a number of three thousand three hundred and seventy-six if I want to
+show airports per country I say select the country and the count from the
+airports grouping by the country and in this case it's odd that my data only
+shows a few other countries and very few airports outside of the USA I can get
+more information about non-us airports with what I select where I say give me
+specific information such as the IATA code the airport in the country from
+airports where the country is not equal to the USA this data may reflect an
+airline that doesn't have many flights that go outside of the us- we can get a
+count of all USA airports by state where we say select the state and the count as
+count from airports whereas countered saying what am I going to call the
+column name of the data that results and I say where my country is equal to USA
+but a group it by state and order by count descending the most airports
+actually show up in a state called alaska which is a very remote state so
+this is quite surprising from our dataset but given that this is Alaska
+Airlines it shouldn't be surprising because that's their home state from my
+data said if I would like to find out aggregations of men max an average
+latitude and longitude data I can do that by using cube and aggregated since
+the results are data frames we can use that API I can call the RDD method on a
+day to frame which returns an RDD representation of the data so those
+methods and Matty P I could be called as well
+all and if I say SQL DROP TABLE airports and empty data frame has returned which
+in this case means that the operation was successful
+will see a few other ways to use hybrid spark in the next few lessons
+having completed this lesson you should be able to describe how to create drop
+hype tables with spark SQL discuss how to run hide queries and explain how to
+use the data frame API with query results

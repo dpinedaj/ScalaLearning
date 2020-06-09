@@ -1,10 +1,12 @@
+import sbt.complete.Parsers._
+
 ThisBuild / scalaVersion := "2.12.11"
 name := "Utils"
-
+val sparkVersion = "2.4.0"
 //Spark modules
-val sparkCore = "org.apache.spark" %% "spark-core" % "2.4.0"
-val sparkSql = "org.apache.spark" %% "spark-sql" % "2.4.0"
-val sparkMlLib = "org.apache.spark" %% "spark-mllib-local" % "2.4.0"
+val sparkCore = "org.apache.spark"  %% "spark-core"         % sparkVersion withSources()
+val sparkSql = "org.apache.spark"   %% "spark-sql"          % sparkVersion withSources()
+val sparkMlLib = "org.apache.spark" %% "spark-mllib-local"  % sparkVersion withSources()
 
 //For test with scala
 val scalaTest = "org.scalatest" %% "scalatest" % "3.1.1"
@@ -33,6 +35,7 @@ lazy val scrappy = (project in file("scrappy"))
 lazy val spark = (project in file("spark"))
   .settings(
     name := "spark",
+    libraryDependencies ++= Seq(sparkCore, sparkSql, sparkMlLib)
     libraryDependencies += scalaTest %Test,
   )
 

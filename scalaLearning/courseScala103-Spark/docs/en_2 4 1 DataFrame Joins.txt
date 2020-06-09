@@ -1,0 +1,53 @@
+welcome to data frame joins after completing this lesson you should be
+able to describe the different kind of joint supported by data frames explain
+how to write SQL queries and discuss the performance considerations involved in
+the spark data frames example in previous lessons we loaded two datasets
+for commercial flights and airports this time let's join them and skip over some
+now-familiar boilerplate for creating the configuration creating the spark
+context and more
+first we're going to load the data are set and construct the rd's as we did
+before we get there comma-separated values from the various files
+representing the flights and the airports and then we load them into our
+DD's we then wrap the rd's as data frames and cash them and we can print
+the schemas and the first 10 records of each this is the flight schema it's
+quite long so in this case on the slide where only showing the first few items
+inside of it including the date and the times but this is the data that resulted
+from ingestion where you see the date and then the time information first as
+well as unique carrier identifier the flight number tail number
+origin destination distance etc
+this is the airport schema with the IATA code the airport named the city the
+state the country and the latitude and longitude and when we ingest the data
+the first 10 rows look like this from before we had a query where we selected
+on the origin and destination and then grouped together account and then
+ordered where the count was to sending the sequel version of the statement
+would look like this in this case we're going to get the flights between
+airports and prep this query where we're going to use aliases to make our code a
+little easier to read on these small slides will call flights between
+airports FBA and will call the airport's air now let's join the airports twice
+against the flights
+between airports to get the origin and destination airport names we can join
+our flights between airports as a second value where we joined on the original
+flights between airports on the origin where the IATA is equal to that airport
+we then join to get the origin origin airport the destination to destination
+airport and the count note that the triple equals is the ON clause and we
+project the columns that we want this effectively aliases all of the columns
+but due to a current bug in spark you must use the two data frame for
+intermediate joins as you see at the end of each joint clause here the second
+joint for destination followed by a projection and a leasing the schema for
+the second flights between airports representation shows that we have the
+origin the origin airport the destination and the destination airport
+as well as the count and the resulting data looks like this and its first 10
+rows the sequel version of the statement looks like this where you see us
+selecting from two different tables the origin the airport the destination and
+that airport and then the count and then we use a left outer join to return all
+their boards even if they don't have a flight spark war tempt a broadcast join
+if one dataset is small know it uses a broadcast variable for the small data
+and then in memory lookups to do the join this gives you much faster
+performance eliminating a shuffle step required for arbitrary joins as the
+large datasets stream through tasks and the lookup occurs with it we can set a
+threshold using the property audio broadcast joined threshold where the
+default is 10 megabytes but please also see the spark documentation for other
+configuration options
+having completed this lesson we should be able to describe the different
+kinds of joint supported by data frames explain how to write SQL queries and
+discuss the performance considerations

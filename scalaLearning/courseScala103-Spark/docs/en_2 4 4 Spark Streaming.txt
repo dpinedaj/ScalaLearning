@@ -1,0 +1,83 @@
+welcome to spark streaming after completing this lesson you should be
+able to describe how spark streaming works and explain the concept of D
+streams the core abstraction and spark streaming so what if you wanted to
+process data as soon as it arrives within seconds or minutes rather than
+wait for that data to be added to your data said i'm for the next batch job to
+run sparked streaming provides this capability spark streaming is a large
+topic with significant operational considerations here we introduce the
+spark streaming model and how it can be useful
+the next lesson will strain how to use Park streaming and spark SQL is hype
+support together to spark streaming supports a mini badge model the data is
+captured in fixed time intervals and you define what those animals will be
+whether it's half of a second or a minute in with each many badge is stored
+in an RDD the sequence of our DD's is held in a D stream and the D stream
+provides windowing functions of the you can group the data together here is a
+visual example of what it looks like when data is coming into a D stream on
+the far right hand side we see that we have T zero time zero when we started
+receiving data and then from time 0 two-time 1 represents a time interval
+that you provided for how long should wait for data before you say that is a
+single many batch in this case we got two events in an RDD we call RDD number
+one in the first interval in the second interval we received four events we call
+that RDD number two and then in the third batch of data we have three events
+included in RD number three D stream gives us the ability to group those many
+batches together such that we can treat Rd number one and RTD number two as a
+single window of data regardless of the
+many batch interval that we provided it is important to note that the time
+intervals are of a fixed size for your many batches however the number of
+events captured in each one could vary depending on how much data is coming in
+through the socket in order to use Park streaming we will declare are packaged
+in imports such that we don't have to do that in line in our code these are the
+imports that we will require here is how we would work with sparks streaming
+first of all we would set up a bunch of constants for our operations we would
+set the port that we were listening on for our data coming in we're set the
+interval we will use for her many batches in this case two seconds
+note that I have a pause constant representing 10 milliseconds which I'm
+going to use for data that I'm pushing into spark streaming a producer of data
+so that we can test our implementation I define the server to be my localhost I
+said a checkpoint directory and then I have a runtime which i'm saying is going
+to be thirty times 1000 milliseconds in other words thirty seconds and I'm also
+gonna have a number asians here of a hundred thousand just like before I set
+up my spark in Fig to be in local mode I set up the number of partitions in the
+application name I one and then I create my spark context from their config it's
+a convention in Sparks streaming to create a function that represents what
+to do when handling an interval of data in this case I set up a new streaming
+context representing my interval of two seconds and then I set up a checkpoint
+at from my checkpoint directory as I said before next I'm going to listen to
+data on the server and socket that I do find my constants in this case the local
+host and the port of 9,000 and then for each line I'm going to split on
+whitespace converting to an integer in each
+case once I've done that for each many batches RDD after construction I'm going
+to count by value and then call for each in print line the result can buy value
+is like reduce bikie were single ends our keys and values but count by value
+is like doing a group buy over the integers then counting the size of the
+group's word count which we saw earlier lessons could also abused something like
+this there is a drawback it returns a scholar collections map to the driver
+not a new Rd instance and hence you should be careful to avoid out of memory
+errors on your JVM next I'm going to set up the actual reading of data from the
+socket in order to do this cleanly I'm going to set up to bars 14 a streaming
+context and the other for thread and set them to know this means that I've
+declared them but I have not provided them with definitions of what they
+actually are yet I'm doing this for scoping reasons i den inside my triblock
+set the data thread equal to some start socket data threat on the port and then
+I'd buying the SSC spark streaming context from the values that I provided
+earlier including the function that I want to provide to do work for each many
+batch I start the spark streaming context and then I away determination or
+time out of the data coming in but then also in my finally block I wanna do all
+of the cleanup that would be required and had a defined by SSC and my data to
+read only within the context of the try block they would not be scoped to be
+visible inside of the finally block if I want to be able to check whether or not
+those were actually set up with real values and are not still no I had to
+have to find them before I created the try block
+luck next I'm going to define a function that does the work to push out data
+which my spark streaming context can now read and handle this is going to set up
+a datasource socket by first creating a runnable which is a representation of
+some function that can be run in a thread on the GBM I create a server
+socket on a port I accept connections and I use a PrintWriter to print the
+data out I only run for num iterations in this case 100,000 times and I
+generate random numbers from the integer 0 to 100 I write each one to the socket
+and then sleeper short pause in this case 10 milliseconds as we defined
+earlier and then I clean up my sock it when I'm done in the next lesson will
+combine what we've learned about hi I'm in streaming to examine a real-world use
+case such as extracting transforming in loading of data into high
+having completed this lesson you should be able to describe how spark streaming
+works explain the concept of D streams the core abstraction in Sparks streaming

@@ -1,0 +1,69 @@
+Joins
+    >>>val df = sqlContext.createDataFrame(dfRDD)
+    >>>val df2 = sqlContext.createDataFrame(df2RDD)
+    >>>val df3 = df.join(df2, df("colName") === df2("colName"))
+
+Agg
+    -Is the general method for computing aggregations
+    >>>df.agg(
+        min($"colName"),
+        max($"colName"),
+        avg($"colName")).show
+
+Cube
+    -Calculates subtotals and a grand total for every permutation of the columns specified.
+    -Generates a groupby by the required fields and generate aggregations
+    >>>val q = sales.cube("city", "year")
+    |  .agg(sum("amount") as "amount")
+    |  .sort($"city".desc_nulls_last, $"year".asc_nulls_last)
+    scala> q.show
+    |  +-------+----+------+
+    |  |   city|year|amount|
+    |  +-------+----+------+
+    |  | Warsaw|2016|   100|  <-- total in Warsaw in 2016
+    |  | Warsaw|2017|   200|  <-- total in Warsaw in 2017
+    |  | Warsaw|null|   300|  <-- total in Warsaw (across all years)
+    |  |Toronto|2017|    50|
+    |  |Toronto|null|    50|
+    |  | Boston|2015|    50|
+    |  | Boston|2016|   150|
+    |  | Boston|null|   200|
+    |  |   null|2015|    50|  <-- total in 2015 (across all cities)
+    |  |   null|2016|   250|
+    |  |   null|2017|   250|
+    |  |   null|null|   550|  <-- grand total (across cities and years)
+    |  +-------+----+------+
+
+Rollup
+    -Calculates subtotals and a grand total over (ordered) combination of groups.
+    >>>val q = expenses
+    |  .rollup(year($"date") as "year", month($"date") as "month")
+    |  .agg(sum("amount") as "amount")
+    |  .sort($"year".asc_nulls_last, $"month".asc_nulls_last)
+    >>>scala> q.show
+    |  +----+-----+------+
+    |  |year|month|amount|
+    |  +----+-----+------+
+    |  |2012|   12|     5|
+    |  |2012| null|     5|
+    |  |2016|    8|    10|
+    |  |2016| null|    10|
+    |  |2017|    5|    15|
+    |  |2017| null|    15|
+    |  |null| null|    30|
+    |  +----+-----+------+
+
+Sample
+    -Allows to extract a fraction of the data
+    -Return a Dataset[Row] or DataFrame
+    >>>df.Sample(0.2) //Takes a 20% of the data
+
+randomSplit
+    -Cut the data to unpack in n dataframes while are assigned n weights
+    >>>val weights = Array(0.6, 0.4)
+    >>>val seed = 11
+    >>>val (train, test) = df.randomSplit(weights, seed)
+
+limit:
+    -Return a portion of the data as a Dataset[Row] or DataFrame
+    >>>df.limit(100) //Takes the first 100 rows

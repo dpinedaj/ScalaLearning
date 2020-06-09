@@ -15,7 +15,7 @@ object BroadcastVariables extends App {
     without the need of transfer the data through the network */
 
   val sc = new SparkContext("local[*]", "Broadcast")
-  val outpath :String = "data/broadcasting"
+  val outpath :String = "data/module_2/broadcasting"
   MyFiles.clearDirectory(outpath)
   val states = Map(("NY", "New York"), ("CA", "California"), ("FL", "Florida"))
   val countries = Map(("USA", "United States of America"), ("IN", "India"))

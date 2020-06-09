@@ -1,0 +1,49 @@
+welcome to speeding up with data frames after completing this lesson you should
+be able to discuss how to create optimized data transformations using
+data frames describe how to limit the amount of data that is read in and
+discuss basic optimization strategies with data frames the main goal of the
+data frame API is to create and run sparked programs faster we do this by
+writing less code reading less data and allowing our optimizer to do the hard
+work for us the fastest way to process a lot of data is to never read it in spark
+SQL helps you do this in several ways we can convert to more efficient formats
+for example we can ingest clickstream data as JSON and converted to a binary
+format such as averell the averell format is more compressed and easier to
+ship to other data processing components we can use columnar formats data we
+ingest can frequently contain information that we do not need for our
+analysis when we use columnar formats such as parquet we can easily skip
+columns we do not care about you can partition our data for example year
+being 2014 month equal the second month of the year and this is a great
+technique for reading less data if you store data in folders such as year or
+month above the data frame API can easily skip folders that contain data
+you do not need and we can use statistics for some data types you can
+use stats such as men or max to help you skip data you can provide a predicate
+which is a statement that results in a boolean value such as this
+X where the X is greater than the minimum value and that allows the data
+frame to automatically skip files entirely we can also push these
+predicates to the storage depending on the capabilities of the data source data
+frames can push that predicate like we saw before to the data source so that
+not all data is returned if you're trying to filter with the equivalent of
+SQL where
+cause you can use this feature to only return dated that meets this condition
+plan optimization and spark happens as late as possible so spark an optimized
+even across multiple functions here you see we have our SQL AST the abstract
+syntax tree and the data frame and we get an unresolved logical plan which is
+then catalog for analysis we get a logical plan as a result of that upon
+which we can perform optimizations of the logical plan we then create a
+physical plant for execution and cost model analysis is performed to select
+the appropriate that's cool plan resulting in the RDD that comes back
+other performance tuning options come from cashing table data or data frames
+in memory you can use this using the cash table method call giving the table
+name or calling cash on the data frame itself spark a skewer will scan only the
+required columns and automatically tune compression to minimize memory usage and
+garbage collection pressure we can also use the audio broadcast joined threshold
+which configures the maximum size in bytes for a table that will be broadcast
+to all worker nodes when performing a join its not applicable on all
+operations so check performance with these Park console to see if it helps
+you can also use the shuffling of partitions this configures the number of
+partitions to use when shuttling data for joins our aggregations based on the
+size of the cluster the number of partitions can improve the performance
+of the job
+having completed this lesson we should be able to discuss how to create
+optimized data transformations using data frames describe how to limit the
+amount of data that is read in and discuss basic optimization strategies

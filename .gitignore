@@ -6,7 +6,8 @@ scalavista-vscode.log
 .idea
 .ipynb_checkpoints
 .empty
-data
+output
 stale_outputs_checked
 project
 target
+logs

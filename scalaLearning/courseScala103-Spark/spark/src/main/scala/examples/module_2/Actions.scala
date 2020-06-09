@@ -15,15 +15,21 @@ object Actions {
 
     val sc = new SparkContext("local[*]", "Actions")
     val data = (1 to 10).map(i => (s"row$i", (i+96).toChar.toString)) toSeq
-    val outputFile: String = "data/tests/actions"
+    val outputFile: String = "output/tests/actions"
 
-    MyFiles.deleteFileOrFolder(outputFile)
+    MyFiles.rmrf(outputFile)
     try {
       val rdd = sc.parallelize(data)
-      println(rdd.count())
-      rdd.collect().foreach(println)
-      
-      rdd.saveAsTextFile(outputFile)
+      println(s"Num of partitions: ${rdd.partitions.size}")
+      println(s"Num of registers ${rdd.count()}")
+
+      //repartition data
+      val rdd2 = rdd.coalesce(1)
+      println(s"Num of partitions after repartition: ${rdd2.partitions.size}")
+
+      rdd2.collect().foreach(println)
+
+      rdd2.saveAsTextFile(outputFile)
       println("Written file")
     } finally {
       sc.stop()

@@ -1,0 +1,40 @@
+welcome to introduction to spark ml lib after completing this lesson you should
+be able to describe what machine learning is and how machines learn you
+should be able to explain how machine learning jobs are different than
+MapReduce jobs and discuss the key components of sparks ml lib library so
+what is machine learning machine learning is any computer program that
+improves its performance at some task through experience more precisely
+according to Tom Mitchell the chair machine learning department at the
+school of computer science at Carnegie Mellon University a computer program is
+said to learn from experience II with respect to some class of task T and
+performance measure P if its performance at St as measured by P
+improves with experiance so how does a machine learn you start with an
+assumption about a solution for a given problem you make the machine process
+data and verify the assumption you then run the program multiple times with the
+same data by updating the assumption as you go you measure improvement and
+adjust accordingly you stop running when the assumption is no longer changing the
+ability to learn on a large corpus of data is a real win for machine learning
+with big data tool sets a wide variety of machine learning applications have
+begun to emerge beyond academic applications and even simplistic a male
+model shine when they are trained on a huge amount of data so big data is
+democratizing machine learning for the general public
+machine learning jobs tend to differ from traditional MapReduce jobs in the
+following ways their interactive computations they are working through
+the data repeatedly they are CPU intensive and not bound by socket or 50
+I O and they maintain state between iterations spark emily is sparks machine
+learning library
+a scalable and easy library for machine learning algorithms it supports popular
+machine learning algorithm such as linear regression logistic regression
+decision trees and more out of the box the spark ml live is divided into two
+broad packages sparked ml lib contains algorithms that work on top of our DVDs
+but sparked ml provides a higher level API built on top of data frames for
+constructing ml pipelines there are many machine learning libraries out there so
+why you Sparky may live it's built on sparks lightweight did powerful API and
+sparks open source community is very large and active there are lots of
+contributions in improvements from the community on a regular basis and
+sparking my lip is one of the most active spark component projects it also
+has excellent scalability and performance characteristics
+having completed this lesson we should be able to describe what machine
+learning is and how machines learn explain how machine learning jobs are
+different from MapReduce jobs and discuss the key components of the spark
+ml live library

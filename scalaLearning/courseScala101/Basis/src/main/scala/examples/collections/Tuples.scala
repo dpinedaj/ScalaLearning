@@ -3,7 +3,8 @@ package examples.collections
 
 object Tuples {
     /*a tuple in scala allows any datatype
-        and are immutable elements*/
+        and are immutable elements,
+        can go up to 22 elements*/
     val junkTup = (6, 3.14, "elephant", true)
     //accessing index
     println(junkTup._2)//res0: Double = 3.14

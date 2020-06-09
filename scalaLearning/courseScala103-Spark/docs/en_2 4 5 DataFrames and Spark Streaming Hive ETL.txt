@@ -1,0 +1,59 @@
+welcome to data frames and sparks streaming with high et al
+after completing this lesson you should be able to describe how to combine spark
+streaming in high to implement an ETL workflow in Hadoop ecosystem to common
+scenario is to use an ETL pipeline to extract transform and load data to
+populate hype tables with incoming data let sketching implementation using spark
+streaming and spark SQL support for high in this case were going to ingest the
+flight stated that we've been using before into high people partitions using
+the same streaming soccer technique we used before as well
+are streaming job will use the hype context to create the table if necessary
+and for each year month and day in the flight data construct a corresponding
+partition of the imports we've been using but we've added a few these will
+listen for stream state transitions as before we're setting up our default port
+are interval are pause that will be used for the writing of the data the server
+that we're using the output directory the checkpoint directory as well as to
+run for 10 seconds we're also going to record her right block 10,000 records we
+will once again set up our spark configuration as needed and create our
+spark context but next we're going to delete the hyde medidata and table data
+and the streaming checkpoint directory from previous runs normally you would
+not do this in production but this is simply for a rerun of an application
+that we're using locally we then create the streaming context as before the
+processing is defined by the process D stream method that we will discuss
+shortly
+we start the thread that writes the data and we create and process the stream as
+before but we also add an event listener note that we have an end of stream
+listener which attempts to recover from errors more gracefully this is as before
+where we are reading data from its socket and this is also very similar to
+before where we have a runnable thread which is going to write data to the
+socket it reads from the airline data in this CSV file and writes blocks to the
+socket with sleep intervals we shut down the socket and the final method start
+socket data thread starts the source data to read in the process D stream we
+create the hype context and obtain the full path for the html directory
+this is what does the real work it creates the hype table ingest the socket
+data sources into flights splits the flights into year month day and rights
+to new high table partitions next we create an external table not to be
+managed by hype itself and we used only some flight columns for this case we
+used three of them for partitioning we're going to use that blights data and
+we're going to do a little more work than necessary
+hype could partition creation forest for example if we use insert into with
+values for new partition columns etc before processing the stream create the
+table and note that hype DDL statements require absolute pads
+pipe is the column delimiter in the text data and you should see just our table
+when the show is printed out
+for each RDD each data stream iteration we're going to parse the read text lines
+into flight instances and convert to a data frame and cash that data next we're
+going to find the unique year month and day combinations in the data it appears
+to be safer to collect into a collection in the driver and then go through it
+seriously to create corresponding table partitions well loop over the year month
+days and for each one had a partition with the directory name we want finally
+will filter the data for that date
+form the new records and write it to the partition directory we write pipe
+separated strings but consider replacing with parquet in production for
+performance reasons we show the partitions we've created and we handle
+failures by catching any exception that might be non-fatal and exiting with the
+one and finally as part of our shutdown process we make sure that all threads
+and spark context have been closed gracefully and finally we define an end
+of stream listener that was used or defined earlier in this application and
+this make sure that we have behavior defined for what to do when our receiver
+is stopped having completed this lesson we should be able to describe how to
+combine spark streaming and high to implement and ETL workflow

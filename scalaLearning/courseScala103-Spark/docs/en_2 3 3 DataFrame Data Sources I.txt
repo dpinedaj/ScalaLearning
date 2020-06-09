@@ -1,0 +1,39 @@
+welcome to data frame data sources one after completing this lesson we should
+be able to describe the various data sources supported by data frames and
+discuss how to read and write JSON data with data frames modern applications
+often need to collect and analyze data from a variety of sources out of the box
+spark data frame sport most popular formats such as JSON Park a hive and
+more spark data frames can read from local filesystems distributed file
+system such as the Hadoop distributed file system commonly called HDFS cloud
+storage such as Amazon's s3 or external relational database formats by a JDBC
+spark data frames use Park SQL as external data sources API data frames
+can be extended to support any third party data formats or sources such as a
+ver o for comma-separated values or elasticsearch or Cassandra and more
+and here's an example of all the data sources that could be supported and more
+you could use park a hive MySQL Postgres JSON s3 OpenStack HDFS the shows the
+flexibility of the data frame data sources API let's reform an example
+where we're going to load JSON data in the form of carrier information for
+airlines in the spark application we create to load this JSON data we're
+going to do the exact same thing that we did in the previous lesson we create a
+spark configuration and we make it run in local mode called again sparked data
+friends and we make it run on four different partitions we then load the
+configuration into a spark context and create an SQL context from that sparked
+context we just created once we've done mad we can define that we have a JSON
+data frame and read in that data from the file by expressing exactly where the
+fire was located now sparking hampered the scheme up the JSON
+as it is reading the JSON document and remember the first record was invalid
+because it did not have a closing of the record it doesn't stop processing
+whenever it finds invalid records which is great for large jobs however you do
+need to make sure that you know that the invalid data was not processed as a
+result at the end we can print out information for records that were not
+processed before we stop the spark context and shut down and when we run
+the application we're going to load the JSON data as we didn't side that source
+file in your notice that does print out the one record which did not meet the
+required JSON format because it was invalid
+you also notice that the beginning of each record there is a delimiter that
+shows whether or not this was a corrupt record it also shows the carrier code
+and the description of the carrier and we print out about fifty of the
+different carriers that were loaded out of the almost 1,500 having completed
+this lesson you should be able to describe the various data sources
+supported by data frames and discuss how to read and write JSON dado using data
+frames

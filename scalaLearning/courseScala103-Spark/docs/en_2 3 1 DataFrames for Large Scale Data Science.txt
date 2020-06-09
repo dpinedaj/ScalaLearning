@@ -1,0 +1,45 @@
+welcome to data frames for large-scale data signs after completing this lesson
+you should be able to describe what a data frame is an outline the difference
+between our TD's and data frames and why you might choose either one data frames
+were created with the goal of enabling a wider audience to leverage the power of
+distributed processing they were inspired by data frames in our and
+Python where they're called pandas but designed from the ground up to support
+modern big data and data science applications data frame features include
+the ability to scale from kilobytes of data on a single laptop to petabytes of
+data on a large cluster machines their support for a wide array of data formats
+and storage systems as well as a state of the art optimization and code
+generation tool through the spark SQL catalyst optimizer of which the API is
+part of the spark SQL package their seamless integration with all Big Data
+tooling and infrastructure bias park and their API for Python Java Scala and our
+spark data frame should make new users who are familiar with data frames and
+other programming languages feel at home for existing spark users this extended
+API should make spark easier to program and improve performance through
+intelligent optimizations and code generation in this diagram you can see
+the performance benefits of the data frame implementation there used to be
+wide variance between the performance of Scala RDD implementations vs Python Rd
+implementations however using data frames the performance of both Python
+and Scala has been normalized so why would you use Collins that a python
+scholar provides modularity and type safety which is particularly useful in
+larger code bases and when we factoring your implementations also Scala's native
+and its interaction with spark and first implementations of new features arrived
+in Scala the upcoming data sets feature will also be based on scholar records
+so when comparing our DVDs and data frames you must consider the following
+Rd DAPI is very flexible but difficult to optimize the data frame API is much
+easier to optimize but lacks the features of our DD's it can be harder to
+use user-defined functions also called UCF's and it lacks strong types but can
+be more type saved in SQL queries which are typically embedded in strings
+datasets will be both easy to optimize and have the fully flexible API as well
+as being fully interoperable with data frames catalyst is the optimization
+engine for spark SQL is agnostic to the back end implementation of the storage
+layer it is used for manipulation of trees of relational operators and
+expressions for execution of the queries a query planner that translates
+catalysts logical queries into data frame operations is used is defined by
+the SQL context type we use in the spark or project as an example we could
+interoperate with Hadoop I've tables using high of context which extends
+sequel context
+allow us to access the hype medicine tour and create read and delete hype
+tables could use hype serialize and deserialize as well as user-defined
+functions and spark SQL SQL dialect is a subset itself of hype you well and the
+goal is to make it a superset having completed this lesson we should be able
+to describe what it data frame is an outline the difference between our DVDs
+and data frames and why you might choose either one

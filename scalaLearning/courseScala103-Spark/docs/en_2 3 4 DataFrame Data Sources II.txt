@@ -1,0 +1,40 @@
+welcome to data frame data sources to after completing this lesson you should
+be able to discuss how to add support for a new data source we mentioned in
+the previous lesson that you can add other data sources than the ones that
+come to you from spark out of the box we're going to add the spark
+comma-separated values package that is created by data bricks which can be
+found here you go to get have dot com and go to the data bricks namespace
+you'll find the repository for spark dash csd you could also find spark CSV
+at spark dash packages dot org
+which is a community index of packages for spark within a dependency to the
+project build file for applications if we are trying to add the dependency in a
+spark rubble session we can do so using the packages flag when we create the
+rebel in this example we are going to take an existing spark project and add
+the spark CSV dependency to it you have to work inside of a build file and if
+you are using SBT you add the group name comdata breaks the artifactId spark CSV
+and then the version that you want
+one-dot 320 in this case and you can specify optionally that you want the
+sources versions of you can see the source code if need be we are going to
+read in a group of airport information in this case you'll see the top line
+includes a header header describes each one of the columns inside of the CSV
+file
+the first column is the IATA acronym for the airport and then the airport named
+the city the state the country and the latitude and longitude of that airport
+when we look at the source code for this application where we're pulling in the
+new data source will once again create our spark configuration and we run in
+local mode calling this application spark data frames were going to run with
+four partitions once again and then we're going to create our spark context
+using the configuration and create the sequel context from that spark on
+text when we read in the data from the comma separated values file we specify
+the name of the file that we wanted the end and give it any options that we want
+from beforehand for example the format is listed as CSV and we say whether or
+not there's a header at the beginning of the file and whether or not to infer the
+schema we then print out the scheme I we show it and we stopped the spark context
+when we run this application we see that the data frame with CSV file is going to
+be run and then you see the schema of the comma separated values being shown
+when the data is displayed it shows it in a meaningful way that is pretty
+printed so you can see the IATA acronym the airport the city the state the
+country in the latitude and longitude clearly the show will only show the top
+20 rows unless you specify otherwise
+having completed this lesson you should be able to discuss how to add support
+for a new data source in spark

@@ -1,0 +1,55 @@
+Whay is a DataFrame?
+    -Created with the goal of enabling a wider audience
+        to leverage the power of distributed processing
+    -Inspired by data frames in R and Python (Pandas), 
+        but designed from the ground-up to support modern big data and
+        data science applications
+
+Features:
+    -Ability to scale from kilobytes of data on a single laptop to petabytes
+        on a large cluster
+    -Support for a wide array of data formats and storage systems
+    -State-of-the-art optimization and code generation through the spark SQL Catalyst
+        optimizer (The Api is a part of the SlarkSQL package)
+    -Seamless integration with all big data tooling and infrastructure vioa Spark
+    -APIs for Python, Java, Scala, and R (In SparkR)
+    -Improve performance through intellint optimizations and code-generation
+    -Can query on tables in Hive with HiveContext extending SQLContext
+
+Why use Scala and not Python
+    -Modularity and type safety, particularly in larger code bases
+    -Native interaction with Spark, and first implementations of new features arrive in Scala
+    -Upcoming datasets feature, based on Scala records
+
+RDDs versus DataFrames:
+    -RDD API es very flexible, but difficult to optimizer
+    -The DataFrame API is much easier to optimize, but lacks the features of RDDs
+        -Harder to use user-defined functions (UDFs)
+        -Lack of strong types, but more type-safe than SQL queries
+    -Dataset will be both, and interoperable with DataFrames
+
+Catalysts:
+    -Optimization engine for Spark SQL
+    -Used to manage trees of relational operators and expressions
+
+Execution:
+    >>>val sc = new SparkContext(master, name)
+    >>>val sqlContext = new SQLContext(sc)
+
+
+Data Sources:
+    -Json
+    -Parquet
+    -Hive
+    -SQL
+    -Csv ---> "com.databricks"   %% "spark-csv"          % "1.5.0"
+    -Txt
+    -Avro
+    -Cassandra
+    -ElasticSearch
+
+Can read from:
+    -Local file system
+    -HDFS
+    -Cloud Storage
+    -JDBC

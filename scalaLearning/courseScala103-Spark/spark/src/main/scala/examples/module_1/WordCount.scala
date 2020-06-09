@@ -10,8 +10,8 @@ object WordCount {
   def main(args: Array[String]): Unit = {
     val t0 = System.nanoTime()
     //define paths
-    val inpath = "data/shakespare.txt"
-    val outpath = "data/word_count1"
+    val inpath = "data/module_1/shakespare.txt"
+    val outpath = "output/module_1/word_count1"
     //Init the sparkContext
     val sc = new SparkContext("local[*]", "Word Count")
 

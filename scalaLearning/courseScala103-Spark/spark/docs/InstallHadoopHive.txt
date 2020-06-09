@@ -1,0 +1,113 @@
+###Hadoop
+    -wget https://archive.apache.org/dist/hadoop/common/hadoop-2.9.2/hadoop-2.9.2.tar.gz
+    -wget https://archive.apache.org/dist/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz
+    -sudo tar -xzf hadoop-2.9.2.tar.gz
+    -sudo mv hadoop-2.9.2 /opt/
+    -sudo chown -R daniel: /opt/hadoop-2.9.2
+    -sudo chmod +x /opt/hadoop-2.9.2
+
+
+
+#Edit ~/.zshrc
+
+    #Java
+    export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+    ///Or Java 8
+    export PATH=$PATH:$JAVA_HOME/bin
+
+    export HADOOP_HOME=/opt/hadoop-2.9.2
+    export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin 
+    export HADOOP_MAPRED:HOME=$HADOOP_HOME
+    export HADOOP_COMMON_HOME=$HADOOP_HOME 
+    export HADOOP_HDFS_HOME=$HADOOP_HOME 
+    export YARN_HOME=$HADOOP_HOME 
+    export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native 
+    export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
+    export HADOOP_STREAMING=$HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.9.2.jar
+    export HADOOP_LOG_DIR=$HADOOP_HOME/logs
+    export HADOOP_INSTALL=$HADOOP_HOME 
+
+
+###Hive
+
+    -wget https://archive.apache.org/dist/hive/hive-3.1.1/apache-hive-3.1.1-bin.tar.gz
+    -wget https://downloads.apache.org/hive/hive-1.2.2/apache-hive-1.2.2-bin.tar.gz
+    -sudo tar -xzf apache-hive-3.1.1-bin.tar.gz
+    -mv apache-hive-3.1.1-bin hive-3.1.1
+    -sudo mv hive-3.1.1 /opt
+    -sudo chown -R daniel: /opt/hive-3.1.1
+    -sudo chmod +x daniel: /opt/hive-3.1.1
+
+    //Download mysql jar
+    wget https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.28/mysql-connector-java-5.1.28.jar
+    mv mysql-connector-java-5.1.28.jar /opt/hive.1.2.2/lib/
+    -cd /opt/hive-3.1.1/conf
+    -cp hive-env.sh.template hive-env.sh
+    -Add "HADOOP_HOME=/opt/hadoop-2.9.2" to the file
+
+    -cp hive-default.xml.template hive-site.xml
+    -Edit hive-site.xml, remove the special characters side to transactional word
+        -fix this: <name>hive.exec.scratchdir</name>
+                    <value>/tmp/hive/${user.name}</value>
+
+                    <name>hive.exec.local.scratchdir</name>
+                    <value>/tmp-${user.name}</value>
+
+                    <name>hive.downloaded.resources.dir</name>
+                    <value>/tmp/${user.name}_resources</value>
+
+                    <name>hive.scratch.dir.permission</name>
+                    <value>733</value>
+
+
+
+                    <property>
+                    <name>javax.jdo.option.ConnectionURL</name>
+                    <value>jdbc:mysql://localhost/metastore?createDatabaseIfNotExist=true</value>
+                    </property>
+
+
+                    <property>
+                    <name>javax.jdo.option.ConnectionDriverName</name>
+                    <value>com.mysql.jdbc.Driver</value>
+                    </property>
+
+                    <property>
+                    <name>javax.jdo.option.ConnectionUserName</name>
+                    <value>root</value>
+                    </property>
+
+                    <property>
+                    <name>javax.jdo.option.ConnectionPassword</name>
+                    <value>root</value>
+                    </property>
+
+                    <property>
+                    <name>datanucleus.autoCreateSchema</name>
+                    <value>true</value>
+                    </property>
+
+                    <property>
+                    <name>datanucleus.fixedDatastore</name>
+                    <value>true</value>
+                    </property>
+
+                    <property>
+                    <name>datanucleus.autoCreateTables</name>
+                    <value>True</value>
+                    </property>
+
+
+
+#Edit ~/.zshrc
+    export HIVE_HOME=/opt/hive-3.1.1
+    export HIVE_CONF_DIR=$HIVE_HOME/conf
+    export HIVE_CLASS_PATH=$HIVE_CONF_DIR
+    export PATH=$PATH:$HIVE_HOME/bin
+    export CLASSPATH=$CLASSPATH:$HADOOP_HOME/lib/*:.
+    export CLASSPATH=$CLASSPATH:$HIVE_HOME/lib/*:.
+
+
+Run
+    -schematool -dbType derby -initSchema
+    -hive --service metastore 

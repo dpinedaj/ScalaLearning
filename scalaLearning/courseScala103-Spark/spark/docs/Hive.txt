@@ -1,0 +1,6 @@
+Using Hive with Spark
+    -SparkSQL supports two SQL dialects:
+        -It's own, a subset of HiveQL
+        -HiveQL -integrated with Hive metastores
+    -HiveQL is richer and is preferred when doing more extensive 
+        data processing with SQL from Spark

@@ -20,9 +20,9 @@ object Crawl {
   
   def crawl(sc: SparkContext): Unit = {
     val sep = separator // sep: String = /
-    val inpath = "data/crawl/enron1/*"
-    val outpath = "data/crawl/output"
-    MyFiles.deleteFileOrFolder(outpath)
+    val inpath = "data/module_2/crawl/enron1/*"
+    val outpath = "output/module_2/crawl/crawl"
+    MyFiles.rmrf(outpath)
     /*wholeTextFiles allows me to read multiple text files in some directories
         and put the fileName as key and content as value*/
     val files_contents = sc.wholeTextFiles(inpath).map {

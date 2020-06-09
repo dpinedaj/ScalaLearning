@@ -1,0 +1,67 @@
+welcome to exploring the data frame API after completing this lesson you should
+be able to leverage the data frame API to perform basic transformations and
+describe the various ways data frames can be used data frames have been very
+concise API and common operations can be expressed concisely you can select
+required columns join different data sources aggregated data using tools like
+counter some or average and you can filter Davis well here's an example of a
+machine learning pipeline and you'll notice that we start out with some data
+said 0 we're going to token eyes that data resulting in a new dataset and then
+we're gonna perform hashing transformer which is going to take a set of terms
+and convert those set into a fixed length feature vector so this is an
+example coming from the spark documentation that results in a new
+dataset dataset to upon which we can perform some sort of linear regression
+which is used in machine learning to predict output for a new data based on
+previous data sets this in turn results in a final dataset called dataset three
+let's look at some code for how we might use data frames to perform some data
+analysis in this example we would like to show the number of canceled flights
+in airline might have during a given month based on historical data we're
+going to use several inputs first of all Alaska Airlines has published
+information about their flights from 2008 in a comma-separated values format
+we also have information about airports where they are
+what they're called and their latitude and longitude we need to take that data
+from those comma separated value files and ingested into a data representation
+for flights and airlines
+and airports and this data has already been created in types that are defined
+in our airline . Scala class were first going to say that we have a quiet mode
+so that we can print out information when we want to debug but not printed
+out whenever we're just running this particular transformation in order to
+perform the data transformation we want to show the cancelled flights for this
+airline during all months of 2008 next we need to set up our spark
+configuration and we're going to make this my local mode we're gonna call this
+application spark data frames were going to use for partitions and then we're
+going to create a spark context using this configuration and create a sequel
+context from the spark context from which we will have access to the data
+frames API next we're going to say that we have our data in these files first
+there's the flight's path and secondly there's the airports path and then we're
+going to ingest the data where we get an RDD from having read and parse that file
+data for flights and airports once we have the RDD representations of the data
+and they've been ingested from the files we can then create the data frames for
+boat and once we've done that we cash the data because we are not specifying
+any parameter we know that we are placing this data in memory for quick
+access
+next we want to filter out only the flights were canceled so that we don't
+try to process information that doesn't represent data we care about if we are
+in quiet mode will ignore these out statements that are going to print out
+information for us by default I've set this to true so that we don't overload
+the amount of information that were printing out to the console and once we
+have our canceled flights with cash that data in memory as well
+finally we go through the transformation to figure out the cancelled flights by
+month the first thing we do is we group that data by its date and month
+nation and we get a count once we done that we can explain that data which is
+an API call from the data frame to show information about the way this data is
+being transformed its information about the logical and physical plan that spark
+is generating to perform this work and once we finished we on persist the data
+and finally we stop the spark context if we run this application you'll notice
+that we're going to start up the application is going to start printing
+out information about the data that is being loaded it's going to show the
+physical and logical plan information and then finally it's going to give us
+the information that we wanted which were what flights were canceled in which
+month where the first number represents the month of the year and a one base
+number representing January 2 12 being December and then the number of flights
+were canceled for that month in 2008 on Alaska Airlines you'll notice from
+having done this that we see that the month of December has the highest number
+of cancellations probably reflecting the number of flights that were being made
+around holiday travel
+having completed this lesson you should be able to leverage the data frame API
+to perform basic transformations and describe the various ways data frames
+can be used

@@ -1,0 +1,10 @@
+Spark Streaming:
+    -To process data as soon as it arrives, within seconds or minutes
+        rather tan wait for the next batch job
+    -Is a large topic with significant operational considerations
+    -Minibatch model:
+        -Data is captured in fixed time intervales ~.5 seconds to minutes
+
+    -Each minibatch is stored in an RDD
+    -The sequence of RDDs is held in a DStream
+    
