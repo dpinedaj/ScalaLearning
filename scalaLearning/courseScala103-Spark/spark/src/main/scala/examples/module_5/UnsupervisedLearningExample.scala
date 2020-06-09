@@ -5,6 +5,7 @@ import org.apache.spark.{SparkContext, SparkConf}
 
 import org.apache.spark.mllib.linalg.{VectorUDT, Vectors}
 import org.apache.spark.ml.clustering.{KMeansModel, KMeans}
+import org.apache.spark.ml.feature.VectorAssembler
 import org.apache.spark.sql.{Row, SQLContext}
 import org.apache.spark.sql.types.{StructField, StructType}
 
@@ -19,7 +20,7 @@ object UnsupervisedLearningExample {
 
   val FEATURES_COL = "features"
 
-  def main(args: Array[String]): Unit = run("data/kmeans_data.txt", 3)
+  def main(args: Array[String]): Unit = run("data/module_5/kmeans_data.txt", 3)
 
   def run(input: String, k: Int): Unit = {
     val conf = new SparkConf()
@@ -29,11 +30,13 @@ object UnsupervisedLearningExample {
 
     val sc = new SparkContext(conf)
     val sqlContext = new SQLContext(sc)
+    import sqlContext.implicits._
 
     Logger.getRootLogger.setLevel(Level.WARN)
 
     // Loads data
-    val rowRDD = sc.textFile(input)
+    val rowRDD = sc
+      .textFile(input)
       .filter(_.nonEmpty)
       .map(_.split(" ").map(_.toDouble))
       //Vectors is the input type KMeans algo expects.
@@ -41,14 +44,17 @@ object UnsupervisedLearningExample {
       .map(Vectors.dense)
       .map(Row(_)) //Each element in DataFrame is represented as Row, think of it as database row
       .cache()
-    val schema = StructType(Array(StructField(FEATURES_COL, new VectorUDT, false)))
+    val schema = new StructType()
+      .add(StructField(FEATURES_COL, new VectorUDT(), false))
     val dataset = sqlContext.createDataFrame(rowRDD, schema)
+    dataset.show()
 
     // Trains a k-means model
     val kmeans = new KMeans()
       .setK(k)
       .setMaxIter(10)
       .setFeaturesCol(FEATURES_COL)
+
     val model: KMeansModel = kmeans.fit(dataset)
 
     // Shows the result

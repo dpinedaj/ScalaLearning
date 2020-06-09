@@ -1,0 +1,98 @@
+welcome to overview of spark an L algorithms after completing this lesson
+he should be able to describe some of the algorithm that come with spark ml
+live explain the difference between supervised and unsupervised learning and
+implement alternating least squares and k-means algorithms ml live algorithms
+can be broken down into several groups there are classification and regression
+algorithm such as linear models naive Bayes decision trees and more
+classification algorithms are used to separate data sets into classes for
+example how to organize a large corpus of data into categories regression is
+much more like the predicted price of a consumer good based on some variables
+another group is collaborative filtering such as the alternating least squares
+algorithm these are used for building recommendation engines clustering
+algorithms may include k-means are Gaussian mixture others and they are
+used to organizing group a dataset finally we have beecher extraction and
+transformation which are used for text mining machine learning algorithms can
+be broadly categorized into two types they're supervised learning and
+unsupervised learning there's another kind called semi-supervised learning
+which is sort of a half of both supervised learning algorithm to need to
+be trained using input data with the expected results which we call training
+data during the training process the model is required to make predictions
+and is corrected until it is correct
+examples of these include the classification and regression algorithms
+that we mentioned before with unsupervised learning there is no
+explicit training step the input data is not labeled and doesn't have known
+result a model is prepared by deducing structures present in the input data an
+example of unsupervised learning my became means unsupervised learning can
+be used to perform tasks such as detecting network intrusion you really
+don't know what the
+jack is going to look like unless you see one happen and you can't train the
+model in advance you can use k-means to group similar things together and try to
+find which one is the odd one out let's look at a code example for supervised
+learning collaborative filtering is commonly used for recommender systems we
+will use the movie rating data from movie lands and used the ALS also called
+alternating least squares algorithm to build a simple movie recommender
+application in the supervised learning example we are going to take data about
+movies and their ratings that were given by individual users we're going to load
+this data into an application first we have to define what rating data looks
+like and how we're going to parse that data in note that we do not care about
+the final field in the ratings as we don't care about the timestamp of the
+rating in our analysis we also have to define what movie looks like and how
+we're going to parse that data as well
+next we're going to start a collaborative filtering example to rate
+these movies the data comes from movie lands which is a non commercial movie
+recommendation website and the example is inspired from the movie lends a less
+dats Col example from the spark distribution first we're going to define
+a number of iterations it we are going to perform when training the model and
+also the number of features were going to consider we define the ratings file
+and the movies fire that we're going to pull in as well as a test data file when
+we execute this model we set up the spark config as before
+create a spark context and create a sequel context of that we can use our
+data frames next we get our training dataset and then we get our test dataset
+to verify the model
+we then determine the number of ratings the number of users and the number of
+movies and print that out so that we can see it as we're executing to start the
+model we create a new als instance with the user column abuser I D and the item
+column of the movie I D we set the rank and the max number of iterations we then
+have our model when we performed a fit method on the ALS this allows for
+training the model converting an RTD to a data frame as well now we try to model
+on our test data and then we capture metadata about the movies in the next
+section we try to find out if our model has any false positives and we join with
+movies so that we can print the movie named in our output and finally we run
+predictions for user number twenty six as an example to find out whether the
+user like some movies finally we stop the spark context we execute and a
+supervised learning example begins it finds fifteen hundred and one rating
+from thirty users on a hundred movies it then starts performing its analysis it
+comes up with zero false positives on its predictions for what people would
+like it then uses user 26 and specific movies to test and verify that it did
+what we expect as MX code example let's look at unsupervised learning we were
+used k-means a commonly used clustering algorithm the group's the data points
+into predefined number of clusters in this unsupervised learning example we're
+going to perform a k-means analysis on some numeric data this may look rather
+random accept most of the time when you're performing this kind of analysis
+you are looking at numeric representation of some text in this case
+we're using the k-means algorithm
+and clustering is the best known type of unsupervised learning these algorithms
+try to find natural groupings and Ada these data points are like one another
+but unlike others are likely to represent a meaningful grouping and so
+clustering algorithms try to put such data into the same cluster this example
+is also taken from the spark distribution and simplified somewhat
+first we define an alias for the features column and then we define how
+we're going to get the data set up our spark context set up our secret context
+next we load the data and we filter it based on non empty data we mapped over
+to split it by space and we converted to double values vectors of the input type
+k-means algorithm expects in ML it represents a numeric vector of pitchers
+that the algorithm we used to create the cluster and then each element in the
+data frame is represented as a row to think of it just like a database role
+once we finish with this week asked the data next we define the schema and set
+up the data set from the data frame using the row Rd and the schema next we
+create the k-means we set the case to the BAL UK that we defined the max
+iterations and the teachers column from the alias we defined earlier as well we
+then do a fit on the algorithm with this data set and print out the results that
+we get finally we predict centers for following test data and those centers
+tell us which groups of these test data belong then we transform and show that
+result and stop when we run this model we see our final centers and the
+groupings of our data as well as the prediction that we expected
+having completed this lesson you should be able to describe some of the
+algorithm succumb with SPARQL live explain the difference between
+supervised and unsupervised learning and implement alternating least squares and
+k-means algorithms

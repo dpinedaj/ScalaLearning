@@ -38,9 +38,9 @@ object SupervisedLearningExample {
   val numIterations = 10
   val rank = 10 //number of features to consider when training the model
   //this file is in UserID::MovieID::Rating::Timestamp format
-  val ratingsFile = "data/als/sample_movielens_ratings.txt"
-  val moviesFile = "data/als/sample_movielens_movies.txt"
-  val testFile = "data/als/test.data"
+  val ratingsFile = "data/module_5/als/sample_movielens_ratings.txt"
+  val moviesFile = "data/module_5/als/sample_movielens_movies.txt"
+  val testFile = "data/module_5/als/test.data"
 
   def main(args: Array[String]): Unit = run()
 
