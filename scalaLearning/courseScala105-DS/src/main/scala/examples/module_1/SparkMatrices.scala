@@ -1,13 +1,13 @@
 package examples.module_1
 
+
+//To set desired logs
 import org.apache.log4j.Logger
 import org.apache.log4j.Level
 
-
-
-
 import org.apache.spark.SparkContext
 
+//Imports for local matrices
 import org.apache.spark.mllib.linalg.{Matrix, Matrices}
 
 //Imports for rowMatrices
@@ -29,7 +29,7 @@ import org.apache.spark.mllib.linalg.distributed.CoordinateMatrix
 object SparkMatrices {
 
   Logger.getLogger("org").setLevel(Level.OFF)
-  
+
   def main(args: Array[String]): Unit = {
 
     val sc = new SparkContext("local[*]", "SparkMatrices")
