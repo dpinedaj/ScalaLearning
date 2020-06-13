@@ -1,0 +1,95 @@
+welcome to data Science with Scala
+produced in conjunction with the data science retreat.
+This course is intended to teach data scientists
+how to use Scala to perform analytics using Apache Spark ecosystem .
+My name is Priya and I will be your guide for this course.
+My background is in probability and statistics
+and I completed my PhD at Columbia University and the Australian National University.
+Currently I'm using the spark ecosystem with Scala for
+customer relationship management of mobile commerce products.
+This is where I've observed the efficiencies of using Scala with Spark.
+In this first lesson we will discuss vectors and labeled points.
+after completing this lesson, you should be able to understand local vectors and labeled points
+create dense and sparse vectors, and create labeled points.
+MLlib has its own vectors with linear algebra operations provided by Breeze, a numerical processing library for Scala
+and Jblas, a fast linear algebra library for Java.
+Now by default, Scala uses its immutable vector from Scala.collection
+so you have to import MLlib's vectors from org.apache.spark.mllib.linalg in order to use MLlib's implementation.
+Just like a regular Scala vector, indices in MLlib's vectors also start with a zero.
+But in MLlib's implementation, all the values in a victim must be doubles.
+MLlib's vectors are  local and stored on a single machine
+and they can be either dense or sparse.
+As a point of reference, a vector is a point in some multi-dimensional space
+where the dimension is the number of elements in a vector.
+It is a non-fixed length sequence.
+A matrix is a two-dimensional array - n x m
+collection of vectors all of the same length and always forms a rectangular structure.
+From now on, unless specified otherwise,
+every reference to a vector
+must be understood as a reference to the MLlib's implementation.
+Let's start with a dense representation of a vector.
+It is the obvious and straightforward implementation of a vector.
+A dense vector can be easily created from an array of doubles,
+And that is how it is represented internally.
+Here's an example of creating a dense vector
+after importing both Vector and Vectors
+I can create a dense victor by calling vectors.dense
+and providing all double values that I want to be in this vector
+res0 shows me I've created the right type of vector
+and that indeed contains all values I passed as parameters.
+The Sparse vector type, on the other hand, is backed by two arrays
+one integer array, representing the indices of all non-zero entries
+and one double array containing the corresponding values of those entries
+It is a binary-search implementation of a Vector.
+A sparse vector  can be created in two different ways
+you can specify two separate arrays
+One for indices and another for the corresponding values
+or you can specify its nonzero entries is a sequence of tuples,
+where the first element is the index and the second element is the value itself.
+Earlier we created a dense vector
+Here we show how to create an equivalent sparse vector by using Vectors.sparse
+which we can do in two different ways.
+In both examples we must begin by specifying the total size of the vector.
+In this case, I am creating a vector with 3 elements.
+then in the first example, I provide an integer array containing the indices of all nonzero entries.
+In this case, I am creating a vector with its first and last elements different from zero
+Remember the indices a zero-based so the indices as zero and two
+and the third argument to Vectors.sparse is a double array containing the actual values
+in this case, 44.0 and 55.0
+The resulting sparse vector is shown in res1.
+Alternatively, I can also create the same sparse vector by providing
+a sequence of all its non-zero entries as tuples.
+In this case, for index 0 I have a value of 44.0
+and for index 2, I have a value of 55.0.
+Now as expected, res2 is exactly the same as res1.
+Now let's talk about labeled points.
+A labeled point is the association of a vector, either dense or sparse
+with a corresponding label or response.
+Labeled points are designed for use in supervised learning algorithms
+If you think of a vector as a representation of features
+a labeled point is a natural extension to it
+allowing the inclusion of the corresponding label or response.
+So for example if we had a set of variables - maybe pixel information
+that could describe whether a photograph was a cat or a dog.
+The labeled points will label each photo in a dataset as a cat or a dog.
+Now unsupervised learning methods like principal components analysis
+don't contain labels or responses
+instead they rely on algorithms to partition the data.
+So in the case of image recognition, maybe we have pixel data that will end up clustering based on image type
+where image type might me dogs or cats.
+It is worth noticing that the labels are also stored as doubles
+so they can be used in both regression and classification algorithms.
+The binary classification problems the labels must be either 0 or 1
+representing respectively negative and positive responses
+and for multi-class classification problems, labels must be class indices starting from zero
+Now let's create some labeled points.
+First I create a labeled point associating the value 1.0
+which could be a positive response for binary classification problem
+like a flip of the coin
+with its corresponding features, that is, a dense vector with values 44, 0 and 55.
+Then I create another labeled point
+associating a zero response to a sparse vector of size three containing the
+containing value 44.0 in its first position and the value 55.0 in its last position, just like before.
+Having completed this lesson we should now be able to
+understand local vectors and labeled points
+create dense and sparse vector, and create labeled points.

@@ -1,0 +1,43 @@
+Local Matrices:
+    -Natural extension of Vectors
+    -Row and column indices are 0-based integers and values are doubles
+    -Local matrices are stored on a single machine
+    -Can be dense or sparse
+    -Are filled in column major order
+
+    Dense Matrices:
+        -A "reshaped" dense Vector
+        -First two arguments specify dimensions of the matrix
+        -Entries are stored in a single double array
+
+    Sparse Matrices:
+        -Compressed Sparse Column Matrices
+
+
+Distributued Matrices:
+    -They are stored in one or more RDDs
+    -Three types:
+        -RowMatrix:
+            -It has no meaningful row indices, being only a collection of feature vectores
+            -Backed by an RDD of its rows, where eachh row is a local vector
+            -Assumes the number of columns is small enough to be stored in a local vector
+            -Each row is a local vector
+            - Can be Easily created from an 'RDD[Vector]'
+
+        -IndexedRowMatrix:
+            -Similar to RowMatrix but it has row indices, 
+                which can be used for identifying rows and executing joins.
+            -Backed by an RDD of indexed rows,
+                where each row is a tuple containing an index(long-typed) and a local Vector
+            -Easily created from an 'RDD[IndexedRow]'
+            -Can be converted to RowMatrix calling 'toRowMatrix()'
+
+        -CoordinateMatrix:
+            -Should be used only when dimensions are huge and matrix is very sparse.
+            -Backed by an 'RDD[MatrixEntry]', where each entry
+                is a tuple (i: Long, j: Long, value: Double) where:
+                    -i is the row index
+                    -j is the column index
+                    -value is the entry value
+
+    -Conversions may require an expensive global shuffle

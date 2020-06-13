@@ -1,0 +1,30 @@
+Vectors MLlib's local vectors:
+    - are used as org.apache.spark.mllib.linalg.{Vector, Vectors}
+    -Index are 0-based integers used and values are doubles
+    -Local vectores ares stored on a single machine
+    -Can be dense or sparse
+
+Dense Vector:
+    -Backed by a double array containing its valued
+    -Is the "obvious" implementation
+    -Can be created from an array of doubles
+
+Sparse Vector:
+    -Is backed by two arrays:
+        -A integer array represanting the indexes
+        -A double array containing the values
+    -Is a binary-search implementation
+
+    -Can be created by:
+        -Two separate arrays
+        -A sequence of tuples
+
+    -Must begin sepecifying the total size of the vector
+
+Labeled Points:
+    -Association of a vector, either dense or sparse, with corresponding label/response
+    -Used in supervised machine learning algorithms
+    -Labels are stored as doubles so they can be used in both regression and classification problems
+    -In classification labels must be:
+        - 0(negative), 1(positive)
+        -class start from zero (0,1,2...) for multiclass

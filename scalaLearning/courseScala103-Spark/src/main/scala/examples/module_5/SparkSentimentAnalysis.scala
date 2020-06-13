@@ -66,7 +66,7 @@ object SparkSentimentAnalysis {
       .format("com.databricks.spark.csv")
       .option("header", "false")
       .option("inferSchema", "true")
-      .load("data/testdata.manual.2009.06.14.csv") //training data taken from help.sentiment140.com
+      .load("data/module_5/testdata.manual.2009.06.14.csv") //training data taken from help.sentiment140.com
       .toDF("polarity", "id", "date", "query", "user", "tweet")
 
     df.printSchema()
