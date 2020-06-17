@@ -1,0 +1,37 @@
+Hypothesis Test:
+    -Used to determine whether a result is statistically significant, that is,
+        whether it occurred by chance or not
+    -Can be an input of RDD[LabeledPoint] enabling feature selection
+    
+    -Supported tests:
+
+        -Chi-Squared for goodness of fit:
+            -Determines whether an observed frequency distribution differs from a given distribution or not
+            -Requires an input of type Vector containing the frequencies of the events
+            -It runs against a uniform distribution, if a second vector to test against is not supplied
+            -Available as 'chiSqTest()' function in Statistics module
+
+        -Chi-Squared for independence
+            -Determines whether unpaired observations on two variables are independent of each other
+            -Requires an input of type Matrix, representing a contingency table or an RDD[LabeledPoint]
+            -May be used for feature Selection
+
+        -Kolmogorov-Smirnov for equality of distribution
+            -Determines whether or not two probability distributions are equal
+            -One sample, two sided test
+            -Supported distributions to test against
+            -Normal distribution (distName='norm')
+            -customized cumulative density function (CDF)
+            -Available as kolmogorovSmirnovTest() in Statistics
+
+        -Kernel Density Estimation
+            -Compute an estimate of the probability density function of a random variable
+            -Does not require assumptions about the particular distribution
+            -Requires an RDD of samples
+            -Abailable as estimate() in KernelDensity
+            -In Spark only Gaussian kernel is Supported
+
+
+Chi-Squared Test:
+    
+

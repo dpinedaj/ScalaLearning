@@ -1,0 +1,110 @@
+Welcome to local and distributed matrices.
+After completing this lesson we should be able to
+understand local and distributed matrices
+create dense and sparse matrices
+and create different types of distributed matrices.
+Matrices can either be local or distributed or dense or sparse.
+First we'll go through local matrices.
+Local matrices are the natural extension of local vectors.
+Similarly to vectors, matrices indices for both row and column, start with a zero.
+Also all values inside a matrix must be doubles.
+And just like vectors, local MLlib's matrices are stored on a single machine
+and they can either be dense or sparse.
+MLlib also has a distributed implementation of matrices, which I will cover later in this session.
+It is worth noticing that in MLlib's implementation
+matrices are always filled in column major order.
+Let's begin with the dense matrix.
+A dense matrix can be thought of as a "reshaped" dense vector
+since it is also stored in a double array.
+It can be created by specifying its dimensions and an array with its values.
+Remember that these values will fill the matrix column-wise.
+This is a simple example of a dense matrix.
+After the appropriate imports, I create a 3 x 2 dense matrix
+by calling Matrices.dense and specifying three as the number of rows
+and two as the number of columns, and an array of six elements
+the first three elements, 1.0, 3.0 and 5.0, will fill the first column of the matrix
+while the other three elements will be in the second column as shown in res0
+Note here that we passed in an array of integers and it returned a matrix of doubles.
+MLlib uses the compressed sparse column format to sparse matrices.
+In this example I'm creating a sparse matrix with five rows and four columns.
+In the sparse representation I keep only the non-zero entries
+so my array of values is going to be (34, 55).
+I also need to specify which row each of the values is in
+in this case, my values are in rows 1 and 3.
+The one remaining element we have to specify when creating a sparse matrix is this array of column pointers.
+This points each non-zero value to the column it belongs in.
+We will repeat pointer values whenever we have an empty column.
+If we look at the column point of values for the sparse matrix
+we have four values representing the point is for each column
+and the final value being the total number of non-zero values.
+Column pointers do not represent an exact physical location in the matrix
+they simply provide visibility into which columns have non-zero values
+and combined with row indices can provide physical location.
+The details of this data format have been designed to be efficient for column slicing
+and computing matrix-vector products.
+These are common operations in Data Science.
+Here's a sparse matrix example.
+Here we see the code for creating the matrix we've just been looking at.
+now that we've gone through local matrices both dense and sparse
+let's move our focus to distributed matrices.
+A distributed matrix is stored in or more RDDs.
+distributed across Spark cluster nodes.
+its row and column indices are of type "long" so as to follow big dimensionality.
+And the values are, as usual, doubles.
+There are three types of distributed matrices
+a RowMatrix, IndexedRowMatrix and CoordinateMatrix.
+It is important to understand the differences between them
+in order to choose the most appropriate type for your particular problem
+Event though the conversion between types is possible
+this may require an expensive global shuffle across nodes.
+The first kind of matrix we're going through is called the RowMatrix.
+We use this kind of matrix when a collection of vectors carries no meaningful row indices.
+So it may be when analyzing anonymized data sets such as no customer ID against a record.
+The RowMatrix is the most basic type of distributed matrix.
+It is a collection of vectors with no meaningful row indices.
+It is assumed that the number of columns is small enough to be stored in a local vector
+since the RowMatrix is backed by an RDD of its rows in each row is a local vector.
+Therefore a row matrix can be easily created from an RDD containing vectors.
+Here we look at a simple example of the creation of a RowMatrix.
+First, I create RDD of vectors called rows
+by parallelizing three dense vectors with two elements in each.
+Now I create a new instance of RowMatrix, named mat, from the previous RDD.
+Since I had three vectors with two elements
+I should get a matrix with dimensions 3 x 2.
+And, indeed numRows and numCols returns me exactly that.
+The IndexRowMatrix is quite similar to the Rowmatrix
+the difference between the two being that the former has meaningful row indices
+which can be used for identifying rows and executing joints, while the latter does not.
+We use this kind of a matrix with the row indices are associated with some meaning or order such as customer ID.
+Just like in a RowMatrix, the columns are stored in a local vector
+but each row is now an IndexedRow, that is, a tuple containing a long-typed index and a local vector.
+So, the IndexedRowMatrix is backed by and RDD of IndexedRows
+and, therefore, can be created from an instance of the latter
+It is also possible to convert an IndexedRowMatrix to a basic RowMatrix
+by calling the toRowMatrix, which will drop the indices.
+This is a simple example of the creation of an IndexedRowMatrix.
+First, I create an RDD of IndexedRows called rows by parallelizing three IndexedRows
+each one being a tuple of a long dense vector.
+Then I create a new instance of IndexedRowMatrix named IDXMAT, from the previous RDD.
+The third type of distributed matrix is the CoordinateMatrix.
+It should only be used when both dimensions are huge and the matrix is very sparse.
+Unlike the other two types, there is no separate rate for the values.
+The CoordinateMatrix is backed by an RDD of matrix entries
+where each entry is a triple containing the row index, the column index, and the value of the entry
+Just like the previous types, the CoordinateMatrix is created from an instance of an RDD
+in this case, of matrix entries.
+But you cannot retrieve the original RDD since there isn't a rows attribute available.
+It is also possible to convert a CoordinateMatrix into an IndexedRowMatrix with sparse rows
+by calling the method toIndexedRowMatrix.
+This is a simple example of the creation of a CoordinateMatrix.
+Just like in the previous examples
+first I create an RDD of matrix Entries called entries by parallelizing 3 matrix entries
+containing the coordinates for the values I want to insert in the CoordinateMatrix
+In the example I'm inserting the value 9 .0 with the upper-left corner of the matrix
+followed by the value 8.0 in the second column of the second row
+and then the value 6.0 in the second column of the third row.
+Then, I create a new instance of the CoordinateMatrix, named coordMat
+from the RDD I have just created.
+Having completed this lesson we should now be able to
+understand local and distributed matrices
+create dense and sparse matrices, and create different types of distributed matrices.

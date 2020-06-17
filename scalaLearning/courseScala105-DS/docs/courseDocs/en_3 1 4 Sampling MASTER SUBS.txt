@@ -1,0 +1,94 @@
+Welcome to sampling.
+After completing this lesson we should be able to
+perform standard sampling on any RDD
+split any RDD randomly into subsets
+and perform stratified sampling on RDDs of key-value pairs
+It's possible to perform a standard sampling on any RDD
+and the result is another RDD with a sampled subset of the original one.
+Sampling can be done with or without replacement
+the sampling without replacement, some packages like r, we'll call an argument
+that fixes the size of each resample.
+Spark on the other hand, calls a fraction argument
+that will return to resample of random size.
+If we perform multiple subsamples, then the size of each subsample may differ from each other
+but when averaged, the average size of all the subsamples
+will be close to the size of the specified fraction of the original RDD
+The sampling with replacement
+again, instead of fixing the size of each resample
+a fraction argument is specified with a fraction of the original RDD is the expected number of times
+each element will appear in the resample.
+So each element is equally likely to appear,  but unlike sampling without replacement
+these subsamples can be larger than the original RDD
+This type of sampling can be used on bootstrapping procedures.
+In this example of sampling, first, I create and RDD of vectors
+by parallelizing three dense vectors and I name it elements.
+Then i sample elements from this RDD, without replacement
+with a fraction equal to 50%
+so the expected size of the sampled subset is going to be 50% of 3, that is, 1.5.
+Of course there is no way I can get exactly one and a half elements in the resulting RDD.
+So I try it with three different seeds and then check the results by calling click on the returned RDD.
+For my first attempt, the sampled subset
+ended up being exactly the same as the original set, with all three elements.
+But for my second subset I got a sampled subset with two elements.
+And, for my last attempt, I got an empty array.
+But in total I get five elements in three different draws
+an average of 1.66 elements, roughly the same as expected one and a half elements.
+Now I could use standard sampling for randomly splitting my dataset
+but there is a better way to do it.
+Apache spark has its own RandomSplit implementation
+which can be performed on any RDD
+and returns an array with the corresponding subsets.
+Moreover, if the weights provided do not add up to 1,
+they will be normalized so that they do add up to one
+Now let's have a look at a simple example of RandomSplit.
+First I create my data, an RDD of integers from 1 to 1 million.
+Then I use RandomSplit to split into three different subsets
+containing respectively 60, 20,  and 20% of the original data.
+It returns me an array of RDDs which I can then use at my convenience.
+For instance, I've defined training as the first split
+containing approximately 60% of the original data.
+It is also important to stress that the splits are approximate.
+if I get a count for each RDD in the array, like I did in the last command
+I get roughly 600 200 and 200,000 elements but not exactly that.
+Another type of sampling that can be useful is stratified sampling.
+We may want to sample from homogeneous subgroups of the dataset
+in such a way that it is representative of the entire population.
+here an RDD must contain key-value pairs.
+Where keys are like labels defining the homogeneous subgroup
+and values of the recorded attributes.
+For example, if a dataset contains the voting preferences of a population
+and the population consisted of subgroups by sex
+then the key would be the sex of an individual
+and the value would be there voting preference.
+there are two ways to create the stratums, or samples from each subgroup.
+One, sampleByKey, and two,  sampleByKeyExact.
+with sampleByKey, each subpopulation is weighted.
+For example, a population may have 60% females and 40% other.
+So SampleByKey would work through each key-value pair
+and decide whether or not to include the pair in the stratum by flipping a weighted coin.
+the result of this, is that the sampling size of each stratum
+or the proportion of each subpopulation is not guaranteed.
+With SampleByKeyExact,  on the other hand,  it's like SampleByKey
+but the stratum sample size is correct with 99.99% confidence.
+This is an example of approximate stratified sampling.
+Since this type of sampling relies on keys
+it is natural to think of labeled points or IndexedRows, which have this kind of structure.
+I use the latter to illustrate this example.
+First I create a corresponding RDD by parallelizing the IndexedRows
+each one with a row index I'm going to use as a key
+and a set of attributes represented by a dense vector of size 2.
+Notice that I have two rows with the same index.
+Then I define a map for the probabilities.
+The keys in the map matched with the keys in the RDD that I'm sampling from
+The values in the map are the probabilities of drawing an element that is associated with a given key.
+in this example I want to draw every element with the keys so I set its probability to 1.0.
+For elements with key equals one, I set a 50% chance of drawing it.
+Fortunately I cannot sample directly from an IndexedRow
+so I have to map it to a standard key-value pair before actually sampling it.
+If I collect the results, I see that, for this particular seed
+I got exactly the probabilities I asked for in the fractions map
+all of the items keyed with zero, and half of those kids with one.
+Having completed this lesson we should now be able to
+perform standard sampling on any RDD
+split any RDD randomly into subsets
+and perform stratified sampling on RDDs of key-value pairs

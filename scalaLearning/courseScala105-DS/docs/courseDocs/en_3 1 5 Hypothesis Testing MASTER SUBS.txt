@@ -1,0 +1,112 @@
+welcome to hypothesis testing.
+After completing this lesson we should be able to
+perform hypothesis testing for goodness of fit and independence
+to form a hypothesis testing for equality of probability distributions
+and perform kernel density estimation.
+Hypothesis testing is used to determine whether a result
+is statistically significant or not.
+Often we make assumptions or hypotheses about the probability model
+that best fits our data.
+We use hypothesis tests to help us decide whether our assumptions are likely to be correct or not.
+There are three supported tests in Spark MLlib
+Pearson's Chi-Squared test fo both goodness of fit and independence
+and the Kolmogorov-Smirnov test the quality of distribution .
+All tests are performed over vectors,  but the test for independence can also be performed over an RDD of labeled points
+thus enabling easier feature selection.
+Let's start with the Pearson's Chi-Squared test for goodness of fit.
+It is applied to six of categorical data and determines
+whether an observed frequency distribution differs from a given distribution or not.
+The expected inputs for these tests are a vector containing the frequencies of the events
+and another vector containing the frequencies to test against
+If this second vector is not supplied, the test will be ran against an uniform distribution.
+The test is available as the chiSqTest function in the Statistics object.
+Before we move on to examples, here are some libraries that we will be basing our examples on.
+To save room, these are the classes you'll need to import in order to do the work shine on subsequent slides.
+This is an example where we can use the chi-squared test for goodness of fit.
+So if we were to have categorical data
+such as the number of customers who like chocolate versus the number of customers who dislike chocolate
+and we form a hypothesis that the proportion of people who really like chocolate is 80%
+then we can apply the goodness of fit test
+to see if that data is likely to be consistent with this hypothesis or not.
+So here in this example we just use some arbitrary numbers
+and I've created a vector with frequencies for seven different events
+ranging from 5% to 30%
+Then I perform the tests are over these frequencies, running against a uniform distribution,
+given that I have not provided a second vector.
+The results are shown as an instance of ChiSqTestResult.
+In this example, the pValue is very high
+so the test states that there is no presumption against the null hypothesis
+and therefore the observed frequencies follow the same distribution as expected.
+The next tested the Pearson's Chi-Squared Test for independence.
+It is also applied two sets of categorical data
+and determines whether the unpaired observations on two variables are independent of each other or not.
+So perhaps we could have a dataset of customers who like chocolate or pizza.
+In this case, we may want to test whether a customer's like for pizza and chocolate is independent.
+The expected input for this test is a matrix representing a contingency table
+but it can also take an RDD of labeled points, being used for feature selection.
+The test is available as the chiSqTest function in the Statistics object.
+Here is a simple example of testing for independence.
+I create a Dense Matrix representing a contingency table for two variables
+with a hundred cases spread across three different outcomes.
+Then I test if these two variables are independent of each other
+by calling the car chiSqTest method with this contingency table.
+The results are shown as an instance of ChiSqTestResult
+and, in this example, it says there is a very strong presumption against the null hypothesis
+meaning the occurrence of both outcomes is likely not independent.
+And here we have another simple test for independence
+but this time performed over an RDD of labeled points.
+First, I create the RDD by parallelizing 3 labeled points
+each one with a label, and a dense vector of size w representing two features.
+Next I test if these two features are independent of each other
+by calling the chiSqTest method with this RDD.
+the results are, once again, shown as an instance of ChiSqTestResult
+and, in this example, there is no presumption against the null hypothesis
+so the occurrence of the outcomes are likely independent.
+The third test is the Lolmogorov-Smirnov Test
+to determine whether or not two probability distributions are equal
+When our Data is continuous, we can use the Lolmogorov-Smirnov Test
+to test how closely are empirical distribution arising from our data
+closely mirrors hypothesized probabilistic distribution.
+This test is in one sample two-sided test and currently it only supports testing
+against a normal distribution or a customized cumulative density function
+The test is available as the KolmogorovSmirnovTest function in the Statistics object.
+Here we implement a simple test for equality of distribution.
+First, I use a random RDD to randomly draw a hundred elements from a normal distribution
+with one single partition and the number 13 as the seed.
+Next I test this data against a normal distribution with zero mean and unit variance
+by calling the KolmogorovSmirnov Test function with the data I've generated.
+And as I would expect, given that I'm testing data drawn from a standard normal distribution
+and, therefore, it is likely that both distributions are equal.
+If you repeat this analysis with a uniform distribution, of course the results will be different.
+So here we have a very small pValue.
+Now let's have a look at the Kernel Density Estimation.
+This computes an estimate of the probability density function of a random variable
+evaluated at a given set of points.
+Currently, only the Gaussian kernel is supported.
+This is particularly useful because it does not require any assumptions about the particular distribution
+that the observed samples are drawn from.
+The estimation is performed over an RDD of samples
+and is available as the estimate function in a KernelDensity instance.
+In this example once again I use a random RDD
+to randomly draw a thousand elements from a standard normal distribution.
+Then I create a new instance of KernelDensity and I set the data I generated as its sample.
+I also set the bandwidth, that is, the standard deviation of the Gaussian kernel, to 0.1.
+Then I use seven evaluation points set at  -1.5 to 1.5 with an interval of 0.5 in between
+to estimate the probability density function at each one of those.
+The resulting densities are returned as an array.
+The estimated probability density has positive values for all seven evaluation points
+it produces a reasonably nice bell-shaped curve which peaks between the range of -0.5 to 0.5.
+and it roughly matches my expectation from a random sample drawn from a normal distribution
+Of course if we increased the number of our evaluation points
+we get a better matching bell-shaped curve.
+In this example instead of using a normal distribution, I've randomly drawn a thousand elements
+from a uniform distribution, and I apply Kernel Density Estimation just as before.
+this time I only used five evaluation points, set at -0.25, 0.25, 0.5, 0.75
+and 1.25, to estimate the probability density function each one of those.
+The results showed that the probability density function is approximately zero at points -0.25 and 1.25.
+In the meantime, the estimated probability density is roughly equal for points 0.25, 0.5 and 0.75.
+This is demonstrating a behavior that's consistent with a uniform distribution over the interval (0, 1).
+After having completed this lesson, we should now be able to
+perform hypothesis testing for goodness of fit and independence
+perform hypothesis testing for equality of probability distributions
+and perform kernel density estimation.

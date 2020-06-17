@@ -1,0 +1,68 @@
+Welcome to summary statistics, correlations, and random data.
+After completing this lesson, we should be able to compute column summary statistics
+compute pairwise correlations between series and columns
+and generate random data from different distributions.
+In the previous listen I've shown you that an RDD of vectors backs a RowMatrix.
+Now it is time to compute some basic summary statistics over its columns.
+They are available through colStats function in the Statistics object.
+It returns an instance of multivariate statistical summary
+which contains column-wise results for: minimum, maximum, mean, variance
+the number of non-zeros in the column and both the L1 and L2 norms.
+That is, the total number of rows within each column is given by count.
+in this example we are creating an RDD of vectors to store our observations.
+This RDD has three elements, each one of Victor with two elements
+This is  a simple example of summary statistics.
+here I apply Statistics.ColStats over the observations RDD and I get my desired summary of statistics.
+The statistics are computed on the columns.
+So we can see from result 0 to result 4, the column-wise results for the mean
+variance, number of non-zero elements, and norms L1 and L2.
+Now let's move to pairwise correlations among series.
+They are available through the correlations function named corr in the Statistics object.
+The correlation methods supported are Pearson, the default one and Spearman, used for rank variables.
+The core function also supports two types of inputs
+you can either provide two RDD of doubles, representing two series of values
+in which case the result is going to be a single double value for the correlation between both series
+or you can provide an RDD of vectors representing rows of the matrix with the series being its columns
+in which case the result is a correlation matrix.
+This is a simple example for the Pearson correlation between two series.
+First I create an RDD of doubles with just three elements on it
+call it series X.
+Next create another series with the same size, and call it series Y.
+Then I compute the correlation between the two series
+by passing them as arguments to the corr function.
+The result for this simple example is minus 0.56.
+Now we look at an example the returns a correlation matrix.
+I start by creating an RDD of vectors with three elements
+each one a dense victor of size 3.
+It gives me a 3 x 3 matrix.
+Remember each series is a column in the matrix, so I have , for the first series 2.0, 1.0  and 4.0.
+Now I compute the matrix correlation among the three series
+by passing the RDD of vectors as an argument to the corr function.
+The result is another 3 x 3 matrix.
+The third example illustrates the difference between Pearson and Spearman correlation methods.
+first I create an RDD of vectors corresponding to a 3 x 3 matrix, and name it ranks.
+If I compute the Pearson correlation matrix
+I get a perfect correlation between the first and second series
+but not with the third one.
+But if I compute the Spearman correlation matrix
+I get a perfect correlation among all series
+since in all three series, the smallest value comes first and the largest one comes last.
+Moving across to Random Data Generation
+Apache Spark provides RandomRDDS which can generate either random double RRDs or random vector RDDs.
+Currently six different statistical distributions are supported
+the uniform, normal, lognormal, poisson, exponential, and gamma.
+this capability useful for randomized algorithms
+prototyping and performance testing.
+Now we look at a simple example of generating some random data.
+First I create an RDD with 1,000,000 doubles spread across 10 partitions.
+I've chosen to use the Poisson distribution with mean 1.0.
+I've just computed the mean and variance to verify that it's behaving the way that we would expect it to.
+Now we generate a multivariate normal.
+First I create a random vector RDD with 10,000 vectors of three elements each, divided into ten partitions.
+And once again I compute the mean and variance, just to illustrate
+that it's behaving as we expect when sampling from a multivariate normal distribution.
+All vector RDDs days are dimensionality of two or greater.
+And available distributions are exponential, gamma lognormal, poisson,  and uniform.
+Having completed this lesson, we should now be able to compute column summary statistics
+compute pairwise correlations between series and columns
+and generate random data from different distributions.

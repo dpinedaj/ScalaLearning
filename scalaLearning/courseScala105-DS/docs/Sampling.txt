@@ -1,0 +1,21 @@
+Sampling
+    -Can be performed on any RDD
+    -Return a sampled subset of an RDD
+    -With or Without replacement
+    -Fraction
+        -Without replacement -expected size of the sample as fraction of RDD's size
+        -With replacement -expected number of times each element is chosen
+    
+Random Sampling
+    -Receives the weights to split the samples
+    -The output is an aproximate count of the percentage submited on the weights
+
+Stratified Sampling
+    -Can be performed on RDDs of key-value pairs
+    -Think of keys as labels and values as an specific attribute
+    -Can be performed by two ways:
+        -sampleByKey:
+            Requires only one pass over the data and provides an exected sample size
+        -sampleByKeyExact:
+            Provides the exact sampling size with 99.99% confidence but requires
+                significantly more resources

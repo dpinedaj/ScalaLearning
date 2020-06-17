@@ -1,4 +1,4 @@
-Whay is a DataFrame?
+Why is a DataFrame?
     -Created with the goal of enabling a wider audience
         to leverage the power of distributed processing
     -Inspired by data frames in R and Python (Pandas), 
