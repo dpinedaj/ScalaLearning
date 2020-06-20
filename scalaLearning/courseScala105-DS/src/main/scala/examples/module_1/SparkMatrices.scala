@@ -50,7 +50,7 @@ object SparkMatrices {
 }
 
 object LocalMatricesExample {
-  def run = {
+  def run: Unit = {
     val md: Matrix = Matrices.dense(3, 2, Array(1, 3, 5, 2, 4, 6))
     println("\nLocal Dense Matrix")
     println(md)
@@ -80,7 +80,7 @@ object LocalMatricesExample {
 }
 object RowMatricesExample {
 
-  def run(sc: SparkContext) = {
+  def run(sc: SparkContext): Unit = {
 
     val row1 = Vectors.dense(1.0, 2.0)
     val row2 = Vectors.dense(4.0, 5.0)
@@ -103,7 +103,7 @@ object RowMatricesExample {
 
 object IndexedMatricesExample {
 
-  def run(sc: SparkContext) = {
+  def run(sc: SparkContext): Unit = {
     val rows: RDD[IndexedRow] = sc.parallelize(
       Array(
         IndexedRow(0, Vectors.dense(1.0, 2.0)),

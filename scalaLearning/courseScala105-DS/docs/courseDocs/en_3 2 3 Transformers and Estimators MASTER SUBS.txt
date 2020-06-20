@@ -1,0 +1,101 @@
+welcome to transformers and estimators after completing this lesson you should
+be able to understand create a new user transformer understand create a new use
+an estimator that parameters to transformers in estimators and create a
+feature vector victor
+a transformer is an algorithm which can transform one day to frame into another
+day to frame it is an instruction that includes Feature Transform is and land
+models feature transformer can take a feature such as text and transform it
+into feature vectors such as words
+another example of a Feature Transform is principal components analysis which
+will look at later on a transformer implements a method transform which
+performs the conversion of one day to frame into another usually by appending
+one or more columns the columns used as input by transformer has set with this
+set input call method and the resulting columns to be appended as a result as
+set out pork omitted one transformer can for instance RAID one or more columns
+and map them into a new column it feature vectors which can then be read
+by another transformer that will output a column of predictions based on these
+factors here are some examples of general-purpose transformice such as one
+hot encoding and streaming indexer victory assembly which will cover later
+on
+here's some transformers for natural language processing such as the inverse
+document frequency and hashing term frequency which we covered in course two
+of these theories spark overview for scholar analytics
+now we look at it simple example of a transformer niece case a tokenizer after
+doing the appropriate imports I create a sentence data frame containing three
+records label 2012 with one sentence each then I create a new Transformer
+instantiating a tokenizer and ice its impotence from my data frame as its
+input column I also said words as its output column which will be appended to
+the resulting data frame once the Transformers created I can then use its
+transform method to actually perform the transformation over my data frame so I
+just called tokenizer . transform and pass the sentence data frame as argument
+the signing the resulting data frame to token I said the result looks like this
+each label and sentence I now have a string array containing the resulting
+transformation that ease the resulting tokenization
+now to estimated an estimator is an algorithm which can be fit on a date of
+frame to produce a transformer
+abstracts the concept of a learning algorithm any algorithm that fits or
+trains on data and estimating implement the method feet which accepts a date of
+frame and produces a model now model is also a transformer for instance a
+logistic regression is a learning algorithm and therefore it is an
+estimator by calling the feet method to a trainer logistic regression model is
+returned and given that every model is a transformer the resulting model
+implements a transform method now we look at an example of an estimate 0 in
+this case logistic regression after doing the appropriate imports I create a
+training data frame containing for records to labeled as 02 labeled as 1
+each associated with the features victor of size three then I creating new
+estimator instantiating a logistic regression and then sitting its maximum
+iterations and a regularized parameter index Mexico relations is just a
+pyramidal that limits how many iterations park will loop through in
+order to find the optimal model fit the regular iced parameter is just a
+regularization parameter that penalizes the weights of predictors to reduce the
+tendency for overfitting now that the estimators created I can use its feet
+method to create a model based on my training data frame the result is a
+logistic regression model which I named model one remember that every model is a
+transformer
+implementing its own transform method this means I can call model one-dot
+transformed over my data frame to get the results for logistic regression it
+depends three new columns to the original data frame role prediction
+probability and prediction we're all prediction is just a prediction into all
+my role in transforming prediction that arises from the logistic regression
+and probability of the associated probabilities corresponding to the
+prediction interval since I've performed the transformation over the training
+data sip it is only logical that the predictions match exactly the labels I
+could have easily performed the same transformation over test validation
+dataset in which case I prediction could have differed so far I've been fitting
+parameters using an appropriate set of methods available in the corresponding
+transformer or estimator both transformers an estimated using uniform
+API specifying parameters this API enables the use of a peres map which is
+nothing more than a set of parameters in value peers or parameters are specific
+to a given instance and there are two ways to pass them to an algorithm
+one using said two methods like I have been doing until now go to passing them
+is a prime at a map to fit or transform methods noticed that you can even
+specify parameters for different instances of algorithms in the same
+parameters map which can be quite useful when doing pipelines
+now we look at a simple example of parameters city using the paramount to
+doing the appropriate import I create a parent map assigning 22 the Maxi
+durations parameter and point 2012 the regularization parameter both parameters
+of an instance of the logistic regression estimator named bill then I
+call this estimate is feat Method passing as arguments my data frame and
+the paramount and it returns Mia model which I assigned to model to next I call
+this model's transform method to get the predictions from my training data frame
+once again all predictions match exactly the labels but since this time I have
+provided different parameters to the estimator and therefore obtained from
+model the probabilities and different any important transformer is the
+victories same below it combines a given list of columns into a single vector
+common it is useful for combining raw features in features generated by other
+transformers into a single features vector victor is similar except columns
+with all numeric types and also Boolean Invicta types now we look at an example
+of a victory simple after doing the appropriate import I created data frame
+with 10 rows and columns one I D column and three other columns with randomly
+generated numbers I call these data frame DAF random then I create the
+victories template transforma setting my three columns of random values as input
+and naming the output column features you would take these three columns and
+turn them into a single column where each element is a vector of size three
+next I perform this transformation over my dear friend and data frame and a sign
+at D if the result looks like this
+the input columns of single values were replaced by the output column of feature
+vectors
+having completed this lesson you should be able to understand create a new user
+transformer understand create and use an estimate 0 set parameters to transform
+is
+estimators and create feature vector victor symbol o

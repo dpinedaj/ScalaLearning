@@ -1,0 +1,121 @@
+welcome to handling missing data and computing values after completing this
+lesson we should be able to drop records and feel missing data according to
+different criteria and drop duplicate records data frames have na na method
+which provides functionality for working with missing data he returns an instance
+of data frame in a functions which implements three types of methods
+methods are dropping rows containing inane or null values feel methods for
+feeling or replacing in a in or null values and a replacement for replacing
+values matching specific case this is an example of a data frame with missing
+values first I created data frame with some random values just like I did in
+the previous list and an aim at DIA then I have to get some of its values to an
+a.m. so I have a data frame with missing values in order to do that I create to
+user-defined functions are you da one to turn values over half into and I N
+named half to NA and and the other two tone values are over one into a Nhan
+named 12 in a if you've never heard of in UDF before diary I just like any
+other function the difference being that they take a whole data frame column as
+an import perform operations over each value inside column and output the
+results as a new data frame column ok now I can form six operations on my data
+frame I create two new columns in a in uniform and in a in normal applying my
+two UDS to the uniform and normal columns I drop these two columns since I
+do not need them anymore and finally I renamed my just created in a in uniform
+and in a normal two uniformed in normal respectively
+the resulting data frame is then assigned D if in a in this is what da
+eff and I am data frame looks like
+notice that road with aidid one has missing data in both columns while the
+row IDs true 37 and 8th have only one missing data
+let's start with the drop function from the data frame in a and functions object
+as its name states this function is used for dropping rows containing in a in or
+null values according to different criteria there are several different
+types of drop available I can drop tries to do not have a minimum number of non
+now columns I can drop rows that contain at least one column or all now columns
+using respectively
+the any or all keywords I can specify a subset of columns of which these
+criteria will be computed or I can simply called drop without any arguments
+to drop every single row that contains at least one column with a null value
+let's stop by dropping rose by using the mean non-null argument in this example I
+set the minimum number of columns without null values to be three in
+effect this is the same as saying that I want to keep brody's without any null
+values on them since I only have three column i hadn I N values on rows with
+IDs 1237 and eight so these rosewood dropped and I end up with the data frame
+like this now it's dropped Bros easy how argument also specifies subset of
+columns over which these criteria is going to be applied in this example I
+choose to apply it over the true columns containing values uniform and normal and
+I set the how argument all meaning that I only want to drop Bros we're all
+columns in this case all specified columns have now values so the only road
+we both uniformed and normal columns containing null values is the road I D
+one and that is the road dropped leaving me with a data frame like this
+here is another example using the house argument the difference being I'm using
+any instead of all so in this case if there are any null values on the
+specified columns the road is going to be dropped
+rose with IDs 1237 an aide had missing data on them so these roads were dropped
+and I end up with a data frame like this what if instead of dropping rows
+containing null values I wanted to compute these values then I can use the
+field function from the data frame in a functions object to replace in a in null
+values according to different criteria there are several different types of
+feel available I can feel different values for different columns using a map
+I can feel the same value for different column and I can feel the same value for
+all columns of the same type by the string would double let's start by
+feeling old double typed Collins in a data frame with Shearer in the data
+frame I created in the beginning of this lesson I had any in values in rows with
+IDs 1237 an 80 these values will be filled with viewer since both Collins
+would double typed I end up with the data frame like this
+replacing numérique null values with zero is quite easy but not that useful
+and much more common operation is to replace null values in a given column
+with a more meaningful value say its corresponding me so let's compute the
+main value for the uniform column and use it as a default value Philly null
+values in the column here I use the combination of filter group by an egg
+functions to get the main of the column uniform first I use filtered to get rid
+of all roads with null values in the column uniform then I use group I with
+nothing within the parenthesis to group all the field to data and then I apply
+the egg functions specifying the main to get the average since results that
+contain
+within a data frame I applied the first function to turn this into a row and
+Oscar the first value from the rug the value is already a double so I don't
+need to transform it into any other data types the resulting average value from
+the column uniform is . 255 since the table is generated by random numbers
+you'll get a different value if you run this example by yourself now for the
+easy pot all null values in the column uniform with its mean value I just
+called the field function passing map is the argument with a key is the column
+name uniform and their values the default value to feel the computed mean
+of this column to fit the results on the screen I asked for the top five
+resulting rose only the resulting data frame looks like this instead of the NA
+ends bro IDs one into now have zero point 255 we managed to feel all null
+values in a single column with its mean value but what if I wanted to do the
+same for all double typed Commons at once
+let's do that in this example through this I thought the names of all double
+type columns I want to feel too dificult I could have done it manually but in
+this example I only have to drop the first column that is the idea column
+next I dropped all rows containing an A and values by specifying an 80 drop the
+whole data frame then compute the average for both uniformed and normal
+combs with the same group by a nag functions there's only one road lift
+which means I think using first and then cast to an array the result is shown in
+the value of DA may now have to build a map to be passed as an argument to the
+fuel function I seem pleased if the column names with its corresponding
+means in custody as a map which I call means map now for the easy part kill all
+null values in all double type Collins
+its corresponding mean values I called the field function with mains map as an
+argument and I end up the data frame like this
+night that aidid one and two in the uniform column and IDs one-in-three in
+the normal column now computed the average values we have previously
+derived another function of the data frame in a functions object is to
+replace function is used for replacing values matching specific case it may be
+performed every single column or subset of columns of a data frame it also takes
+a math argument with a case of the values to be replaced and the values of
+the replacing values he we look at a simple example I use the Replace
+function to replace all and I in values in the column uniform with the value 0
+the result of this operation performed over the DNA in a data frame like this
+another useful method is the drop duplicates which is a data frame method
+as its name states it is used to remove duplicate rows but it's possible to
+specify a subset of columns to check for duplicates instead of checking the role
+as a whole
+to illustrate this method I append to more rose to the DFA in a and data frame
+containing identical values for both uniformed and normal columns but with
+different I days the resulting data frame named DFG pockets like this
+then I J
+least columns I wish to remove duplicates on in this case the column
+IDs irrelevant since I create and write a column names uniform and normal by
+dropping the name of the first column I D then I called the drop duplicates
+method by specifying the column names array and it drops the road with idea 11
+which was identical to the road with aidid 10
+having completed this lesson you should be able to drop records in film missing
+data according to different criteria and drop duplicate records

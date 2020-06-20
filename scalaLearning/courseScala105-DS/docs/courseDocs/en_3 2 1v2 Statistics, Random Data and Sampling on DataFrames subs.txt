@@ -1,0 +1,135 @@
+welcome to statistics random data and sampling on data frames after completing
+this lesson you should be able to compute column summary statistics heyy
+statistics between series incomes performance standard in stratified
+sampling on any data frame and split any data prime randomly into subsets and
+generate random data from uniform and normal distributions in the previous
+module I've introduced column summary statistics bodies of victims now
+introduce column summary statistics big data frames there are two ways to
+proceed
+the first and most straightforward one is the described method which returns in
+other data frame with 54 containing column wise results the Mean Max mean
+standard deviation and count however we recommend the second method at some uses
+experience issues in using the summary statistics table at ports for further
+calculations the second way is to use both groups by an aggregate methods
+which also returns a data frame with the results but only once to txt can be
+returned for each column so it's possible to get minimums for all columns
+or different statistics for each column but not all statistics for all columns
+that wants to see that the standard deviation is not supported by these
+methods this is a simple example of summary statistics using the described
+method first I import complete its from the SQL context so I can turn an IDD
+into a data frame next I define a case class named record which encapsulates
+the description and two values then I create a data frame containing three
+records named Rick da and now I can compute column summary statistics by
+calling the described method on my data frame I thought the result to another
+data frame named Rick stats and show its results and as expected the return date
+of frame is five lines long and contains statistics
+for all numeric columns patties value on and value to the computing columnist
+summary statistics is quite easy now I'm gonna work a little bit on fetching for
+extracting the results from the data frame if I'm interested in a particular
+statistics say the standard deviation I can feel to the data frame using summary
+equals STD Depp and then pitched the corresponding results with first since
+I'm guaranteed to have exactly only 19 left it will return me with an instance
+of row as shown in raid 0 the perhaps that is not the most convenient way to
+handle the results so I may constitute seq into a raid by end up with an array
+of any as shining raised 10 does the description of the statistic itself is
+on the array so next I drop it and everything else that he's the actual
+results to double now I have standard deviations for all numeric columns as a
+double array as showing raised to please note that some users experienced issues
+in using extractions from the summary statistics table within certain
+implementations of spark so you may wish to try the following alternatives in a
+slide and in the next few things aren't working out for you
+supposedly I may be interested in all statistics for a given column so I may
+select that particular column for instance value one and map all elements
+to strain and then to double the result is another double array as shown in race
+3 with column statistics in the following order count main standard
+deviation mean and max here we have another simple example of summary
+statistics this time using both groups by an aggregate methods I use the same
+data frame named Rick da and called the group by method with no arguments that's
+using the whole day to frame and then call the aggregate method with the map
+where keys a column names of the data frame and values of the corresponding
+statistics are going to compute over that particular column in my first
+attempt I have a map containing twice the key value one between different
+values as if I wanted to compute by two men and a maximum of the column value
+want but it does not work that way and I end up with only the maximum for this
+column remember anyone's DTC can be returned by column eating the aggregate
+method then in my second attempt I can compute the minimums for columns value
+one and value to and indeed the resulting data frame has results for
+both if you first import or daughter patchy dots parked on SQL functions here
+is an alternative way we can derive the same results without writing them
+function I can fits the description of the return statistics using the columns
+attributed the resulting data frame as shown in with your and I can fix this
+statistics using the same approach shown in the previous slide as shown in race
+one now introduced yet another set of statistics available on data frames
+missteps method returns a data frame steps function object which has another
+set of methods for computing pearson correlation and sample covariance
+between two columns as well as pairwise frequency table for a given set of
+Columbus also there is a method for finding the most frequent items in a
+column although it may yield false positives this is a simple example of
+these set statistics again I'm using the same data frame named Rick DAF and call
+the static method in order to get me instance of data frames taps functions
+then I compute the Pearson correlation between columns value on value to which
+is approximately negative point 59 as showing receiver and the sample
+covariance between the same columns is about negative 3.57 as shown in the
+frequent item
+method passing as arguments the column over which I want to perform the
+operation at ease while you want and the minimum proportion of roads in this case
+point three or thirty percent this is the one pass an approximate algorithm
+which may yield false positives for any story example it returned all three rise
+even I asked for just 30 percent of course this kind of operation is
+supposed to be performed over much larger data frames and this result is
+just to illustrate the method inputs and outputs now let's turn to sampling on
+data frames sampling can be performed on any data frame and returns assembled
+subset of it it can be done with or without replacement and in either case
+the fraction passed as argument is expected not the exact fraction of rose
+to be generated in the resulting data frame as one could expect sampling on
+data frames is very useful for bootstrapping procedures
+this is a simple example of sampling and data frame I created data frame with
+seven key value pairs and they made da then I just simple biddy percent of its
+elements without replacement eating 11 at the seed and assigning it to another
+day to frame named EF sampled this operation results in two elements
+sampled which is roughly 30 percent of all seven elements in the previous list
+and i've introduced the random split method on Adi days evicted a hassle-free
+way to split today to fit into multiple subsets without having to be concerned
+about the approximate nature of standard sampling the same method is applicable
+to data frames returning an array of data frames of size is proportional to
+the array of whites passed as an argument again if the whites do not add
+up to one they are normalized prior to the splitting
+now we look at an example of a random split his time I use the same data frame
+with seven key value pairs and call the random split method specifying an array
+of whites and I want to split the data frame into two parts of sizes 30% and
+70% respectively and I use a lebanon secede you returns me an array of data
+frames named Dee a split its second element is a data frame which contains
+457 elements of the original array roughly 70% as specified in the
+arguments to third type of sampling is again the stratified sampling it can be
+performed on any data frame and any color may work is a key label each key
+it may be specified a corresponding expected fraction of elements to be
+drawn that are associated with that particular case stratified sampling can
+only be performed without replacement is available as sample by function in the
+data frames step functions object
+this is an example of stratified sampling again I use the same data frame
+with seven key value pairs noticed that I called a static method of the data
+frame in order to gain access to the data frame steps functions object which
+implements the stratified sampling procedure mikey is the column named keep
+each possible value 1203 I specify a fraction in this case seventy percent so
+I wanna draw approximately 70% of the elements in my data frame while keeping
+the original proportion of the case in the original data frame I had twice the
+keys equals 13 times the keys equals two and twice the key equals three the
+resulting stratified sampling returned me two different elements for each key
+that's preserving the original proportion as much as the care given the
+approximate nature of the algorithm and the quite small size the example moving
+onto random data generation here we use SQL functions to generate columns filled
+with random values there to support and distributions unify and normal and we
+made me want to generate random data by using algorithms prototyping or to test
+the performance of a model
+this is a simple example of random data generation I stop by importing the
+corresponding SQL functions uniform and normal distributions that he's Rand Ayn
+Rand in then I create a data frame from a range and they met de it next my
+opinion to Commons to its original idea column naming them uniform and normal
+and using the functions Rand Ayn Rand in weed seeds equal 10 to generate the
+corresponding random values
+it returns me another data frame with three club the first five rows show some
+of the values generated randomly having completed this lesson you should be able
+to compute column summary statistics heyy statistics between series and
+columns perform standard and stratified sampling on any data frame delete any
+data frame randomly into subsets and generate random data from uniform and
+normal distributions

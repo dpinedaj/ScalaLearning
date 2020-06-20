@@ -1,0 +1,30 @@
+Na Functions
+    -na method provides functionality for working with missing data
+    -Returns an instance of DataFrameNaFunctions
+    -Methods availables:
+        -drop
+            -drop(minNonNulls, cols)
+            -drop(minNonNulls)
+            -drop(how, cols)
+            -drop(cols)
+            -drop(how)
+            -drop()
+
+            ---> cols is an Array or Seq of column names
+            ---> how is "any" or "all"
+
+        -fill
+            -fill(valueMap)
+            -fill(value, cols)
+            -fill(value)
+        -replace
+            -replace with a map:
+                -key is the value to be matched
+                -Value is the replacement value itself
+        
+        dropDuplicates
+            -Is a DataFrame method
+            -Used to remove duplicated rows
+            
+
+    
