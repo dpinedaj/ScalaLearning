@@ -9,10 +9,10 @@ object SparkVectorsLabel {
     //Dense vectores can be from an Array of doubles
     val vd: Vector = Vectors.dense(44.0, 0.0, 55.0) //Indices are 0-based integers on 
                                             //a single machine MLlib's vectors can either be dense or sparse.
-
+    println(vd)
     //Sparse vector size 3 from 2 arrays, once is the indexes and another are values
     val vs1: Vector = Vectors.sparse(3, Array(0, 2), Array(44.0, 55.0))
-
+    println(vs1)
     //Sparse vector size 3 from a sequence of tuples, each tuple contains index and value
     val vs2: Vector = Vectors.sparse(3, Seq((0, 44.0), (2, 55.0)))
 

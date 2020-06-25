@@ -1,0 +1,87 @@
+welcome to random forests
+after completing this lesson we should be able to understand the pipelines API
+for random forests in grain boosted trees described defaults input and
+output columns perform classification and regression with random forests and
+gradient boosted trees understand and use random forests and gradient boosting
+trees parameters and outline the differences between the two regarding
+its premises and ensemble is a learning algorithm which creates an aggregate
+model composed of a set of other base models random forests and gradient
+boosted trades are ensemble algorithm based on decision trees ensemble
+algorithm are among the top performers for classification and regression
+problems
+random forests are ensembles of decision trees one of the most successful machine
+learning models for classification and regression random forests combine many
+decision trees in order to reduce the risk of overfitting the pipelines API
+for random forests supports both binary and multi-class classification as well
+as regression it also supports continuous and categorical features this
+is a quick description of the basic algorithm of random forests it trains a
+set of decision trees separately while injecting randomness into the training
+process this randomness comes from two different sources one from subsampling
+the original dataset on each iteration to get a different training said also
+called bootstrap and two from considering different random subsets of
+features to split on each tree node then each trade makes a prediction and the
+combined predictions from several trees reduces the variance of the predictions
+improving the performance on test data the classification problems the
+predictions are combined using the majority vote rule that is the class
+with the largest number of votes is the predicted class for aggression problems
+the predictions are combined eating a simple average now let's look at the
+parameters of random forests in spa Kimmel
+I start with the most important parameters the number of trees and the
+maximum depth which can be tuned to improve performance
+the number of trees is of course the total number of trees in the forest as
+the number of trees increases the variance of production decreases
+improving test time accuracy the training time on the other hand
+increases roughly linearly with the number of trees the maximum depth is the
+maximum depth of each tree in the forest as trees get deeper the model gets more
+express even powerful but it also takes longer to train and he's more likely to
+over fit the second set of parameters random forests do not required to me
+that they can be tuned to speed up training the subsampling right specifies
+the fraction of the size of the original data to be used for training each tree
+in the forest its default value is one that means it uses the entire original
+dataset to subsample decreasing these fail you can speed up training as it
+uses a smaller sample the accuracy of the model may suffer
+the features subset strategy specifies the fraction of total number of features
+used to use as candidates the splitting at each tree node again
+decreasing this value can speed up training but if it too can also impact
+the performance the inputs taken and the output produced by random forests in the
+pipelines API and not surprisingly exactly the same as decision trees this
+is the base model for random forests a quick recap as imports there are the
+label and features columns and as outboards there are the prediction royal
+protection and probability columns with the last two only apply for
+classification trees
+continuing on from a previous example this is the same dataset we used in the
+lesson on decision trees
+and the data looked somewhat like these
+once again I'm going to build up on the previous example the decision tree
+classifier remember the pipeline I eased then had four stages to preprocessing
+estimators one decision tree classifier and one post-processing transformed
+since I'm using the same training data the only thing I need to change is the
+classifier itself all the rest pre- and post-processing estimated in
+transformants remain the same so first I create a new instance of a random forest
+classify all it would take is imports the columns named indexed label and
+indexed features the number of trees I'm going to train is quite small
+just three then I create a new pipeline also with four stages but replacing the
+decision tree classifier with the new random forest classify as its third
+stage this is the pipeline RFC the Random Forest classifier
+and all the rest is exactly the same as before calling the feet method to get a
+model and calling the transform method to make predictions the predictions are
+then returned in the prediction RFC data frame
+and here is the prediction RFC data frame
+we can derive the random forest classification model and from that the
+feature important PSA's
+now let's take a look at the models rules I can use to debugging stream to
+inspect the rules of each and every tree in this example I had only three trees
+and I'm emitting output for the second one in this slide
+having completed an example of classification with Random Forests these
+time for an example of progression once again I will build up on the previous
+regression example using decision trees the pipeline progression in that case
+had only two stages the feature in Nixa and the decision tree regresa now I
+replace the decision tree with the random forest regresa and create a new
+pipeline this is the pipeline RFI from Random Forests regressive all the rest
+is exactly the same as before calling the feet method to get a model and
+calling the transform method to make predictions the predictions and then
+returned in the prediction RFI data frame
+having completed this lesson we should now be able to understand how to run a
+random forests in spock grass most of the premises and their effect understand
+inputs and outputs and understand how to use random forests for aggression and
+categorization

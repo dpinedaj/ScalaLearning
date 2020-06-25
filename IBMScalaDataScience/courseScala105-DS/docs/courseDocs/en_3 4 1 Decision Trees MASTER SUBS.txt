@@ -1,0 +1,103 @@
+welcome to decision trees
+after completing this lesson you should be able to understand the pipelines API
+for decision trees described pipelines input and output columns perform
+classification and regression
+decision trees and understand and use decision trees parameters a decision
+tree is ineffective non parametric modeling method for different types of
+data it can handle both continuous and categorical data can also help us
+identify markers that split up categories a male lead implementation of
+decision trees supports both binary and multi-class classification as well as
+regression it also supports both continuous and categorical features in
+ML liebe the data is partitioned by Rose allowing distributed training decision
+trees this implementation is then used by the pipelines API a decision trees
+which I'll introduce in this lesson this park in mail API for decision trees
+contains more functionalities in the original email Lieb AP I there is a
+separation of decision trees the classification and regression we use
+data frames meta data to distinguish between continuous and categorical
+features now let's take a look at the inputs taken and the output produced by
+decision trees in the pipelines API as imports there at the label and feature
+columns of its corresponding parameter names are emitted the API will look for
+its defaults label and features in import data frame as outputs there are
+the prediction role prediction and probability columns with a las 2 only
+apply for classification trees if its corresponding parameter names are
+emitted the API will append these columns with its default names to the
+resulting data frame notice that if I don't want to give a column to be
+appended I just have to see it its name is an empty string using the appropriate
+parameter name we can light up data by creating a sequel Khan
+text giving us access to the data frame API and then importing the implicit suis
+need for automatic data conversions we then import the classes we need this is
+a sample data set that comes with Spock if you didn't get spark from sources you
+probably don't have it from a spark notebook you can get with the shell
+command W get remember this will not work on Microsoft Windows boxes then we
+can load the data into a data frame using the machine learning utils . load
+lead its p.m. file function and then calling to date of frame on it
+next we set up our input and output columns and then fit the data for the
+label index up from that we get the label converted from it then we set up a
+feature indexer from victory index which will perform a sequel on without input
+data next we set up the pipeline of the data with the stages are derived from
+those values which is created and performer random split to get out
+training data and test out of valleys
+to get a decision tree classifier we create a model classifying by feeding a
+pipeline from the training data values and then we create the tree models by
+casting the data to an instance of a decision tree classification model and
+then print out the doctor
+you may notice that the indexed label is presented as one while label suggests 0
+and vice versa
+please note the buck passing the model by the string index and label converter
+box has signed its own alias to the labels provided hence the prediction is
+also represented in Sparks
+alias the predicted label however returns a string value that represents
+the original names of the labels in a dataset
+the same goes for the decision tree aggressive in the case of regression
+remember that my pipeline had only two stages the features in Nixa and the
+decision tree regresa similarly to a decision tree classifier we get a
+decision tree regresa by creating a model regressive value from feeding a
+pipeline from the training data values and like before we create the tree
+models by casting the doctor to an instance of a decision tree regression
+model and print out the daughter getting results from the model we have a
+printout of the data now let's take a look into all different parameters of
+decision trees the parameters can be classified into three categories problem
+specification stopping criteria and tunable parameters I'll start with a
+problem specification parameters as their name suggests they describe the
+problem and the day to sit they should be properly specified and do not require
+training this category of parameters include some classes the number of
+classes in a classification problem
+categorical features info it's an optional parameter that specifies which
+features a categorical and how many categorical values each of those
+features can take although it is an optional parameter is specified properly
+it can lead to better performance
+the parameters in the stopping criteria category determine when the treetops
+building the specification of these parameters need to be validated on held
+out test data as they may lead to overfitting this category of primitives
+include mack step the maximum depth of the tree if this parameter is increased
+that ease if it is set to build deeper trees the resulting model may be more
+expressive and more accurate but will also be more costly to train and more
+likely to oversee it mean instances per node the minimum number of instances the
+children
+must receive for an ode to be split further it is commonly used in random
+forests as trees go deeper and may over fit resulting leaf nodes with only one
+instance each main info gain the minimum information gain obtained with a split
+for an ode to be split further the information gained is the difference
+between the parent node impurity and the weighted sum the two child nodes
+impurities the impurity of a node is a measure of the homogeneity of the labels
+at that particular node
+finally the tunable parameters as their name suggests these parameters for
+fine-tuning a model and they also need to be validated on held out test data as
+they too may lead to overfeeding these final category of primitives include max
+beans the number of bins used Wendy scrutinizing continuous features being
+equal or greater than the maximum number of categories there any categorical
+feature max memory in MB the amount of memory to be used for collecting
+sufficient statistics its default stands at 256 megabytes which will work in most
+scenarios if increased this parameter can lead to faster training canceled as
+fewer passes over the doctor on the other hand if increased to match it may
+have decreasing returns and the amount of communication on each interaction
+also increases subsampling right the fraction of the training data used for
+learning the decision trade these primitives more relevant for training
+ensembles of trees like random forests impurity the impurity measure used to
+choose between candidates blitz for classification problems
+jeanne impurity and entropy measures is supported for regression problems the
+only supported measure it the variance
+having completed this listen we should now be able to understand the pipelines
+API for decision trees described pipeline input and output columns
+perform classification and regression with decision trees and understand and
+use decision trees parameters

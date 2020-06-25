@@ -1,0 +1,27 @@
+Random Forests:
+    -Ensembles of Decision Trees
+    -Can perform Classification and Regression analysis
+    -Combines many decision trees in order to reduce the risk of overfitting
+    -Support continuous and categorical features
+    -Parameters:
+
+        -numTrees: The total number of trees in the forest
+            -Require tuning
+            -As the number increases the variance decreases
+            -training time increase
+        -maxDepth: maximum depth of each tree in the forest
+            -Require tuning
+            -Takes longer to train
+            -More prone to overfitting
+
+        -subsamplingRate: fraction of the size of the original data set to use 
+            for training in each tree
+            -default = 1.0
+        -featureSubsetStrategy: fraction of total number of features to use as
+            candidates for splitting at each tree node
+            -decreasing this can speed up training
+            -if set too low can also impact the performance
+
+        
+
+        

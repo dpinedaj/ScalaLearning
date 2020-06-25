@@ -1,0 +1,30 @@
+Gradient Boost trees:
+    -Ensembles of decision trees
+    -Iteratively trained to minimize a loss function
+    -Support binary classification and regression
+    -Support continuous and categorical features
+
+    -Process:
+        -Interatively trains a sequence of decision trees
+        -On each iteration it uses the current ensemble to 
+            make label predictions and then it compares these to true labels
+        -Next it re-labels the dataset to put more emphasis 
+            on instances with poor predictions, according to a given loss function
+        With each iteration it reduces the loss function,
+            thus correcting for previous mistakes
+    Supported loss functions:
+        -classification: Log Loss
+        -regression: Squared Error
+
+Random Forest vs GBTs
+    -Number of trees 
+        -RFs: More trees reduce variance and maybe overfitting
+        -GBTs: More trees reduce bias, but increase likehood of overfitting
+    
+    -Parallelization:
+        -RFs: Can train multiples trees in parallel
+        -GBTs: train one tree at time
+
+    -Depth of trees
+        -RFs: deeper trees
+        -GBTs: Shallower trees

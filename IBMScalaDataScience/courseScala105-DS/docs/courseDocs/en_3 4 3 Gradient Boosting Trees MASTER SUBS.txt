@@ -1,0 +1,86 @@
+welcome to gradient boosting trees or GB tease
+after completing the set of lessons about predicting grant applications you
+should be able to understand how to fit together the functions available in
+Sparks machine learning libraries to solve real problems
+use a spark cluster to fit models in a fraction of the time
+perform classification and regression with gradient boosted trees and
+understand in use
+gradient boosted trees parameters trading boosted trees are ensembles of
+decision trees iteratively trained to minimize given loss function the
+pipelines API for gradient boosted trees supports regression and binary
+classification it also supports continuous and categorical features
+this is a quick description of the basic algorithm gradient boosted trees it
+rains a sequence of decision trees iteratively on each iteration it uses
+the current ensemble to make label predictions and then it compares these
+predictions to the true labels next it read labels the dataset to put more
+emphasis on instances with poor predictions according to a given loss
+function so each iteration it reduces the loss that's correcting for previous
+mistakes the supported loss function for classification problems is the log loss
+while for regression problems both square Deira and absolute era supported
+now let's take a look at the parameters of gradient boosted trace the first
+parameter is the loss function itself as I've shown in the previous slide next
+the number of iterations that is the number of trees in the ensemble given
+that each iteration produces one tree as the number of trees increases the
+resulting model gets more expressive improving training data security but its
+test time accuracy may suffer for a large number of trees then we have the
+learning right it's a parameter that should not need to be changed but it can
+be decreased to improve the stability of the model showing unstable behavior
+as the number of trees grows the gradient boost to trees can overheat in
+order to avoid overfitting there is the run with validation method which takes a
+pair of IDT's corresponding to training and validation datasets and performs
+validation while training that's the training is stopped when the validation
+area improvement is less than the tolerance specified as validation toll
+in the boosting strategy object notice that the validation area decreases
+initially and later increases but they may be cases in which it doesn't change
+monotonically in these cases it is recommended to set up a large enough
+negative tolerance and then examine the validation curve using the evaluate each
+iteration method so the number of iterations can be tuned
+here we have inputs and outputs the inputs taken by gradient boosted trades
+in the pipelines API a just the same as the inputs taken by decision trees that
+is the label and features columns however gradient boosted trees output
+only one column the prediction itself
+you need to run the following script from previous lessons to be able to run
+this example if you haven't downloaded the data set from the previous list then
+there is the link in the script to download it to temporary folder and
+loaded in the previous lists and we've also created to preprocessing estimated
+and one post-processing transformer we will use the same estimate isn't
+transformers in a gradient boosting trees pipeline for a gradient boosted
+treats classifying first I create a new instance of it and said its label and
+features columns just like on the random forest course
+can I build up on the same for stage pipeline I've been using so far once
+again I replaced the third stage of the pipeline with my current classify a DBT
+classifier and everything else is the same as before calling the feet method
+to get a model and calling the transform method to make predictions the
+predictions and then returned in the predictions GBT see data frame now let's
+take a look at this data frame I show the predicted an original label and its
+corresponding features for the three top pros in a tests it then remember the
+gradient boosted trees the third stage of the pipeline so once again I can cost
+the stage as the proper model in order to inspect it further the resulting
+model GBT model city has 10 trees
+having completed an example of classification with gradient boosted
+trades just time for an example of repression once again I will build up on
+previous regression examples the pipelines for aggression had only two
+stages and I replace the second one with my current regresa IGBT regresa we used
+the same data already split into a training and test everything else is the
+same as before calling the fit method to get a model and calling the transform
+method to make predictions
+the predictions and then returned in the predictions GBT on data frame as you can
+see the pipelines API makes it very easy to manage the workflow and replace
+and/or extend models as you go
+finally let's compare by the ensemble algorithms random forests and gradient
+boosted trade at the number of trees increase random forests reduce the
+variance and the likelihood of overfitting improving the performance
+monotonically gradient boosted trees on the other hand reduce the bias but
+increase the likelihood of overfishing so the performance can actually decrease
+the number of trees growth to large other important differences at random
+forests are highly parallelized Apple each tree being trained independently
+from each other while grading boosted trees are trained one at a time
+the algorithms also defended the usual depth of its trees while random forests
+usually grow deeper trees since it can benefit from a large number of trees to
+compensate for overfitting gradient boost to trees are usually grown shelhah
+having completed this lesson we should now be able to understand the pipelines
+API for random forests and gradient boosted trees described defaults input
+and output columns perform classification and regression with
+random forests and gradient boosted treats understand and use random forests
+and gradient boosted trees parameters outlined the differences between the two
+regarding its premises
