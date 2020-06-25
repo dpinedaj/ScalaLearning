@@ -1,0 +1,55 @@
+welcome to predicting grant applications and introduction after completing this
+model we will have the ability to use all of the parallel processing power of
+the spark cluster two feet and evaluate machine learning models these can be
+dramatically faster than working on a laptop or even a large multi core server
+contrary to what we did in the other modules in this module will not repeat
+the script we've run in previous lessons after completing this lesson we should
+be able to understand in a general way the data available in the grant
+application data sit appreciate the problem being solved and proposed some
+features that might be good predictors the dataset will be looking at contains
+8708 grant applications from the University of Melbourne 3992 of which
+was successful there was seventeen thousand five hundred and ninety-four
+researchers involved in those applications and the data is available
+on capital L goal is to understand what features contribute to a successful
+grant application and we would like to build a model beacon successfully
+predict whether an application will be successful or not here is some of the
+grant data that's available in the dataset now the original dataset from
+cattle has additional information but we've dropped several columns in order
+to simplify this example
+some of the grant date of the way looking at includes a grant application
+I D which is encoded as an integer the grant status this is whether or not the
+grant application was successful or not the contract value band this is the
+amount of the grant bucket ice tea into ranges and this is encoded as a strain
+and grant category code also encoded as a string it is the categorization of the
+sponsor for example Australian competitive grants Cooperative Research
+Centre industry etc
+now we have some . about researches so this includes the researchers role in
+the proposed research their date of birth day department number and whether
+they have a PhD or not boorda her about researches that we looking at includes
+the number of successful grounds the number of unsuccessful grants and the
+number of articles published in journals of various quality a to being the most
+prestigious and say the least and here is the basic setup night that uses
+running Windows will have to download the data set to a local file in some
+other way because the shell command W get might work for you
+the original data from the university as distributed by candle is quite messy so
+we've cleaned the data and join the data about researchers and grants together
+into a single table we using this box here to a package from data breaks to
+load these tab separated csv file in case you've downloaded the file
+elsewhere please change the load path to the location on your local machine and
+if you're trying this out on a cluster instead of a local machine movies file
+to html his and he was showing some of the columns from the dataset these
+include the grant application I D
+the role the investigative place whether they have a PhD or not the number of
+successful grounds the number of unsuccessful grants which journals
+they've published in and the grad status as some of the grant applications like
+number three we have many rows of data in this data frame this is because there
+are many researches collaborating on this one grant application there are
+also many cases where the data is missing before we continue to the next
+lesson
+let's have the think about a few things first we want to include features that
+are a good predictor each grant we also want to create preaches about grounds
+using the data about researchers and we would like to understand which values in
+the dataset might make good predictors
+having completed this lesson we should be able to understand in a general way
+the data are available in the grant application dataset appreciate the
+problem being solved and proposed some features that might be good predictors

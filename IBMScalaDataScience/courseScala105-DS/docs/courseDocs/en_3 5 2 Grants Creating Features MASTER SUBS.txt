@@ -1,0 +1,57 @@
+welcome to predicting grant applications creating features
+after completing this lesson we should be able to create features for our own
+data sets and learn about and sit relevant model parameters our overall
+plan of attack is to make some of the data more useful by adding some columns
+to the data set that re-encode a few fields we want to use group buy on the
+grant application I D aggregator and summarize the data about researches and
+when necessary we need to create string indexes for the categorical features
+here we using the weed column method on data frame to add three columns to a
+dataset with column takes two arguments first the name of a new column we want
+to create and second a description of how to construct the new column because
+the with PhD column is estranged it will be more convenient to have an integer
+field encoding the same information for example we might want to count the
+number of PHD's in the research team associated with each grant application
+the chief investigator column will be an integer telling us whether or not this
+individual researcher has a chief investigator all we're doing this
+because the chief investigator may impact the outcome of whether the grant
+is successful or not in a dataset we have four columns labeled A to A be and
+say they tell us the number of publications each researcher has had in
+each journal with varying prestige the eighteen generals have the best
+reputation a the second best and so on
+it is reasonable to believe that each researchers publishing record has some
+impact on the acceptance of grant applications for the purposes of
+impressing the reviewers of grant application were having a guest at the A
+two and A level journals and more significant than the others and that the
+others are basically noise he will allocating a weight of 4282 journals and
+328 generals now we can see a few rows of the new data frame with these three
+columns added we've got PhD chief investigator and papers goal which is
+the weighted sum of the journal publications each researcher
+now this looks complicated so let's take it apart piece by piece
+the overall structure he is that we're doing a group buy of the research data
+frame on the grant application I date this means that will be aggregating
+team-by-team combining information about the research is for each grant the first
+three fields are information about the grant rather than the individual
+researchers and we know that for a given grant these fields don't vary from road
+to grow PhD is the number of PHD's on the team and for the team's papers call
+you just take the maximum paper score of any of the chief investigators on the
+team team size is just the number of researchers associated with each grant
+application and finally we add up the number of successful and unsuccessful
+grant applications that each team member has been involved in these are the
+results of the group by Grant status is the column will be trying to predict and
+the other seven columns will be the features for a classifier we could
+probably get better predictive results if we included more of the data
+available to us as we saw in early listen 3.3 point to drink features have
+to be converted into just makes me happy
+you have to do this whenever working with sparks estimated they all expect to
+be given a single victim containing all of the features and now finally ready to
+create a classify oh it's a good idea to set a seed so you can reproduce your
+results if you would like to see all of the parameters available
+you could use the explain parameters method explained parameters is available
+on all of sparks transformers an estimated it will show you all of the
+parameters and each the defaults in current values for example one of the
+more important parameters for Random Forest classifier is the feature subset
+strategy doc defaults these permitted to auto which means that the algorithm will
+decide using some heuristics in our case we only have seven features so one thing
+square root and load to are all about the same somewhere between two and three
+having completed this list and you should be able to create features for
+your own data sets learn about and sit relevant model parameters

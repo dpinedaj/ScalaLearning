@@ -1,0 +1,52 @@
+welcome to predicting grant applications building a pipeline
+after completing this lesson we should be able to understand the role of
+pipelines inspire email use the pipeline to feed a model and make predictions and
+evaluate the results
+pipelines makes use of different components which I've already presented
+in previous lessons regarding parameters in an earlier lesson we saw how one can
+use a parameter map function containing parameters to both transformers and
+estimators pipelines or a best practice solution to a frequent need in machine
+learning where there is a need to combine multiple algorithms into a
+single workflow to produce the desired outputs pipelines are inspired by the
+psyche to learn project they leverage the standardized API's for machine
+learning algorithms in spark a male the refactoring done to support pipelines is
+the primary difference between the old a.m. el Deeb library and spark email as
+the pipeline is composed of different components namely transformers an
+estimated the standardized methods transform in feet
+turns the changing of the different components of a pipeline into a
+straightforward operation regarding the properties of the components in a
+pipeline notice that both transform and feet methods as stateless and each
+component is given a unique I D as we saw before when assigning parameters to
+different instances of transformers and estimators inspire Camilla pipeline is a
+sequence of pipeline stages to be run in a specific order it begins with an input
+data frame containing the original dataset as it passes through each stage
+it is transformed into a different data frame each stage can be either a
+transformer itself or an estimate oh the Transformers stages rather simple he
+calls the transform method on the data frame any estimated stages though the
+feet method is called first and a new Transformers produced and it becomes
+part of the pipeline model works like any other transformers stage at the end
+the pipeline out
+transformed data frame which may contain several additional columns depending on
+the stages it has been through noticed that type checking is done during
+runtime before actually running the pipeline these for transformers and
+random forest classify it come from the previous lesson now we create an
+evaluator recall that the default metric for evaluating a binary classifier is
+the area under the ROC curve this is a good way to measure the performance of a
+model now we want to split a dataset into a training set and a tests it we
+choose or grant applications before 2008 to be in the training set and the tests
+it is the grant applications from 2008 this holds out about a quarter of a date
+of the testing and here we have the results of a pipeline it looks like
+feeding a model on the training set has resulted in over 90% accuracy when
+testing it on a test that looks promising
+now keep in mind that Spock is lazy nothing is computed until it's needed
+this means that into you call feet on the pipeline the Transformers an
+estimated that make up its stages have not been executed when you first put
+your pipeline together you may discover problems in one or more of the stages
+that you created much earlier so it's a good idea to first build a very simple
+pipeline with just a few feature transformers and a model just to get
+things working and then increment only add stages once you have something
+working in to end in the next lesson will try to improve on these results by
+using grid search to find better premises for the model
+having completed this lesson we should now be able to understand the role of
+pipeline since by email
+use a pipeline to get a model and make predictions and evaluate the results

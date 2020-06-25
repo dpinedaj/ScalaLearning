@@ -1,0 +1,54 @@
+welcome to predicting grant applications wrapping up after completing this lesson
+we should be able to extract useful information from the results of the grid
+search including the average area under the ROC curve each combination of
+parameters the parameters of the best model and the feature important PSA's of
+the best model here at the results of the cross validation and grid search we
+completed in the last lesson one thing we may want to know is which set the
+parameters that is to say which parameter map produced the best results
+we decided to try to different values of max depth and two different values of
+Numb treat this gave us four outcomes cross validation is used to fit models
+using all four combinations of these two parameters average metrics returns the
+results of our evaluated each of the four sets of Providence here we can see
+that all of our results look fairly similar but the best results came from
+the second combination of parameters this is the list of pyramidal maps again
+from the last lesson we can see that the second combination that is the second
+parameter map is the one with max depth equals 10 and number trees equals 100
+figuring out the best set of primitives by hand just like we did is workable
+when there are only a couple of parameters but when there are more
+primitive or more values being tried
+exercise gets tedious pretty quickly so he's a bit of scarlet code that you can
+use to automate this
+this method pairs each primitive map with its corresponding school it binds
+the pair with the highest score and returns the perimeter map from the
+winning pair and we get max depth of 10 a number of trees of a hundred another
+thing we'd like to do is to examine the winning random forest classification
+model the best model is a method on cross validated model that returns a
+pipeline model with the winning versions the Transformers and estimator in its
+pipeline the last stage of these pipeline model is the Random Forest
+classifier we'd like to examine in more detail we can print out the
+classification model for the best random forest derived from the pipeline model
+he we put the features and the best friend of forest has sixty one thousand
+two hundred and eighty four nodes let's have a look at the feature importance is
+now here we can see the team size and PHD's don't seem to be very informative
+and surprisingly paper score doesn't seem to be very informative either the
+first two and last two features are clearly used for pets
+Value Index category index and successes and failures the big surprise here is
+that we would have thought the papers school would contribute more to the
+success of a grant we may want to play with the way that we allocated this
+Court to see if it changes everything
+also we may want to have a look at how variable the feature important Cesare
+cross other models but that's for another listen now summarizing our
+results when we used the default parameters we had an area under the ROC
+curve of point nine or nine that means that the probability that the model
+predicts successful grant accurately is around ninety percent just pretty good
+after a grid search we got that up 2.92 running the grid search on a cluster
+proved to be a real time saver and what we found out is that not all of our
+features prove very useful so maybe you can try and get a better results
+having completed this listing we should be able to extract useful information
+from the grid search including the average area under the ROC curve each
+combination of parameters the parameters of the best model and a feature
+importance is the best model
+having completed this module about predicting grant applications you should
+now be able to understand how to fit together the functions available in
+Sparks machine learning libraries to solve real problems but models in a
+fraction of the time using the spot cluster

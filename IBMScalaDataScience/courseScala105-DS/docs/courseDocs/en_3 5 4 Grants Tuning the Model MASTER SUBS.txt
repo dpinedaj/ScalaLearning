@@ -1,0 +1,44 @@
+welcome to predicting grant applications cross validation and model tuning
+after completing this lesson we should be able to avoid overfitting by using
+cross-validation when trading a model improve the model's performance by using
+grid search to find better premise out typical workflow begins with loading
+data
+extracting features training a model and then evaluating a model the outcome of
+loading out data is a creation of a data frame we use a transformer two extracted
+features we then use an estimate oh she's feeding our model to train a model
+and once we have a model we implement a model on a test set of data and we can
+evaluated using and evaluate 0 during this process we would like to explore
+the parameter space more deeply to extracting optimal set of features and
+fit a model to predict with greater accuracy RAF is the Random Forest
+classifier we working within a pipeline we extract the perimeter map to show us
+all of its parameters as we chillin this classifier we've been trying different
+values for some of these parameters for each combination of parameters settings
+we will build and evaluate a model and eventually we pick a winner
+the DePaul values for the max depth and numbers trees parameters around the
+small they were probably chosen so that the models could be built quickly by
+default this is how we implement a simple grid search here we are
+overriding the default values for maximum depth and number of trees we
+specify the maximum depth to be 30 instead of the default five and we
+specify the number of trees to be 100 instead of the default 20 these are the
+resulting Mac step mom trees combinations we will be evaluating now
+we want across validate our models the main idea is to break out data sit in
+two tests and training data we want to split a data several times and each time
+you use a part of the date of the training and the rest of the testing to
+implement a cross-validation method spock supports k fold cross validation
+all it is doing is dividing the data in 2k non-overlapping subsamples in the
+performance is measured by averaging the result of the evaluator across the case
+subsamples we should choose k to be greater than or equal to 3 years how we
+implement cross validate oh we have to first set up a cross validation data by
+providing the pipeline for the estimate oh we then poss in the area under the
+curve as an evaluate oh that we have to provide that power and greed for the
+estimate oh and finally we set the number of subsamples we would like to
+implement a final results are a little bit better than what we had before
+comparing it to the results of a previous pipeline it looks like we have
+a couple of percent improvement but it did require twelve times the
+computational effort three times because of the three fold cross validation and
+four times because of private a grid search what's really amazing about these
+prices is that these computations are occurring concurrently and this is where
+spark email really shines
+having completed this lesson we should now be able to avoid overfeeding by
+using cross-validation when training a model and improving model's performance
+by using grid search to find better parameters

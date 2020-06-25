@@ -1,0 +1,68 @@
+welcome to linear methods after completing this lesson we should be able
+to understand the pipelines API for logistic regression and linear
+least-squares perform classification with logistic regression perform
+regression with linear least squares and use regularization with both methods to
+pipelines API also provides models for logistic regression and linear
+least-squares both models using implementation of elastic net to provide
+regularization elastic net is a convex combination of L one NL to
+regularization terms of its parameters alpha 20 it is equivalent to a region
+aggression and if its parameter alpha set to 1 it is equivalent to the lawsuit
+let's start with the logistic regression it is widely used to predict binary
+responses that is for binary classification problems its elastic net
+parameter is denoted as alpha while its regularization parameter is denoted as
+lambda logistic regression can also be generalized into a multinomial logistic
+regression in the case if they're a que possible outcomes one outcome is chosen
+as pivot and the other k minus one outcomes
+separately regressed against the pivot outcome the benefits of logistic
+regression and that it has no changing parameters and its prediction equation
+is simple and easy to implement
+any leads implementation of a multinomial logistic regression the
+first class hero is chosen as the pivot class then its output contains k minus
+one binary logistic regression models regressed against the pivot class so for
+a new data point these k minus one models are run in the class with the
+largest probability is chosen as the predicted class two algorithms are
+supported in a male leads implementation and many batch gradient descent and L
+BFGS which is recommended for faster convergence in the fight against
+overfitting researchers during the nineties proposed different ways to
+penalize large parameters is called regularization sparks linear regression
+implementation supports different types of regularization 2010 lawsuit and ill
+to reach regression the combination of the two is called elastic net and if
+there is no regularization term it is a simple case of ordinary least squares
+this is a formula table showing how the elastic net is combined with both the L
+one last until to reach regression smoothing techniques there are two
+parameters alpha Atlanta corresponding to the last two and reach progression
+smoothing techniques if you haven't downloaded the dataset from the previous
+lesson there is a link in the script to download it to temporary folder and
+loaded now we look at an example of binary classification using logistic
+regression
+I create a new instance of the logistic regression and said its parameters
+maximum number of iterations regularization and elastic net
+parameters then I call defeat method to produce a trained model which I named
+log model noticed that I'm still using the training data from the original data
+frame I have randomly splitted in the beginning of this entire module I can
+then inspect
+kuwait's coefficients and the intercept of the trained model using the
+corresponding attribute in a model instance more I thought I can access the
+logistic regression training summary object through the summary attribute the
+model instance this summary has plenty of useful information for instance the
+objective history that is the era of the model in every iteration the summary can
+also be used to evaluate the model this is the topic of the last listen this
+module now it's time to introduce linear least-squares the most common
+formulation for regression problems with the average loss equals the mean squared
+era it also supports different types of regularization by the L one less sooo
+and ill to reach regression and if there's no regularization term it's just
+a simple case of ordinary least-squares he is the example of a linear regression
+I create a new instance of linear regression and just like I did with
+logistic regression I said its parameters number of iterations
+regularization and elastic net parameters everything else goes exactly
+the same fitting the model inspecting its weight in intercept also accessing
+the summary of the linear regression I can observe the objective history that
+he's the era of the model in every iteration let's explore this summary a
+little bit further this time besides the objective history which I have
+introduced before you can also get all residuals in a data frame by accessing
+its residuals attribute this is an example of the residuals for the first
+three elements in the dataset after completing this lesson we should now be
+able to understand the pipelines API for logistic regression and linear
+least-squares perform classification with logistic regression perform
+regression with linear least-squares
+and use regularization with both methods

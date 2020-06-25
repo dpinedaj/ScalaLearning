@@ -1,0 +1,32 @@
+Linear Methods:
+    -Logistic Regression
+        -Predict binary responses
+        -Can be generalized into multinomial logistic regression (1 vs all)
+        -Benefits:
+            -Has no tunning parameters
+            -Simple and easy to implement
+        -Supported algorithms:
+            -mini-batch gradient descent
+            -L-BFGS (recommended for faster convergence)
+        -Regularization:
+            -L2 regularization: Ridge Regression (penalize beta parameters by
+                the square of their magnitude)
+            -L1 regularization: Lasso (penalizes beta parameters by their absolute value)
+            -Elastic net: combinates L1 and L2 with a weight for each
+                -Equivalent to ridge if alfa set to 0
+                -equivalent to Lasso if alfa set to 1
+
+                Parameters:
+                    -elasticNetParam -> corresponds to alfa
+                    -regParam -> corresponds to lambda
+                    -Are passed when es instanciated the LogisticRegression estimator
+
+    
+    -Linear Least Square
+        -Most common formulation for regression problems
+        -As in logistic regression, diferrent types of regularization possible
+            -no regularization: Ordinary Least Squares
+            -L2->Ridge Regression
+            -L1->Lasso
+            -Elastic net
+        -Average loss = Mean Squared Error

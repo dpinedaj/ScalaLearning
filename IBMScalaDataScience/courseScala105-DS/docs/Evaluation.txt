@@ -1,0 +1,47 @@
+Evaluators:
+    -Available evaluators:
+
+        -BinaryClassificationEvaluator:
+            -Expects two input columns: RawPrediction and label
+            -Supported metric: areaUnderROC
+
+        -MultiClassClassificationEvaluator:
+            -Expected two input columns: prediction and label
+            -supported metrics:
+                -F1(default)
+                -Precision
+                -Recall
+                -weightedPrecision
+                -weightedRecall
+
+        -RegressionEvaluator:
+            -Expect two input columns: prediction and label
+            -Supported metrics:
+                -rmse
+                -mse
+                -r2
+                -mae
+
+    -BinaryLogisticRegressionSummary:
+        -Accesibble through summary attribute of a LogisticRegressionModel
+        -Summarizes que model over the trainning set
+        -Supported metrics:
+            -areaUnderROC
+            -fMeasureByThreshold
+            -pr
+            -precisionByThreshold
+            -recallByThreshold
+            -roc
+
+    LinearRegressionTrainningSumamry:
+        -Attribute of a LinearRegressionModel
+        -Supported metrics:
+            -explainedVariance
+            -meanAbsoluteError
+            -meanSquaredError
+            -r2
+            -residuals
+            -rootMeanSquaredError
+
+    
+

@@ -1,0 +1,120 @@
+welcome to evaluation
+after completing this lesson you should be able to evaluate binary
+classification algorithm using the area under the receiver operating
+characteristic curve or the rock evaluate multi-class classification and
+regression algorithms using several metrics and evaluate logistic and linear
+regression algorithm using summaries up to training a model and making
+predictions for the test data it is time to evaluate the model and evaluate is a
+class that computes metrics from the predictions there are three types of
+evaluate is available the binary classification evaluated as the
+multi-class classification evaluated and regression evaluators if you haven't
+downloaded the data fit from the previous lesson here is the link in the
+script to download it to your temporary folder and loaded into spark now we look
+at an example of binary classification using logistic regression test I create
+a new instance of the logistic regression and said its premise the
+maximum number of iterations the regularization and elastic net premise
+then I call the fifth method to produce a trained model which I named log model
+that is that I'm still using the training data from the original data
+frame five randomly selected in the beginning of this entire module I can
+inspect the whites
+coefficients and the intercept of the trained model using the corresponding
+attributes in a model instance let's start with the binary classification
+evaluate oh as its name states it is used to evaluate binary classifies it
+expects to input columns the Royal prediction column and the label column
+the only supported metric
+area under the ROC curve this is an example of a binary classification
+evaluate oh I'm going to build upon the logistic regression model from the
+previous lesson and evaluate its predictions
+Thursday I called the transform method on the test data to get a data frame
+with the predictions which I named predictions log in I create a new
+instance of a binary classification evaluate oh and set the corresponding
+columns as inputs and the metric name to the army available metric area under ROC
+now I can call the evaluated evaluate method on the predictions made by the
+logistic regression to get its area under the ROC curve which happens to be
+in this example a perfect 10 often there are more than two categories you can
+classify an item into the multi-class classification evaluate oh he's an
+evaluative for multi-class classification problems it also expects
+to employ columns prediction and label it supports five different metrics the F
+school the default meant trick precision recall and it's weighted versions waited
+precision and waited recall to show what a multi-class classification evaluated
+can do we will need a model that can do more than two categories the Random
+Forest classifier we calculated before we do we will need to prepare the
+pipeline for that model this is the exact script we have running previous
+sessions to set up pipelines for random forests and gradient boosting treat all
+the rest is exactly the same as before calling the feet method to get a model
+and calling the transform method to make predictions the predictions and then
+returned in the prediction RFC data frame now an example of a multi-class
+evaluate oh this example I can evaluate any of the multi-class classifiers I
+have trained so far and I choose to evaluate the predictions made by the
+Random Forest classifier which I previously assigned to the prediction
+see data frame the true labels of the tests it we're in the index label column
+and the predictions made by the model wherein its prediction column so I
+create a new instance of a multi classification of value 80 and set the
+corresponding columns imports also I said the metric to be precision instead
+of the default if school now I can call the evaluated evaluate method on the
+predictions made by the Random Forest classifier to get the estimated
+precision which is 96.6% or put in another way
+a 3.3% test era the regression evaluator is an evaluative aggression problems it
+also expects to import columns prediction and label it supports four
+different metrics root mean squared error which is the default metric main
+square Deira ask Wade which is the coefficient of determination and mean
+absolute era who used the previous regression in a previous lists and in
+random forest if you come to this listen directly and don't have the context he
+is the code that produces the predictions we will evaluate now for an
+example of a regression evaluate 0 for this example I can evaluate any of the
+regreses I've trained so far and I choose to evaluate the predictions made
+by the random forest regresar which I've previously assigned to the predictions
+are if they to frame the true labels of the tests it when its label column and
+the predictions made by the model wherein its prediction column so I
+create a new instance of regression evaluate oh and sit the corresponding
+columns imports also I sit the metric to be the root-mean-square era now I can
+call the evaluated evaluate method on the predictions made by the random
+forest regresa to get the root mean squared error on the test data which is
+approximately zero point 16
+in less than three point for point fool I introduced summaries for both logistic
+regression and linear regression models they were accessible through this
+summary attribute of the model and contained useful information regarding
+the training crisis
+the majestic regression model summary is an instance of logistic regression
+training summary which can be casted as a binary logistic regression summary
+fields summary can be used for model evaluation it supports six different
+metrics the area under the receiver operating characteristic curve the F
+measure by threshold it data frame with two fields at threshold and its
+corresponding if measure PR the precision recall curve also a data frame
+with two fields recall and precision precision by threshold a data frame with
+two fields at threshold and its corresponding precision recall by
+threshold a data frame with two fields at threshold and its corresponding
+recall and rock the receiver operating characteristic curve data frame with two
+fields false-positive tried and true positive rate now for a simple example
+of a binary logistic regression summary again I'm going to build up the logistic
+regression model from the previous lesson and get it summary which I named
+training summary Ella next I cast an instance of binary logistic regression
+summary which I named finery summary then I can get any of the supported
+metrics by accessing its corresponding methods so I get the area under the ROC
+curve which is . 99 I can also get the F measure by threshold as shown in the
+resulting data frame and yes this is a close to perfect model and it's very
+unlikely that you'll get such a perfect fit with data in reality then I can
+obtain the maximum if measure applying the aggregate method on these data frame
+as seen in an early lesson in this case the maximum if misha is . 988 now I can
+get the corresponding threshold using a we're conditioned on the data frame
+taking its head row and casting it to a double alternatively I can get either
+the precision by threshold
+the recall by threshold data frames has shown in this light finally I can get
+the ROC curve as the data frame with false positive rates and true positive
+rate in its columns linear regression models also have summary they can be
+easily accessed through the summary attribute the linear regression model
+and like the logistic regression there is no need for casting it to another
+class it also supports six different metrics explained variance main absolute
+era LDL one normal loss mean square Deira a squid also the coefficient of
+determination the residuals which is the difference between the actual and
+predicted values and the root mean square Deira now I'm going to build up
+on the linear regression model from the previous list in and get it summary
+which I named training summary lol its game I can simply get any of the
+supported matrix by accessing its corresponding methods so I show the
+results for the explained variance mean absolute era mean squared error and for
+the coefficient of determination I can also get the residuals as the data frame
+and finally the root mean squared error for the model is also available
+having completed this lesson you should now be able to evaluate binary
+classification algorithm using the area under the ROC curve evaluate multi-class
+classification and regression algorithms using simple metrics and evaluate
+logistic and linear regression algorithms using summaries
