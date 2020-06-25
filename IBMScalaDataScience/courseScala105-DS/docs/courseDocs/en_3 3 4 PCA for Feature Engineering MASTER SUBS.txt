@@ -1,0 +1,106 @@
+welcome to principal component analysis in feature engineering
+after completing this lesson we should be able to understand what principal
+component analysis is and understand PCA's role in feature engineering
+principal component analysis is used to transform possibly correlated variables
+into uncorrelated variables it has many uses but in this video we are only
+interested in use for feature selection often we will be dealing with large
+datasets which contain a large number of predictors or features we will likely
+want to select the smallest number of the most important features for a model
+to do this we can use principal component analysis with PCA we are
+transforming a predictors into an orthogonal set of new predictors called
+principal components this means each principal component is uncorrelated each
+principal component is formed by constructing a linear combination of our
+regional predictors the first PC captures the most variability at all
+possible linear combinations while the remaining PCs capture most of the
+remaining variability the number of PCs will always be less than or equal to the
+number of our regional predictors feature engineering is a practice where
+predictive created and refined to maximize model performance this can take
+quite some time
+feature selection is a critical part of the modeling process as it affects a
+model components and interpretability there's a great quote on the feature
+engineering page on wikipedia by Pedro Domingos that sums up feature
+engineering he goes like this
+some machine learning projects succeed and some fail what makes the difference
+easily the most important factor is the features used the basic idea of each
+engineering is to generate a smaller city of variables that capture most of
+the information in the original variables so when we are dealing with
+hundreds of predictors we want to select the smallest possible subset that will
+result in optimal model fit leading to better decision-making and the new
+predictors just functions of the original predictors and all the original
+predictors are still needed to create the surrogate variables now we're going
+to look at a dataset of us' crimes this dataset contains more than a hundred
+predicted some of which are socioeconomic predictors touches the
+percentage of offenders who have not yet entered high school and the percentage
+of households with wage or salary
+we interested in predicting the proportion of violent crimes per 100,000
+population on different locations across the us- let's assume that we don't want
+to operate with all the predictions in the dataset there are more than 100 the
+reason for this is that some of that product is a likely to exhibit
+collinearity it is also difficult to identify relationships in high
+dimensional spaces we would now like to use PCA to reduce a set of predictors to
+ten dimensions this slide shows how to load the crime CSV into a data frame at
+the top there is a dependency defined with the coal indep command allowing us
+to use this box ESP library now spa crippled or notebook we then use the
+shell colon W get command to pull down the CSV data set from an external server
+night at the W get command may not work on Microsoft Windows boxes we then
+create a C
+equal context which gives us access to the data frame library and then we
+import implicit conversions which will automatically translate data types for
+us we then define the crimes data frame value by using the sequel context to
+read in the data from this year a file specified a comma delimiter and that
+there is a line of head is at the top to pause before reading data we didn't
+specify to infer the scheme of the data based on the values found a male leads
+principal component analysis wants a row matrix not the data frame so we need to
+convert the predictors from data frame turow matrix
+in this slide we are taking the idea of rows that represent the features data
+frame and applying a function to each value you need a DVD of rose to convert
+it to a victim then we create a new row matrix from the IDD victors
+the principal components are stored in a local dense matrix he we compute the top
+10 principal components the matrix PC is now ten dimensions but it now explains
+the variability in crimes almost as well as the previous one hundred dimensions
+like any modeling technique principal component analysis carry some pros and
+some cons IPRO could be interpreted bility game because you have fewer
+dimensions you can now plot the original variables that comprise each chosen
+principal component and observe patents that you could not see before there is
+an alternative viewpoint to these thought that's that principal components
+are not easily interpretable for example if a principal component happened to be
+the linear combination of various socio-economic factors as well as
+highlight these new variable may not make a lot of sense to interpret as it
+doesn't really exist in reality in general though principal component
+analysis can lead to a better predictive model as it can help us construct a
+parsimonious model that will reduce the issue of overfeeding our training data
+at the pros of PCA include performance through dimension reduction and the
+identification of separate classes for classification problems these can set
+the initial expectations of the model a- if there is little clustering of the
+classes the plot of the principal component values will show a significant
+overlap of the points for each class the cons of principal component analysis of
+the computational effort which often depends greatly on the number of
+variables and the number of data records because PC 86 linear combinations have
+predicted that maximize variability in data you will naturally first be drawn
+to summarizing predicted that retain most of the variation in the data if the
+original predictors are on measurement scales that defeat in orders of
+magnitude considered demographic predictors for example such as income
+level in dollars and height in feet
+in the first few components will focus on summarizing the higher magnitude
+predictors for example income while latta components will summarize lower
+magnitude predictors for example height this means that the PC whites will be
+large if the predictors that explain the most variation in our data to address
+this you would normalize your data and perhaps even think about transforming it
+prior to analysis this nice simple answer to the question of how many
+principal components should we use but there are a couple of heuristics for
+example we could look at a screen prot these graphs the components as the xx's
+and the corresponding eigenvalues is the y axis as one moves to the right toward
+latta components the eigenvalues drop in the gradient of the drop flattens out
+the graph displays appointed complexion or an elbow the screen test then says to
+drop all further components after the one starting at the elbow another Hira
+stick to use it to set up a variance explained threshold for example in our
+crimes Dutta said we could take as many principal components is needed to
+explain ninety-five percent of the variation among the proportion of
+violent crimes across the USS the single best tip her best practice is to always
+center and scale the predictors prior to performing principal component analysis
+otherwise the predictors that have more variation will soak the top principal
+components in this dataset the data was already tainted and scaled we may also
+want to look at transforming some of the variables prior to analysis as well
+having completed this lesson we should now be able to apply principal component
+analysis inspire and use principal component analysis to fix datasets with
+correlated predicted that could otherwise trip out models

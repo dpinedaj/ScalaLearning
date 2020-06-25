@@ -1,0 +1,11 @@
+    -The models in MLlib are designed to work with RDD[LabeledPoint] objects, 
+    which associates labels with feature vectors 
+    
+    -spark.ml
+        -The models in spark.ml are designed to work with DataFrames
+        -A basic spark.ml DataFrame will (by default) have two columns:
+            -a label column (default name: "label")
+            -a feature column (default name: "features")
+        -To create a feature vector we can use the VectorAssembler Transformer
+            passing to it the features and output all in the same column
+

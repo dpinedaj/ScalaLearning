@@ -1,0 +1,14 @@
+Mahalanobis Distance:
+    -Multi-dimensional generalization of measuring how
+    many standard deviations a point is away from the mean
+    -Measured along each Principal Component axis
+    -Unitless and scale-invariant
+    -Takes into account the correlations of the dataset
+    -Used to detect outliers
+
+    --> Is important to scale the features before applying the process
+
+    -->It takes the inverse matrix of the correlation matrix to perform the udf
+    
+    --> The udf to perform mahalabobis convert a vector to a linalg Vector with the formula:
+            vB.t * invCorre * vB

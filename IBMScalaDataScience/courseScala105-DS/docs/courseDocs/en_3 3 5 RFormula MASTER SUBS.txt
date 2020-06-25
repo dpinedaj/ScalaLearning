@@ -1,0 +1,48 @@
+welcome to a formula
+after completing this lesson you should be able to understand why often Mueller
+exists understand a formal invitation understand the transformations a formula
+produces only new models and use a formula on a real-world example in
+modeling we often define a variable as a function of other variables or
+predictors the pseudocode for DS is very close to more traditional math notation
+it could be that a variable Y equals the combination of several other variables
+variable A&B all the way to variable fee
+the problem is it is entirely accurate to use the equal simple because we are
+generally working with variables that are random and it really only makes
+sense but two random variables to be equal in distribution so we used the TLD
+sign to denied that one variable is composed of others ie that one variable
+who had the distributional qualities of the particular composition of the others
+the at symbol represents the inclusion of a variable in a model
+this table
+shows some of the ways variables can be combined in the interaction term is used
+when the combination of two or more variables contribute to the outcome of
+the third for example the joint effect of inhaling asbestos and smoking is
+higher than the sum of both of those effects separately
+in we don't tend to go down to the abstraction level so we aren't concerned
+much with the internals of this system unlike with spark an example is that the
+string input columns will automatically be one hot encoded
+Lighthouse Park actually fits two models for the two levels of the categorical
+variables that a one hot encoded when we are dealing with multiple categorical
+variables but Sparky's doing his defeat multiple models one for each condition
+this is the same dataset be downloaded in the lesson on using principal
+component analysis the feature engineering first we use the colon DEP
+to add the dependency for the spock CSV library so we can use it we then create
+the sequel context so we can access data frames and import the implicit it's
+required for automatic data type conversions when we load the data we
+then read the CSV data as we did in early adolescence specifying the format
+the delimiter character whether or not there is a header row and whether or not
+to infer the schema
+we will use the crimes to date a frame from the previous list and 3.3 point
+four principal component analysis feature engineering if you arrived at
+this video without viewing that one first
+you may want to go back and do so before viewing this one
+we provide the formula as to how to calculate what we want from each field
+and provide the features and label column names next we fit the formula and
+transform the results when we select the data by column name here the results
+than what we've seen is that a formula is a very handy shorthand to write quite
+elaborate models it started in the Outworld used only on linear models but
+over time on the models for example random forests started using formula
+notation to specify models a formula simplifies the creation of machine
+learning pipelines by providing a concise way of expressing complex
+feature transformations
+having completed this lesson we should now be able to understand the off
+formulate interface to model feeding and fit a model using the formula interface

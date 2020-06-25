@@ -1,0 +1,40 @@
+welcome to feature vectors
+after completing this lesson we should be able to understand how feature
+vectors feeding to the API's
+box in mail leap and Spa Kimmel Live briefs it simple feature vectors and
+extract specific dimensions from feature vectors Emily B is dependent on the IDD
+API which is best used from Scala for run-time performance reasons Python in
+our performance when using our DVDs can be anywhere from three to 10 times lower
+back email is a new email library implementation that leverages data
+frames data frames homogenized the runtime performance between Scylla
+Python and I but at the expense of a less powerful API but is also not well
+typed so you feel this way we passed ring bell using two functions to
+represent what we want to do but if you misspelled one of these streams you only
+find out at runtime so that can be quite painful as a data scientist using Scala
+we have to make choices about which aP I we will use based upon the power of
+either implementation the type safety and correctness we desire and the
+runtime performance associated with it
+there is a new API code data sets in spark version 1.6 but we won't cover
+them in this course the models in ML lead a designed to work with IDD label
+point objects which associates labels with feature vectors on the other hand
+the models with sparking a melee designed to work with data frames and
+basics Pachelbel data frame will by default have two columns labeled column
+and features column let's have a look at creating featured that does using spock
+email the output of our extract transform load process
+ETL process may be a data frame in this example we have a data frame with full
+color change user session count revenue arising from those sessions and recency
+or time elapsed since our last login
+we would like to see if we can prediction using the three other
+variables in a data frame
+here is the code to generate the example data frame
+in order to use the model estimated since pocket male roommate to combine
+your features into one victim you can do this with a victory simpler to use of
+victories same blow specify the columns you want to gather together and the name
+of the victim Kalam you want to have created here I've included the session
+count total revenue and the number of days since the last login or recency
+into the features victim you can also use Invictus license to extract data
+from each victim in this example have chosen to keep the first two columns of
+the feature vectors
+having completed this lesson we should now be able to understand how feature
+vectors feet into the API's for Spock Sam Elliott and Spa kemal libraries the
+symbol feature vectors and extract specific dimensions from feature victors

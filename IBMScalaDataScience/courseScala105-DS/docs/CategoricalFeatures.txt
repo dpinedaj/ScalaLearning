@@ -1,0 +1,14 @@
+The categorical features:
+    -Can be processed by his index, which is needed because spark classifiers
+     and regressors only work with numerical features
+
+    -Methods:
+        -StringIndexer:
+            -Converts the string categorical variable into Double Indexers
+            -Those indexers store some information about which string represents
+        -Reversing the Mapping:
+            -When a column is made by a string Indexer, we can restore the string data
+             using the IndexToString transformator
+        -OneHotEncoding:
+            -Generate a sparse vector column, with each dimension of this vector of Booleans
+             representing one of the possible values of the original feature

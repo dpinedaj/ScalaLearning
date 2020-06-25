@@ -1,0 +1,61 @@
+Welcome to data normalization.
+After completing this lesson you should be able to
+normalize the data set to have unit p-norm
+normalize the data set to have unit standard deviation and zero mean
+and normalize the data set to have given minimum and maximum values.
+A normalizer is a transformer which transforms a dataset of vector rows
+normalizing each vector to have unit norm.
+It takes a parameter P, which specifies the p-norm used for normalization.
+it standardizes input data, improving the behavior of learning algorithms.
+To illustrate this and further examples in this lesson
+I used the same DFVEC DataFrame from the previous lesson
+which is a 10-rows DataFrame with two columns: ID and features
+each feature being a vector of size three with randomly generated values.
+We have used the vectorAssembler to turn these three columns of randomly generated values
+into a single column in a DataFrame
+where each element is a vector with three elements.
+as with any other transformer, I instantiate a  normalizer
+and set its input and output columns and appropriate parameters.
+In this case, I want to normalize the features column and I named the resulting column scaledFeat.
+Also I set the P parameter to 1.0
+then I call the transform method over my DataFrame to get the normalized feature  vectors appended to it.
+The result looks like this.
+A StandardsScaler is a model which can be fit on a dataset to produce a StandardScaleModel.
+It is also a transformer which transforms a dataset of vector rows
+normalizing each feature to have a unit standard deviation and/or zero mean.
+It takes two parameters
+withStd, to scale the data to unit standard deviation and withMean, to center the data with mean before scaling.
+If set true, the parameter withMean builds a dense output, so sparse inputs will raise an exception.
+And, if the standard of a feature is zero
+StardardScaler returns 0 in the Vector for that feature.
+This is an example of a StandardScaler.
+After doing the appropriate import, I instantiate a standardScaler and set its input
+and output columns, just like I did with the normalizer in the previous example.
+But in this case, I also have to set the withStd and withMean parameters.
+I choose to set them both to true
+so my feature vectors have zero mean and unit variance .
+Since the StandardScaler is a model I call its fit method
+and pass my data frame as an argument is signing the result to scaler2Model.
+Now I can call the transform method over my DataFrame to get the standardized feature vectors appended to it.
+the result looks like this.
+A MinMaxScaler is a model which can be fit on a dataset to produce a MinMaxScalerModel.
+It also is a transformer which transforms the dataset of vector rows
+rescaling each feature to a specific range, for instance, between 0 and 1
+It takes two parameters, min and max, respectively
+lower and upper bounds shared by all features after transformation.
+Notice that since 0 values are likely to be transformed to non-zero values
+sparse input may result in dense outputs.
+now for an example of a MinMaxScaler.
+After doing the appropriate import, I instantiate a MinMaxScaler
+and set its input and output columns, just like in the previous example.
+I also have to set its specific parameters, that is min and max.
+I choose to set them as -1.0 and 1.0
+Like the StandardScaler, the MinMaxScaler is also a model
+so I first call its fit method and with its result Scaler3 model
+I apply the transformation over my DataFrame with the transform method.
+Now, the output column contains feature vectors scaled to range between  -1.0 and 1.0
+as shown in the resulting DataFrame.
+Having completed this lesson you should be able to
+normalize the data set to have unit p-norm
+normalize the dataset to have unit standard deviation and zero mean
+and normalize a dataset to have given minimum and maximum values.

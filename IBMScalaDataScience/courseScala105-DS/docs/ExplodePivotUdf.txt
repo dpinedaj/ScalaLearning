@@ -1,0 +1,13 @@
+Explode function:
+    -Allows to unpack the sequence or iterable columns where each value
+        represents a new row
+    
+User Defined functions:
+    -Can be done with a defined function or with a lambda function
+        and can be applied to a specific column in a dataframe
+    -In the example allows to determine the lenght of the array which represent
+        a single value of a column in the dataframe
+
+Pivot function:
+    -Allow to see a grouped DataFrame where there's an index and column groups
+        and the values are the match of every index and column

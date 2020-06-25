@@ -1,0 +1,76 @@
+welcome to categorical features
+after completing this lesson we should be able to encode categorical features
+with sparks string index are encouraged categorical features with box one hot in
+coda and know when to use each of these as a data scientist we will often be
+dealing with categorical variables the problem is
+categories on so useful to work with so we will need to map these categories to
+into jizz this lesson teaches us how to do this as a bit of background the type
+of variables we deal with determine the sip-it statistical models we can choose
+from for example it only makes sense to implement a standard linear regression
+on continuous variables certified data is categorical we have to look to the
+generalized linear regression family like a logistic regression since
+categorical variables accountable finite unlike real numbers which are continuous
+we can encode them within touches the problem is we have to be careful how we
+called them for example if we assigned the integers 1234 to four different
+categories we imply a distance metric and order or rank 20 variables if the
+integers carried no meaning to the four categories this would result in poor
+interpretation of results these lists and looks at how we can encode variables
+so the modeling process makes sense in are you have factors in Python pandas
+you have the categorical data type in the function factor can be used to
+encode vector as a factor it maps strings to enter jizz in this video we
+will see how to map string features two integers in spark
+tax classification and regression functions only work with numerical
+features this means we have to map string features two numbers we do this
+using string index on this helps keeps box internal simple and efficient is
+also very little cost in transforming categorical features two numbers and
+then back to their respective categories again here we have a very simple data
+frame nationality is a string column with three distinct values the USS UK
+France will need to convert the string values to something numeric before we
+can use one of Spock's predictive models the string index assigns a unique
+integer value to each nationality note that the string index assigns numeric
+values in order with the most common label being assigned the value 0 the
+second most common gets the value 1 and so on the classifiers in ML liebe and
+spark a male who predict numeric values that correspond to the index values
+index to stream is what you need to transform these numbers back to your
+original make labels he's an example of indexed to street first import the index
+to string library 2nd create a new index to stream converter in spark the input
+data frame needs to contain a column called predicted index in order to
+create a toy example I've created a data frame by selecting the index column from
+the indexed table and renamed it as predicted index when I passed these data
+frame into the converter output me and other table with an additional column
+predicted nationality often you actually have a classifier that can only do
+Boolean but the problem has multiple classes so white Hawk the algorithm to
+work on a multi category context is to do the double coding into Boolean
+features here the table shows the encoding the week
+expect to get from the one hot in coda the first element of each vector tells
+us whether the nationality is the United States or not the second element whether
+or not the nationalities France and the third element encodes whether or not the
+nationality is the United Kingdom the one hot and Koda needs to be told which
+column to use as its import and what column to create for its output here in
+the input column is the output from the string index we created earlier the
+output of the one holding coda is the Invicta column it looks funny because
+this column contains sparse vectors in the next couple of slides will explore
+this in more detail the one holding coda creates espoused Victor but it is easy
+to see what's going on if we convert the sparse vectors too dense factors as
+shown here now this isn't quite what we expected there are only two values in
+each vector rather than three by default the last category is not included the UK
+in this case because if we were to included it would make the victim
+entries linearly dependent the missing category is completely determined by the
+data we have in the first two columns night that the psyche learns one hunting
+kinda does he's differently it keeps all the categories to include all the
+categories in the encoded victors it dropped last two false when creating the
+one hot in coda in a table below you can see that the one hot encoding is now
+creating victors with all three nationalities explicitly represented as
+we expected he we've used a couple of advanced ages of Spock data frames to
+help illustrate what's going on in state of friends are immutable we can't just
+add a new column to the encoded data frame but the with column method on data
+frame can be used to define a new column in relation to an existing common with
+column takes two arguments the name of the new column being created and a
+description of how to create the new column here we are using a user-defined
+function called to dance
+that converts column of sparse vectors into an equivalent column of dense
+victors normally you won't want to do these particular conversion but we just
+did it here so you could clearly see the results of the one in coda
+having completed this lesson we should now be able to encode categorical
+features with sparks stream indexer function in code categorical features
+with sparks one hot encoded function and know when to use each of these

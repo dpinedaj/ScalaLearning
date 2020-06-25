@@ -1,0 +1,5 @@
+RFormula:
+    -In modeling we often devine a variable(criterion) as a 
+    function of other variables(predictors)
+    -The pseudocode is 
+        --> Variable ~ variable A + variable B ....+ variable Z

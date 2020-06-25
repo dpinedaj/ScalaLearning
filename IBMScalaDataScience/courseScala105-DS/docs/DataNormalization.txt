@@ -1,0 +1,21 @@
+Normalizer:
+    -Is a transformer which transforms a dataset of Vector rows,
+    normalizing each vector to have unit norm
+
+Standard Normalizer:
+    -Setting a parameter P (2 by default) can normalize the features using
+    vectorAssembler
+
+Standard Scaler:
+    -A Model which can be fit on a dataset to produce StandardScalerModel
+    -Takes two parameters: 
+        -withStd: Using standard deviation (default true)
+        -withMean: Centers the data with mean before scaling (default false)
+
+    -If the std is 0.0, it returns 0.0 in the vector for that feature
+
+Min Max Scaler:
+    -A model which can be fit on a dataset to produce a transformer
+    -The transformer can rescale each feature to a specific range (often [0,1])
+    
+    

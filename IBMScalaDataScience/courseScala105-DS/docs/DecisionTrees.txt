@@ -1,0 +1,32 @@
+DecisionTrees:
+    -Popular method for classification and regression
+    -Handle categorical features
+    -Do NOT require feature scaling
+    -They capture non-linearities and feature interactions
+
+MLlib's implementation
+    -Support both binary and multi-class classification as well as regression
+    -Support continuous and categorical features
+    -Partitions data by rows, allowing distributed training
+
+Spark.ML API for Decision Trees:
+    -Extended funcionalities
+    -Separation of Decision Trees for classification and for regression
+
+Parameters:
+    -numClasses (classification)
+    -categoricalFeaturesInfo
+    -Stopping Criteria
+        -Determine when the tree stops building
+        -May lead to overfitting
+        -Need to be validate on held-out test data
+        -Parameters:
+            -maxDepth: if increase it get more expressive and maybe higher accuracy
+                        but more costly to train and likely to overfit
+            -minInstancePerNode
+            -minInfoGain
+    -Tunable parameters:
+        -maxBins
+        -maxMemoryInMB
+        -subSamplingRate
+        -impurity

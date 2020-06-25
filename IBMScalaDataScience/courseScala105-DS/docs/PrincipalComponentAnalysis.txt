@@ -1,0 +1,30 @@
+PCA:
+    -Dimension reduction technique, is a unsupervised machine learning model
+    -The principal component (PC) is defined as the linear combination of the
+     predictors that captures the most variability of all possible linear combinations.
+     then, subsequent PCs are derived such thaht these linear combinations capture
+     the most remaining variability while also beign uncorrelated with all previous
+     PCs.
+
+Feature Engineering with PCA:
+    -The basic idea es generate a smaller set of variables that capture most of the
+     information in the original variables
+
+Pros:
+    -Interpretability
+    -Create components that are uncorrelated
+    -Helps avoiding the curse of dimensionality
+    -Improves performance on further modeling
+
+Cons:
+    -The computational effort depends on the number of variables and records
+    -PCA seeks lineal combinations, so will summarize predictors that retain most
+     of the variation in the data
+
+How many principal components to use:
+    -Depends of each case, is a heuristic practice
+    -Can be used the elbow on the graphs
+
+Tip:
+    -Always center and scale the predictors prior to perform PCA
+

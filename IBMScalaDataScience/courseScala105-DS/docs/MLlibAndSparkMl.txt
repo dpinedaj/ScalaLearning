@@ -1,0 +1,7 @@
+MLlib and Spark.ml
+
+Spark's machine learning libraries are divided into two packages, MLlib and spark.ml
+
+    MLlib is older, and is built on top of RDDs
+    spark.ml is built on top of DataFrames, and can be used to construct ML pipelines
+    In cases where MLlib and spark.ml offer equivalent functionality, this course will focus on spark.ml

@@ -68,6 +68,8 @@ object SparkTransEstimators {
   def estimators: Unit = {
 
     def logisticRegressionTest(df: DataFrame): LogisticRegressionModel = {
+      /*Create a logisticRegressionModel that needs to be fited to a
+      vectors dataframe */
       val lr: LogisticRegression = new LogisticRegression()
       lr.setMaxIter(10).setRegParam(0.01)
       val model = lr.fit(df)

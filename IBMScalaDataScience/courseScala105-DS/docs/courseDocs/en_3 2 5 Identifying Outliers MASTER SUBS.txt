@@ -1,0 +1,82 @@
+welcome to identifying allies
+after completing this lesson we should be able to compute the inverse of
+covariance matrix given a dataset compute the Mahalanobis distance for all
+elements in a dataset and remove outliers from a dataset the Mahalanobis
+distance is a multidimensional generalization of measuring how many
+standard deviations a point away from the main cities measured along the beach
+principal component access and takes into account the correlations of the
+data fit you know and scale-invariant tested which can be used to detect
+outliers let's start with an example of an outlier I use the same day if Vick
+data frame from the previous two lessons which is a 10 rows data frame with
+two-color I D and features each feature being a vector of size three with
+randomly generated values here we've used the victor is simpler to turn these
+three columns of randomly generated values into a single column in a data
+frame where each element is a vector with three elements then I append a new
+victim that is an outline all its values a three much greater than the other
+victims in the day to frame the resulting data frame as shown in its
+last five rows presented in descending order look like this now I standardize
+the data frame using the standard scaling introduced in the previous
+lesson this is an important step when computing Mahalanobis distances since
+its computation relies on the covariance matrix so if I standardize the feature
+vectors to the remaining unit standard deviation the covariance matrix is
+exactly the same as the correlation matrix and the correlation matrix has
+been implemented method on the statistics object which I'm going to you
+soon back to the standardization I do exactly the same as before when I
+introduced the standards gala I create an instance of it said its input and
+output columns and sit
+with standard deviation and we mean parameters to be true since I want the
+features to have zero mean and unit standard deviation next I fit the
+standard scale model using my data frame and then transform the data frame using
+the model the resulting data frame as shown in the last three Bros presented
+in descending order look like this it's time to compute the inverse of the
+covariance matrix since my feature vectors are already standardized the
+covariance matrix is identical to the correlation matrix data frames only
+provide methods for the computation of correlation of covariance between two
+columns at a time but the statistics object can compute entire correlation
+matrix over an idea victors so let's proceed after doing the appropriate
+imports in this case the breeze library is needed for computing matrix inversion
+I obtain an idea of victor's from my data frame selecting only the column
+feature vectors accessing its ided attributes and then mapping each feature
+vector into an email the victor next I used the statistics object to compute
+the correlation matrix for the feature vectors remember that correlation and
+covariance this same here in the case of standardized features the result is
+shown as coal covariance cold cough then I need to compute its inverse I create a
+new instance of a three by three dense matrix from Brees and then called the
+inverse method to get the inverted matrix as a result which I assigned to
+call Cove be now to the Mahalanobis distance computation itself first I
+create a user defined function UDF which takes a column of a male lead characters
+and a puts a column of doubles for each mL the victim V my function creates a
+breezes dents victim BB and uses these new victor in the mail
+obvious distance formula that he is the beast transpose multiplied by the
+inverse of the covariance matrix multiply and again by Phoebe the result
+is a double value representing the computer and distance having defined the
+user-defined function for the Mahalanobis distance I have to apply it
+over the column of feature vectors you might data frame the scaled feet column
+I used with column to perform this operation the resulting data frame is
+then named the F Mahalanobis and the result looks like this modus city
+outlier I've added as an ideal number equal to 10 its Mahalanobis distance is
+not surprisingly the largest in the data frame you can be argued that the second
+largest distance in the road with heidi is true is also an outlier is possible
+to define a threshold over which points are considered outliers another approach
+would be to consider as allies points in the 99th percentile regarding its
+Mahalanobis distance in this example with only 11 rose I choose to consider
+the points with the top two computer distances as outliers as shown in the
+slide having defined criteria the next step is to remove the outlines from the
+data frame I stop by selecting only I D and distances from my data frame and
+then sort them by distance in decreasing order since I'm only interested in
+selecting the IDs of the rose to be removed
+I dropped the decent column and collect the result as shown in ideas which is an
+array of Rose every row has only one element which is known to be a long type
+I D high-cost each element too long and then use slice to get only the first to
+these are the ideals of the outliers in this case 10 and 2 as shown in I D out
+lights
+now that I have the IDs for the out lies I can just feel to them out by keeping
+everything that he's not an outlier then the resulting data frame looks like this
+points I D six and ten
+gone
+I just said even if I have standardized the feature vectors before to ease the
+computation of the covariance matrix now that the allies have been removed it is
+necessary to standardise the feature vectors once again
+having completed this lesson you should now be able to compute the inverse of a
+covariance matrix given a day to compute the Mahalanobis distances for all
+elements in a dataset and remove outliers from a dataset
