@@ -35,7 +35,7 @@ object IdentifyOutliers {
   }
 
   def generateData: DataFrame = {
-    val dfRandom = this.spark
+    val dfRandom: DataFrame = this.spark
       .range(0, 10)
       .select("id")
       .withColumn("uniform", rand(10L))
