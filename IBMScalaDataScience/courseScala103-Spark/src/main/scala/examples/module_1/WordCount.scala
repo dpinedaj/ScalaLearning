@@ -1,9 +1,9 @@
 package examples.module_1
 
-import scala.reflect.io.Directory //module to manage local directorys or folders
+import scala.reflect.io.Directory //module to manage local directory or folders
 import java.io.File //module to manage local files
 import org.apache.spark.SparkContext //SparkContext class
-import java.util.logging.{Level, Logger} //To speciffy the logger level
+import java.util.logging.{Level, Logger} //To specify the logger level
 
 object WordCount {
   Logger.getLogger("org").setLevel(Level.OFF)
