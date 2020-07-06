@@ -1,6 +1,0 @@
-package sophosTest
-
-object CaseOne {
-
-
-}

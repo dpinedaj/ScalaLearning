@@ -1,9 +1,6 @@
 package sophosTest
 
-object NumberCast {
-  /*
-  ¿Cómo validamos que una cadena/string es completamente numérica?
-   */
+object NumberCaster {
 
   def isNumber(text: String): Boolean = {
     try {

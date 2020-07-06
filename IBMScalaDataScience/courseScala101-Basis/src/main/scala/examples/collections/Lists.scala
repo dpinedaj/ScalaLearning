@@ -92,6 +92,7 @@ object Lists {
   val animals3 = "zebra" :: animals2
   println(animals3)
 
+  var listInLine = (for(i<-1 to 10 if i%2==0) yield i).toList
   
 
 }

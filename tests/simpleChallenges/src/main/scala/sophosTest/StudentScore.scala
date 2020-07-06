@@ -1,14 +1,41 @@
 package sophosTest
 
-
 object StudentScore {
-  /*A lo largo de un curso se realizan dos exámenes parciales.
-Para aprobar el curso la nota media debe ser mayor o igual que
- 5 siempre y cuando en ambos parciales se tenga al menos un 4.
- Escribir un programa que pregunte al usuario la nota de los
- dos parciales y muestre por pantalla si el alumno ha aprobado
- el curso o si no, y en caso de no haber aprobado,
-qué parcial tiene que repetir por tener menos de 4 en él. (CÓDIGO)
-   */
 
+  def getInt: Int = {
+    while (true) {
+      val score: String = io.StdIn.readLine(s"Insert num of scores: ")
+      try {
+        val value = score.toInt
+        return value
+      } catch {
+        case _: Throwable => println(s"$score can't be treated as a Double value")
+      }
+    }
+    throw new IllegalStateException("This should never happen")
+  }
+
+
+  def getScore(n: Int): Double = {
+    while (true) {
+      val score: String = io.StdIn.readLine(s"Insert score $n: ")
+      try {
+        val value = score.toDouble
+        return value
+      } catch {
+        case _: Throwable => println(s"$score can't be treated as a Double value")
+      }
+    }
+    throw new IllegalStateException("This should never happen")
+  }
+  def checkPass(scores: List[Double]): String ={
+
+    val meanScore: Double = scores.sum / scores.length
+    val passScores: Int = scores.map{
+      x => if(x>=4.0) 1 else 0
+    }.sum
+
+    if (meanScore >= 5 && passScores == scores.length) "The student passed"
+    else "The student doesn't passed"
+  }
 }
