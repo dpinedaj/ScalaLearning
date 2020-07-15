@@ -11,10 +11,7 @@ import org.apache.spark.sql.functions._
 //Libraries to feature flow the data
 import org.apache.spark.ml.Pipeline
 import org.apache.spark.ml.PipelineModel
-import org.apache.spark.mllib.util.MLUtils
-import org.apache.spark.ml.feature.{StringIndexer, IndexToString, VectorIndexer}
 import org.apache.spark.mllib.util.MLUtils.{
-  convertVectorColumnsFromML => fromML,
   convertVectorColumnsToML => toML
 }
 

@@ -7,6 +7,9 @@ object Solutions {
     //CompareTriplets.solution()
     //VeryBigSum.solution()
     //DiagonalDifference.solution()
-    Staircase.solution()
+    //Staircase.solution()
+    //MinMaxSum.solution()
+    //BirthdayCake.solution()
+    TimeConversion.solution()
   }
 }

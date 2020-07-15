@@ -8,9 +8,7 @@ object Staircase {
   }
 
   def solution(): Unit = {
-    val stdin = scala.io.StdIn
-
-    val n = stdin.readLine.trim.toInt
+    val n = io.StdIn.readLine.trim.toInt
 
     staircase(n)
   }

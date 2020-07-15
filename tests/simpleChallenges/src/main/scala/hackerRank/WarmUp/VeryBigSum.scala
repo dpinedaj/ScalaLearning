@@ -6,9 +6,8 @@ object VeryBigSum {
   }
 
   def solution(): Unit = {
-    val stdin = scala.io.StdIn
     println("Insert array values with blank space separation")
-    val ar = stdin.readLine.split(" ").map(_.trim.toLong)
+    val ar =io.StdIn.readLine.split(" ").map(_.trim.toLong)
     val result = veryBigSum(ar)
 
     println(result)

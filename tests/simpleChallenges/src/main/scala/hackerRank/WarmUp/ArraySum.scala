@@ -11,8 +11,7 @@ object ArraySum {
   }
 
   def solution():Unit = {
-    val stdin = scala.io.StdIn
-    val ar = stdin.readLine.split(" ").map(_.trim.toInt)
+    val ar = io.StdIn.readLine.split(" ").map(_.trim.toInt)
     val result = simpleArraySum(ar)
     println(result)
   }

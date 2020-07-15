@@ -13,11 +13,8 @@ object PlusMinus {
   }
 
   def solution(): Unit = {
-    val stdin = scala.io.StdIn
 
-    val n = stdin.readLine.trim.toInt
-
-    val arr = stdin.readLine.split(" ").map(_.trim.toInt)
+    val arr = io.StdIn.readLine.split(" ").map(_.trim.toInt)
     plusMinus(arr)
   }
 
