@@ -1,7 +1,0 @@
-Object Orientation provides four things:
-    -> Encapsulation
-    -> Abstraction
-    -> Inheritance
-    -> Polymorphism
-
-    
