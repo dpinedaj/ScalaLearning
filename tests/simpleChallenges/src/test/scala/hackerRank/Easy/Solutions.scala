@@ -5,6 +5,7 @@ object Solutions {
     //SequenceEquation.solution()
     //AppendDelete.solution()
     //CutSticks.solution()
-    JumpingClouds.solution()
+    //JumpingClouds.solution()
+    LibraryFine.solution()
   }
 }

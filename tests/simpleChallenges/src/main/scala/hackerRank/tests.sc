@@ -1,14 +1,48 @@
-def squares(a: Int, b: Int): Int = {
-  def sqIter(n: Int): Int = {
-    if (math.sqrt(n).toString.length > 6) 0
-    else 1
+
+val s = Array(1,7,2,4)
+val k = 3
+
+
+def nonDivisibleSubset(k: Int, s: Array[Int]): Int = {
+  def check(x: Int, ar: Array[Int]): Int = {
+    (for (i <- 1 until ar.length if (x + ar(i)) % k != 0) yield ar(i)).length
   }
-  val result = (for(i<-a to b) yield sqIter(i)).sum
-  result
+
+  def checkMax(x: Int, y: Int): Int = if (x > y) x else y
+
+  @scala.annotation.tailrec
+  def generalCheck(max: Int, ar: Array[Int]): Int = {
+    if (ar.isEmpty) max
+    else generalCheck(checkMax(max, check(ar(0), s)),ar.tail)
+  }
+
+  generalCheck(0, s)
 }
 
+nonDivisibleSubset(k, s)
 
-squares(3, 9)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
