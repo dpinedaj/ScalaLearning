@@ -9,7 +9,7 @@ class Tests extends FunSuite {
     assert(HighOrderFunctions.usage() canEqual Array(15, 255, 5))
   }
   test("AnonymousFunctions.usage") {
-    assert(AnonymousFunctions.usage == 50)
+    assert(AnonymousFunctions.usage() == 50)
   }
   test("Currying.usage") {
     assert(Currying.usage() == 3091)
