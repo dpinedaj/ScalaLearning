@@ -1,11 +1,11 @@
-val myListOfTuples = List(("Abhiram", 56), ("Sheena", 33), ("Meena", 50))
 
-myListOfTuples.foreach(x => if (x._2 > 50) println(x._1 + " passed"))
+val l = List(1, 2 ,3, 4, 5, 6)
 
+def f(arr: List[Int]): List[Int] = {
+  arr.
+}
 
-
-
-
+f(l)
 
 
 
