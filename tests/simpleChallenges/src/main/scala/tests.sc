@@ -1,11 +1,25 @@
 
-val l = List(1, 2 ,3, 4, 5, 6)
 
-def f(arr: List[Int]): List[Int] = {
-  arr.
+
+def factorial(i: Int): Int = {
+  if (i == 1) 1
+  else i * factorial(i - 1)
 }
 
-f(l)
+def expansion(i: Int, acc: Double, x: Double): Double = {
+  if (i == 10) acc
+  else acc + expansion(i + 1, math.pow(x, i) / factorial(i), x)
+}
+expansion(1, 1, 20)
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-package hackerRank.functional
+package hackerRank.functional.Easy
 
 import scala.annotation.tailrec
 

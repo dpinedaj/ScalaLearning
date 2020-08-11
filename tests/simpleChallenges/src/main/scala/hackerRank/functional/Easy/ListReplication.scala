@@ -1,4 +1,4 @@
-package hackerRank.functional
+package hackerRank.functional.Easy
 
 object ListReplication {
   def f(n: Int, l: List[Int]): List[Int] = {
