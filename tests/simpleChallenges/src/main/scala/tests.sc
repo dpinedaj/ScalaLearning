@@ -1,20 +1,22 @@
-
-
-
 def factorial(i: Int): Int = {
   if (i == 1) 1
   else i * factorial(i - 1)
 }
 
-def expansion(i: Int, acc: Double, x: Double): Double = {
-  if (i == 10) acc
-  else acc + expansion(i + 1, math.pow(x, i) / factorial(i), x)
+factorial(4)
+
+def ownFactorial(i: Int): Int = {
+  (1 to i).foldLeft(1){case (acc, x) => acc * x}
 }
-expansion(1, 1, 20)
 
+def ownFactorial2(i: Int): Int = {
+  (1 to i).reduce((acc, y) => acc * y)
+}
 
+ownFactorial(4)
+ownFactorial2(4)
 
-
+(1 to 4).product
 
 
 

@@ -83,7 +83,7 @@ object InvertedIndex {
           (word, iterable.mkString(", ")) //Convert iterable as string to write
       }
 
-      val words = rdd.map(x => (x._1))
+      val words = rdd.map(x => x._1)
     return (rdd, words)
 
   }
