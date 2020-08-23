@@ -24,8 +24,7 @@ object PascalTriangle extends App {
   }
 
   def iterPascal(row: Int, column: Int): Int = {
-    if (column == 0) 0
-    else if (column == 1 || column == row || row == 1) 1
+    if (column == 1 || column == row || row == 1) 1
     else iterPascal(row - 1, column - 1) + iterPascal(row - 1, column)
   }
 
