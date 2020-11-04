@@ -1,5 +1,3 @@
-import scala.annotation.tailrec
-
 val x = "kitkat"
 val y = "kit"
 
