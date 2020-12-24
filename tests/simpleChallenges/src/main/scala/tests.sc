@@ -1,21 +1,17 @@
-val x = "kitkat"
-val y = "kit"
+/*
+
+ */
+
+val arr = Array(1, 2, 2, 3)
 
 
-val common = (x zip y).takeWhile(c => c._1 == c._2).map(_._1).mkString("")
-val x1 = x.toSeq.diff(common).unwrap; val y1 = y.toSeq.diff(common).unwrap
-println(s"${common.length} $common\n${x1.length} $x1\n${y1.length} $y1")
+def equalizeArray(arr: Array[Int]): Int = {
+  val (x, _) = arr.groupBy(identity)
+    .maxBy { case (_, y) => y.length }
+  arr.filterNot(_ == x).length
+}
 
-
-
-
-
-
-
-
-
-
-
+equalizeArray(arr)
 
 
 
