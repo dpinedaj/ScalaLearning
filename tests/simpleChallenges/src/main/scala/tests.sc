@@ -1,17 +1,29 @@
-/*
-
- */
-
-val arr = Array(1, 2, 2, 3)
+val a = 100
+val b = 2
 
 
-def equalizeArray(arr: Array[Int]): Int = {
-  val (x, _) = arr.groupBy(identity)
-    .maxBy { case (_, y) => y.length }
-  arr.filterNot(_ == x).length
-}
 
-equalizeArray(arr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
