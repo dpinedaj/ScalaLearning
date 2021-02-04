@@ -1,5 +1,7 @@
 package hackerRank.functional.Easy
 
+import scala.annotation.tailrec
+
 object PascalTriangle extends App {
   /*
     This solution allows to perform the Pascal Triangle.
@@ -14,13 +16,19 @@ object PascalTriangle extends App {
 
   pascal(5)
 
-  def pascal(k: Int): Unit = {
-    for (row <- 1 to k) {
-      for (column <- 1 to row) {
+  @tailrec
+  def pascal(k: Int, row: Int = 1, column: Int = 1): Unit = {
+    if (row <= k){
+      if (column <= row) {
         print(s"${iterPascal(row, column)} ")
+        pascal(k, row, column + 1)
       }
-      println()
+      else{
+        println()
+        pascal(k, row+1, 1)
+      }
     }
+
   }
 
   def iterPascal(row: Int, column: Int): Int = {
