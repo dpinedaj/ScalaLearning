@@ -1,5 +1,21 @@
-val a = 100
-val b = 2
+
+val n = 2
+val a = "abcdpqrs"
+val b = "az"
+
+val w = a.toArray
+val result = w.zipWithIndex.map(
+  value =>
+    if (value._2 % 2 == 0) w(value._2 + 1)
+    else w(value._2 - 1)
+).mkString("")
+
+
+
+
+
+
+
 
 
 
