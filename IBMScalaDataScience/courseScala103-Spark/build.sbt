@@ -46,11 +46,11 @@ lazy val main = (project in file("."))
       sparkCore,
       sparkSql,
       sparkMlLib,
-      sparkStreaming,
-      sparkHive,
-      sparkStreamingTwitter,
-      twitter4j,
-      twitter4jStream
+      //sparkStreaming,
+      //sparkHive,
+      //sparkStreamingTwitter,
+      //twitter4j,
+      //twitter4jStream
     )
   )
 

@@ -1,4 +1,4 @@
-package examples.data
+/*package examples.data
 
 import twitter4j.auth.{Authorization, OAuthAuthorization}
 import twitter4j.conf.ConfigurationBuilder
@@ -15,4 +15,4 @@ object Twitter {
     Option(new OAuthAuthorization(c))
   }
 
-}
+}*/
