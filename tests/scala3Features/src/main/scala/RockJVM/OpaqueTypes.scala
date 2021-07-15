@@ -1,0 +1,5 @@
+package RockJVM
+
+object OpaqueTypes {
+
+}

@@ -40,7 +40,6 @@ object WordCount {
       println("Finished")
 
       val t1 = System.nanoTime()
-
       println("Elapsed time: %.2f seconds".format((t1 - t0) / 1e9d))
     } finally {
       sc.stop()
