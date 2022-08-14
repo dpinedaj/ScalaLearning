@@ -5,9 +5,11 @@ import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
 import org.apache.spark.ml.linalg.Vectors
 import org.apache.spark.sql.DataFrame
+import org.apache.spark.sql.Row
 
 //Transformer and estimator to perform PCA
 import org.apache.spark.ml.feature.{VectorAssembler, PCA}
+import org.apache.spark.ml.linalg.DenseVector
 
 object PrincipalComponentAnalysis {
   Logger.getLogger("org").setLevel(Level.OFF)
@@ -19,9 +21,11 @@ object PrincipalComponentAnalysis {
       val df = loadData
       println("Initial DataFrame:")
       df.printSchema()
+      println(s"Dataframe N of features: ${df.columns.length}")
 
       println("\nDataFrame after PCA:")
       val dfPca = applyPCA(df)
+      println(s"Dataframe N of features ${dfPca.first().toSeq(0).asInstanceOf[DenseVector].toArray.length}")
       dfPca.show(truncate=false)
     } finally {
       this.spark.stop()
